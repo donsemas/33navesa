@@ -4,35 +4,32 @@ import Footer from "../../../../components/Footer.astro";
 import "../../../../styles/base.css";
 
 export async function getStaticPaths({ paginate }) {
-  // Данные для пагинации категории "Навесы" — берём из реального каталога
-  // В оригинальном WP было 9+ элементов, пагинация /page/2/ существовала
   const allItems = [
-    { title: "Автомобильные навесы", href: "/katalog/navesy/avtomobilnye-navesy/", img: "/uploads/2021/05/navesy-dlya-mashiny-odnoskatnye.webp", price: "5400" },
-    { title: "Металлические навесы", href: "/katalog/navesy/metallicheskie-navesy/", img: "/uploads/2021/05/metallicheskie-navesy.webp", price: "5400" },
-    { title: "Односкатные навесы", href: "/katalog/navesy/odnoskatnye-navesy/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-polikarbonata.webp", price: "5400" },
-    { title: "Двухскатные навесы", href: "/katalog/navesy/dvuhskatnye-navesy/", img: "/uploads/2021/05/navesy-dvuhskatnye-iz-profnastila.webp", price: "5400" },
-    { title: "Арочные навесы", href: "/katalog/navesy/arochnye-navesy/", img: "/uploads/2021/05/arochnye-navesy-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы из поликарбоната", href: "/katalog/navesy/navesy-iz-polikarbonata/", img: "/uploads/2021/05/navesy-iz-polikarbonata.webp", price: "5400" },
-    { title: "Крытые навесы", href: "/katalog/navesy/krytye-navesy/", img: "/uploads/2021/05/krytye-navesy-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для автомобилей", href: "/katalog/navesy/navesy-dlya-mashin/", img: "/uploads/2021/05/navesy-dlya-mashiny.webp", price: "5400" },
-    { title: "Садовые навесы", href: "/katalog/navesy/sadovye-navesy/", img: "/uploads/2021/05/sadovye-navesy-dlja-dachi.webp", price: "5400" },
+    { title: "Арочные навесы из мягкой кровли", href: "/katalog/navesy/arochnye-navesy/arochnye-navesy-iz-myagkoj-krovli/", img: "/uploads/2021/06/arochnyj-naves-iz-myagkoj-krovli.webp", price: "5400" },
+    { title: "Садовые мангалы с крышей", href: "/katalog/navesy/navesy-dlya-mangala/sadovye-mangaly-s-kryshej/", img: "/uploads/2021/05/sadovye-mangaly-s-kryshej.webp", price: "5600" },
+    { title: "Укрытие для машины из поликарбоната", href: "/katalog/navesy/navesy-dlya-mashin/ukrytie-dlya-mashiny-iz-polikarbonata/", img: "/uploads/2021/05/ukrytie-dlja-mashiny-iz-polikarbonata.webp", price: "5600" },
+    { title: "Садовые навесы для дачи", href: "/katalog/navesy/sadovye-navesy/sadovye-navesy-dlya-dachi/", img: "/uploads/2021/05/sadovye-navesy-dlja-dachi.webp", price: "5400" },
+    { title: "Уличные навесы для машин", href: "/katalog/navesy/navesy-dlya-mashin/ulichnye-navesy-dlya-mashin/", img: "/uploads/2021/05/ulichnye-navesy-dlja-mashin.webp", price: "5400" },
+    { title: "Стальные навесы", href: "/katalog/navesy/drugie/stalnye-navesy/", img: "/uploads/2021/05/stalnye-navesy.webp", price: "5600" },
+    { title: "Уличные навесы из поликарбоната", href: "/katalog/navesy/drugie/ulichnye-navesy-iz-polikarbonata/", img: "/uploads/2021/05/ulichnye-navesy-iz-polikarbonata.webp", price: "5500" },
+    { title: "Террасы с навесом из поликарбоната", href: "/katalog/navesy/navesy-dlya-terrasy/terrasy-s-navesom-iz-polikarbonata/", img: "/uploads/2021/05/terrasy-s-navesom-iz-polikarbonata.webp", price: "5400" },
+    { title: "Односкатные навесы из металлопрофиля", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-metalloprofilya/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-metalloprofilja.webp", price: "5400" },
+    { title: "Односкатные навесы из профильной трубы", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-profilnoj-truby/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-profilnoj-truby.webp", price: "5400" },
+    { title: "Односкатные навесы из поликарбоната", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-polikarbonata/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-polikarbonata.webp", price: "5600" },
+    { title: "Односкатные навесы из металлочерепицы", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-metallocherepicy/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-metallocherepicy.webp", price: "5500" },
     { title: "Навесы для барбекю", href: "/katalog/navesy/navesy-dlya-barbekju/", img: "/uploads/2021/05/navesy-dlja-barbekju-iz-polikarbonata.webp", price: "5400" },
     { title: "Навесы для бассейна", href: "/katalog/navesy/navesy-dlya-bassejna/", img: "/uploads/2021/05/navesy-dlya-bassejna-iz-polikarbonata.webp", price: "5400" },
     { title: "Навесы для мангала", href: "/katalog/navesy/navesy-dlya-mangala/", img: "/uploads/2021/05/navesy-dlya-mangala-iz-polikarbonata.webp", price: "5400" },
     { title: "Навесы для дачи", href: "/katalog/navesy/navesy-dlya-dachi/", img: "/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata.webp", price: "5400" },
     { title: "Навесы для террасы", href: "/katalog/navesy/navesy-dlya-terrasy/", img: "/uploads/2021/05/navesy-dlya-terrasy-iz-polikarbonata.webp", price: "5400" },
     { title: "Навесы для крыльца", href: "/katalog/navesy/navesy-dlya-krylca/", img: "/uploads/2021/05/navesy-dlya-krylca-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для балкона", href: "/katalog/navesy/navesy-dlya-balkona/", img: "/uploads/2021/05/navesy-dlya-balkona-iz-polikarbonata.webp", price: "5400" },
-    { title: "Другие навесы", href: "/katalog/navesy/drugie/", img: "/uploads/2021/05/navesy.webp", price: "5400" },
-    { title: "Навесы для гаража", href: "/katalog/garazhi-iz-polikarbonata/", img: "/uploads/2021/05/navesy-dlya-garazha.webp", price: "5400" },
   ];
-  // pageSize 9 -> будет 2 страницы: /katalog/navesy/page/1/ и /katalog/navesy/page/2/
   return paginate(allItems, { pageSize: 9 });
 }
 
 const { page } = Astro.props;
-const title = `Навесы — каталог, страница ${page.currentPage}`;
-const description = `Каталог навесов из поликарбоната — страница ${page.currentPage}. Производство и монтаж навесов по доступной цене.`;
+const title = page.currentPage === 1 ? "Навесы купить на заказ с установкой под ключ по цене за метр м2" : `Навесы — страница ${page.currentPage}`;
+const description = page.currentPage === 1 ? "⭐⭐⭐⭐⭐ Предлагаем купить навесы на заказ с установкой под ключ по цене за метр м2. Доставка и монтаж под ключ 🔧 в Москве и Московской обл. 👷‍♂️ Работаем с Пн-Вс с 9:00 до 18:00 | Строительная компания ДонГрупп" : `Каталог навесов — страница ${page.currentPage}. Доставка и монтаж под ключ в Москве и МО.`;
 const canonical = page.currentPage === 1 ? "/katalog/navesy/" : `/katalog/navesy/page/${page.currentPage}/`;
 ---
 
@@ -43,11 +40,17 @@ const canonical = page.currentPage === 1 ? "/katalog/navesy/" : `/katalog/navesy
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <title>{title}</title>
   {description && <meta name="description" content={description} />}
   <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="article" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Фабрика навесов" />
   <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
@@ -56,40 +59,93 @@ const canonical = page.currentPage === 1 ? "/katalog/navesy/" : `/katalog/navesy
   <Header />
   <div class="content">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="/">Главная</a> &gt; <a href="/katalog/">Каталог</a> &gt; <span>Навесы — страница {page.currentPage}</span>
-      </div>
-      <h1>Навесы — страница {page.currentPage} из {page.lastPage}</h1>
-      <div class="catalog-list">
-        <div class="row">
-          {page.data.map((item) => (
-            <div class="box">
-              <a href={item.href}>
-                <div class="catalog-list__item">
-                  <div class="catalog-list__item-image">
-                    <img src={item.img} alt={item.title} loading="lazy" width="400" height="250" />
-                  </div>
-                  <div class="catalog-list__item-title">{item.title}</div>
-                </div>
-              </a>
-              <div class="catalog-list__item-price"><span>Цена от {item.price} ₽/м²</span></div>
+      <div class="row">
+        <div class="sitebar">
+          <h3>Статьи по теме</h3>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3.webp" class="attachment-blog-thumbnails" alt="навес на даче из полика" decoding="async" /></a>
             </div>
-          ))}
+            <div class="related__blog-title"><a href="/blog/navesy-dlya-dachi-iz-polikarbonata/">Навесы для дачи из поликарбоната</a></div>
+          </div>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/vopros-otvet/"><img width="290" height="250" src="/uploads/2021/05/vopros-otvet2.webp" alt="" decoding="async" /></a>
+            </div>
+            <div class="related__blog-title"><a href="/blog/vopros-otvet/">Вопрос ответ</a></div>
+          </div>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/besedki-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/besedki-iz-polikarbonata3.webp" alt="" decoding="async" /></a>
+            </div>
+            <div class="related__blog-title"><a href="/blog/besedki-iz-polikarbonata/">Беседки из поликарбоната</a></div>
+          </div>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-mashiny-iz-polikarbonata-na-dachu6.webp" alt="" decoding="async" /></a>
+            </div>
+            <div class="related__blog-title"><a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/">Навес для машины из поликарбоната на дачу</a></div>
+          </div>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-bassejna-iz-polikarbonata.webp" alt="" decoding="async" /></a>
+            </div>
+            <div class="related__blog-title"><a href="/blog/naves-dlya-bassejna-iz-polikarbonata/">Навес для бассейна из поликарбоната</a></div>
+          </div>
+          <div class="related__blog">
+            <div class="related__blog-img">
+              <a href="/blog/naves-dlya-balkona/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-balkona5.webp" alt="" decoding="async" /></a>
+            </div>
+            <div class="related__blog-title"><a href="/blog/naves-dlya-balkona/">Навес для балкона</a></div>
+          </div>
+          <h3>СНиПы</h3>
+          <a class="s-file" href="/uploads/2021/05/SNiP_2.01.07-85_Nagruzki_i_vozdejstvija.pdf" target="_blank">Нагрузки и воздействия</a>
+          <a class="s-file" href="/uploads/2021/05/SNiP_2-23-81_Normy_proektirovanija._Stalnye_konstrukcii.pdf" target="_blank">Нормы проектирования</a>
+          <a class="s-file" href="/uploads/2021/05/SNiP_3.04.03-85_Zashhita_stroitelnyh_konstrukcij_i_sooruzhenij_ot_korrozii.pdf" target="_blank">Защита строительных конструкций от коррозии</a>
         </div>
+        <main>
+          <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+            <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1" /></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2" /></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive taxonomy category current-item">Навесы{page.currentPage > 1 ? ` — страница ${page.currentPage}` : ""}</span><meta property="url" content={canonical} /><meta property="position" content="3" /></span>
+          </div>
+          <h1>Навесы{page.currentPage > 1 ? ` — страница ${page.currentPage}` : ""}</h1>
+          <div class="products__items row">
+            {page.data.map((item) => (
+              <div class="box">
+                <div class="products__item">
+                  <div class="products__item-title"><a href={item.href}>{item.title}</a></div>
+                  <div class="products__item-img">
+                    <a href={item.href}><img width="400" height="250" src={item.img} alt={item.title} decoding="async" loading="lazy" /></a>
+                  </div>
+                  <div class="products__price"><span>Цена от <i>{item.price}</i> руб. за кв/м</span></div>
+                  <div class="products__more"><a href={item.href}>Подробнее</a></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <nav class="navigation pagination" aria-label="Пагинация">
+            <h2 class="screen-reader-text">Пагинация</h2>
+            <div class="nav-links">
+              {page.url.prev && <a class="prev page-numbers" href={page.url.prev}>Назад</a>}
+              {Array.from({ length: page.lastPage }, (_, i) => {
+                const n = i + 1;
+                const href = n === 1 ? "/katalog/navesy/" : `/katalog/navesy/page/${n}/`;
+                return n === page.currentPage ? <span aria-current="page" class="page-numbers current">{n}</span> : <a class="page-numbers" href={href}>{n}</a>;
+              })}
+              {page.url.next && <a class="next page-numbers" href={page.url.next}>Далее</a>}
+            </div>
+          </nav>
+          <div class="cat__text">
+            <p>Предлагаем выбрать и купить навес из каталога с установкой под ключ по Москве и Московской области по доступной цене в минимальные сроки с предоставлением гарантии качества на все товары и услуги.<br />Основными достоинствами сотрудничества с нами являются:</p>
+            <ul>
+              <li>возможность получения товаров высокого качества, имеющий соответствующую сертификацию и лицензирование;</li>
+              <li>гарантированное получение требуемого результата. Мы проведем работу в соответствии с требованиями и предпочтениями заказчика;</li>
+              <li>работают специалисты, которые проводят многочисленные процессы качественно и быстро;</li>
+              <li>работа будет сдана строго в установленные сроки. Мы предоставим готовый результат в сроки, первоначально установленные заказчиком.</li>
+            </ul>
+            <p>Получить более подробное консультирование по вопросам работы нашей компании, а также произвести заполнение заявки на приобретение материалов и проведение строительных работ, можно будет на сайте организации.</p>
+          </div>
+        </main>
       </div>
-
-      <nav class="navigation pagination" aria-label="Пагинация">
-        <div class="nav-links">
-          {page.url.prev && <a class="prev page-numbers" href={page.url.prev}>Назад</a>}
-          {Array.from({ length: page.lastPage }, (_, i) => {
-            const n = i + 1;
-            const href = n === 1 ? "/katalog/navesy/" : `/katalog/navesy/page/${n}/`;
-            const isCurrent = n === page.currentPage;
-            return isCurrent ? <span aria-current="page" class="page-numbers current">{n}</span> : <a class="page-numbers" href={href}>{n}</a>;
-          })}
-          {page.url.next && <a class="next page-numbers" href={page.url.next}>Далее</a>}
-        </div>
-      </nav>
     </div>
   </div>
   <Footer />
