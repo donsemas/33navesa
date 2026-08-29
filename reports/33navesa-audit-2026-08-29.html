@@ -15,12 +15,12 @@
   --code:#0f172a;--shadow:0 8px 32px rgba(0,0,0,.4);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);overflow:hidden}
+header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:800}
@@ -38,10 +38,10 @@ header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px 
 .hero h2{margin:0 0 8px;font-size:28px;letter-spacing:-.02em}
 .hero p{margin:0;color:var(--muted);max-width:760px}
 .grid{display:grid;gap:16px}
-.main-grid{display:grid;grid-template-columns:280px 1fr;gap:18px;overflow:hidden}
-.main-grid > div{min-width:0;overflow:hidden}
+.main-grid{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+.main-grid > *{min-width:0}
 .grid-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.grid-3{grid-template-columns:1fr}}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr} .main-grid{grid-template-columns:1fr} .toc{position:static !important}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
 .card h3{margin:0 0 10px;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
 .kpi{font-size:28px;font-weight:800}
@@ -61,10 +61,10 @@ pre code{display:block;white-space:pre;word-wrap:normal;overflow-x:auto}
 .section h3{font-size:16px;margin:18px 0 10px}
 .anchor{opacity:0;font-size:14px}
 h2:hover .anchor{opacity:1}
-.toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
-.toc a{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:14px;color:var(--muted)}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 16px 18px 24px;align-self:start}
+.toc a{display:flex;align-items:center;gap:10px;padding:7px 0 7px 4px;font-size:14px;color:var(--muted)}
 .toc a:hover{color:var(--text)}
-.toc .num{display:inline-block;width:20px;text-align:right;color:var(--accent);font-weight:600;font-size:13px;flex-shrink:0}
+.toc .num{display:inline-block;min-width:28px;text-align:right;color:var(--accent);font-weight:600;font-size:13px;flex-shrink:0}
 .progress{height:6px;background:var(--border);border-radius:999px;overflow:hidden}
 .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:24px}
