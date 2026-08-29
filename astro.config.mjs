@@ -1,9 +1,10 @@
 ﻿import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
+  site: "https://33navesa.vercel.app",
   output: "static",
-  integrations: [tailwind()],
-  // Сохраняем точные URL без добавления trailingSlash, чтобы совпасть с WP
+  integrations: [tailwind(), sitemap()],
   trailingSlash: "always",
 });
