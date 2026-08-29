@@ -15,12 +15,12 @@
   --code:#0f172a;--shadow:0 8px 32px rgba(0,0,0,.4);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s;overflow-x:hidden}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .container{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);overflow:hidden}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:800}
@@ -38,6 +38,8 @@ header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px 
 .hero h2{margin:0 0 8px;font-size:28px;letter-spacing:-.02em}
 .hero p{margin:0;color:var(--muted);max-width:760px}
 .grid{display:grid;gap:16px}
+.main-grid{display:grid;grid-template-columns:280px 1fr;gap:18px;overflow:hidden}
+.main-grid > div{min-width:0;overflow:hidden}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
@@ -51,16 +53,18 @@ header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px 
 .table{width:100%;border-collapse:collapse;font-size:14px}
 .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left}
 .table th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--code)}
-pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto;font-size:13px;line-height:1.5}
+pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:14px;overflow-x:auto;overflow-y:hidden;font-size:13px;line-height:1.5;max-width:100%}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+pre code{display:block;white-space:pre;word-wrap:normal;overflow-x:auto}
 .section{padding:22px 0}
 .section h2{font-size:22px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
 .section h3{font-size:16px;margin:18px 0 10px}
 .anchor{opacity:0;font-size:14px}
 h2:hover .anchor{opacity:1}
 .toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
-.toc a{display:block;padding:6px 0;font-size:14px;color:var(--muted)}
+.toc a{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:14px;color:var(--muted)}
 .toc a:hover{color:var(--text)}
+.toc .num{display:inline-block;width:20px;text-align:right;color:var(--accent);font-weight:600;font-size:13px;flex-shrink:0}
 .progress{height:6px;background:var(--border);border-radius:999px;overflow:hidden}
 .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:24px}
@@ -96,20 +100,20 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var
   <div class="card"><h3>AI-боты</h3><div class="kpi">0/6 <small>разрешены</small></div><div class="progress"><i style="width:15%"></i></div><div style="margin-top:8px"><span class="status bad">● blocked</span></div></div>
 </div>
 
-<div class="container section" style="display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:18px">
+<div class="container section main-grid" style="margin-top:18px">
   <nav class="toc" style="position:sticky;top:76px;height:fit-content">
     <b style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Содержание</b>
-    <a href="#exec">0. Executive Summary</a>
-    <a href="#tech">1. Тех-аудит</a>
-    <a href="#robots">2. Robots.txt — P0</a>
-    <a href="#sitemap">3. Sitemap — P0</a>
-    <a href="#keywords">4. Ключевые слова</a>
-    <a href="#geo">5. GEO — 9 методов</a>
-    <a href="#schema">6. Schema FAQ</a>
-    <a href="#traditional">7. Traditional SEO</a>
-    <a href="#platforms">8. Платформы</a>
-    <a href="#plan">9. План P0/P1/P2</a>
-    <a href="#validate">10. Валидация</a>
+    <a href="#exec"><span class="num">0.</span> Executive Summary</a>
+    <a href="#tech"><span class="num">1.</span> Тех-аудит</a>
+    <a href="#robots"><span class="num">2.</span> Robots.txt — P0</a>
+    <a href="#sitemap"><span class="num">3.</span> Sitemap — P0</a>
+    <a href="#keywords"><span class="num">4.</span> Ключевые слова</a>
+    <a href="#geo"><span class="num">5.</span> GEO — 9 методов</a>
+    <a href="#schema"><span class="num">6.</span> Schema FAQ</a>
+    <a href="#traditional"><span class="num">7.</span> Traditional SEO</a>
+    <a href="#platforms"><span class="num">8.</span> Платформы</a>
+    <a href="#plan"><span class="num">9.</span> План P0/P1/P2</a>
+    <a href="#validate"><span class="num">10.</span> Валидация</a>
   </nav>
 
   <div>
