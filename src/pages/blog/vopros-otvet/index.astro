@@ -1,0 +1,170 @@
+---
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import "../../../styles/base.css";
+const title = 'Вопрос ответ - Фабрика навесов';
+const description = '';
+const canonical = '/blog/vopros-otvet/';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/blog/vopros-otvet/","url":"/blog/vopros-otvet/","name":"Вопрос ответ - Фабрика навесов","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/blog/vopros-otvet/#primaryimage"},"image":{"@id":"/blog/vopros-otvet/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2021/05/vopros-otvet2.jpg","datePublished":"2021-05-28T16:03:22+00:00","dateModified":"2021-05-29T10:59:47+00:00","breadcrumb":{"@id":"/blog/vopros-otvet/#breadcrumb"},"inLanguage":"ru-RU","potentialAction":[{"@type":"ReadAction","target":["/blog/vopros-otvet/"]}]},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/blog/vopros-otvet/#primaryimage","url":"/wp-content/uploads/2021/05/vopros-otvet2.jpg","contentUrl":"/wp-content/uploads/2021/05/vopros-otvet2.jpg","width":896,"height":584},{"@type":"BreadcrumbList","@id":"/blog/vopros-otvet/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Блог","item":"/blog/"},{"@type":"ListItem","position":2,"name":"Вопрос ответ"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Вопрос ответ - Фабрика навесов">
+    <meta property="og:description" content="Какой поликарбонат подойдёт для изготовления навесов?   Ответ: При выборе поликарбоната в первую очередь нужно руководствоваться стилем и дизайнерским решением вашего будущего навеса. Монолитный поликарбонат, несомненно, выглядит богаче, чем сотовый,...">
+    <meta property="og:url" content="/blog/vopros-otvet/">
+    <meta property="og:site_name" content="Фабрика навесов">
+    <meta property="og:image" content="/wp-content/uploads/2021/05/vopros-otvet2.jpg">
+    <meta property="og:image:width" content="896">
+    <meta property="og:image:height" content="584">
+    <meta property="og:image:type" content="image/jpeg">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+</head>
+<body>
+  <Header />
+  <div set:html={`<div class="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="sitebar">
+    
+    <h3>Статьи по теме</h3>
+
+                         
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес на даче из полика" decoding="async" fetchpriority="high"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/">Навесы для дачи из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/vopros-otvet/"><img width="290" height="250" src="/uploads/2021/05/vopros-otvet2-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/vopros-otvet/">Вопрос ответ</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/besedki-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/besedki-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/besedki-iz-polikarbonata/">Беседки из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-mashiny-iz-polikarbonata-na-dachu6-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="Навес для машины из поликарбоната на дачу10" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/">Навес для машины из поликарбоната на дачу</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-bassejna-iz-polikarbonata-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес для бассейна из поликарбоната" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/">Навес для бассейна из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-balkona/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-balkona5-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-balkona/">Навес для балкона</a>
+                </div> 
+            </div> 
+                
+        <h3>СНиПы</h3>
+
+                <a class="s-file" href="/uploads/2021/05/SNiP_2.01.07-85_Nagruzki_i_vozdejstvija.pdf" target="_blank">Нагрузки и воздействия</a>
+        
+                <a class="s-file" href="/uploads/2021/05/SNiP_2-23-81_Normy_proektirovanija._Stalnye_konstrukcii.pdf" target="_blank">Нормы проектирования</a>
+        
+                <a class="s-file" href="/uploads/2021/05/SNiP_3.04.03-85_Zashhita_stroitelnyh_konstrukcij_i_sooruzhenij_ot_korrozii.pdf" target="_blank">Защита строительных конструкций от коррозии</a>
+        
+        
+</div>
+            <main>
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Блог." href="/blog/" class="archive post-blog-archive"><span property="name">Блог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-blog current-item">Вопрос ответ</span><meta property="url" content="/blog/vopros-otvet/"><meta property="position" content="3"></span></div>
+                <h1>Вопрос ответ</h1>
+
+                <h2>Какой поликарбонат подойдёт для изготовления навесов?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p><strong>Ответ:</strong><br>
+При выборе поликарбоната в первую очередь нужно руководствоваться стилем и дизайнерским решением вашего будущего навеса. Монолитный поликарбонат, несомненно, выглядит богаче, чем сотовый, но он и стоит дороже, если цена вас не смущает, то смело покупайте его, толщины 4мм будет достаточно.</p>
+<p>Если же вы решили остановить свой выбор на сотовом поликарбонате, то 4мм – всё же маловато, таким – накрывают только теплицы, а для навесов существуют варианты потолще от 8 – 10мм.</p>
+<p>Во вторую очередь, выбирая пластик для покрытия навеса необходимо учитывать его цвет. Прозрачный больше подходит для теплиц, т.к. хорошо пропускает свет, а для навесов или беседок нужно использовать более тёмные оттенки с низкой светопроницаемостью, создающие тень, более того на тёмных поликарбонатных покрытиях, не так заметна будет скопившаяся со временем пыль и листва.</p></blockquote>
+<h2>Из чего состоит конструкция готового навеса?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p><strong>Ответ:</strong><br>
+Основной составляющей навесов, которые производит компания «Донгрупп» являются листы поликарбоната, закреплённые на арочных фермах. Навесы прочно крепятся на столбах из металлического профиля, которые заливаются бетоном. Так же крепление навесов может осуществляться к кирпичным, деревянным или каменным основаниям.</p>
+<p>Автомобильный навес из поликарбоната, который плотно прилегает к вашей постройке, может быть зафиксирован прямо к его фасаду, т.к. масса металлоконструкции невелика этого будет вполне достаточно.</p>
+<p>В ассортименте навесов, которые предлагает наша компания есть различные модели, отличающиеся по форме, цвету, размерам и дизайну, что в свою очередь позволяет угодить требованиям даже самых придирчивых клиентов.</p></blockquote>
+<h2>Требуется ли фундамент чтобы установить навес?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p><strong>Ответ:</strong><br>
+Как таковой фундамент не требуется, установка навеса может происходить следующими методами:</p>
+<p>1. Стойки навеса бетонируются на глубину 60 – 120см в зависимости от грунта;<br>
+2. На заранее подготовленную асфальтированную площадку;<br>
+3. На плитку, которая уложена на бетонированную поверхность, для фиксации опор из металлопрофиля анкерами;<br>
+4. На закладные</p></blockquote>
+<h2>Можно ли производить бетонирование в зимний период?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p><strong>Ответ:</strong><br>
+Да, можно, но при бетонировании в зимний период нужно исключить замерзание воды входящей в состав бетонной смеси.</p>
+<p>Для этого используются специальные противоморозные добавки, которые способствуют увеличению реакции застывания бетонной смеси и быстроте её затвердевания.</p>
+<p>Окончательное застывание бетона в полной мере произойдёт в весенний период при оттаивании земляного покрова.</p></blockquote>
+<h2 id="kakoe-pokritie">Какое покрытие для навеса будет лучше?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p>Ответ:</p>
+<p>Самым оптимальным вариантом для покрытия кровли навесов считается поликарбонат, его толщина составляет от 8 – 10мм.</p>
+<p>Одним из больших достоинств сотового поликарбоната считается его светопроницаемость, что позволяет обеспечить дневное освещение по всему пространству навеса.</p>
+<p>Если вы решите сделать крышу для своего навеса, например из профлиста,то под ней будет темновато и вам придется проводить свет, покрывая, навес поликарбонатом вы получаете, два в одном: крышу с освещением.</p></blockquote>
+<h2>Для чего рассчитывают снеговые и ветровые нагрузки?</h2>
+<p> </p>
+<blockquote class="wp-block-quote"><p>Ответ:</p>
+<p>Такие расчёты производятся с целью исключения поломок конструкций навесов из-за воздействий на них атмосферных явлении. На территории нашей страны в зимние месяцы выпадает примерно до 200кг/кв.м. снега, который даёт серьёзную нагрузку, как на каркас металлоконструкции, так и на само поликарбонатное покрытие.</p>
+<p>Из-за того что дачные, автомобильные и навесы для лоджий отличаются немалой парусностью, то грамотно рассчитанные ветровые нагрузки позволяют избежать разрушений и деформаций.</p></blockquote>
+<p> </p>
+
+                
+
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+  <script is:inline src="/wp-content/themes/naves/js/script.js"></script>
+  <script is:inline src="/wp-content/themes/naves/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/base.css";
+const title = 'Блог о уличных навесах из поликарбоната для дачи';
+const description = 'Фабрика Донгруп 33 навеса. Предлагаем блог об уличных навесах из поликарбоната для дачи. Телефон ☎: +7(495) 128-23-27. Статьи уже на сайте компании. Режим работы: Пн-Пт с 09:00 до 18:00.';
+const canonical = '/blog/';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"/blog/","url":"/blog/","name":"Блог о уличных навесах из поликарбоната для дачи","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/blog/#primaryimage"},"image":{"@id":"/blog/#primaryimage"},"thumbnailUrl":"/wp-content/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3.png","description":"Фабрика Донгруп 33 навеса. Предлагаем блог об уличных навесах из поликарбоната для дачи. Телефон ☎: +7(495) 128-23-27. Статьи уже на сайте компании. Режим работы: Пн-Пт с 09:00 до 18:00.","inLanguage":"ru-RU"},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/blog/#primaryimage","url":"/wp-content/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3.png","contentUrl":"/wp-content/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3.png","width":640,"height":480,"caption":"навес на даче из полика"},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Блог о уличных навесах из поликарбоната для дачи">
+    <meta property="og:description" content="Фабрика Донгруп 33 навеса. Предлагаем блог об уличных навесах из поликарбоната для дачи. Телефон ☎: +7(495) 128-23-27. Статьи уже на сайте компании. Режим работы: Пн-Пт с 09:00 до 18:00.">
+    <meta property="og:url" content="/blog/">
+    <meta property="og:site_name" content="Фабрика навесов">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+</head>
+<body>
+  <Header />
+  <div set:html={`<div class="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="sitebar">
+    
+    <h3>Статьи по теме</h3>
+
+                         
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес на даче из полика" decoding="async" fetchpriority="high"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/">Навесы для дачи из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/vopros-otvet/"><img width="290" height="250" src="/uploads/2021/05/vopros-otvet2-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/vopros-otvet/">Вопрос ответ</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/besedki-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/besedki-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/besedki-iz-polikarbonata/">Беседки из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-mashiny-iz-polikarbonata-na-dachu6-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="Навес для машины из поликарбоната на дачу10" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/">Навес для машины из поликарбоната на дачу</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-bassejna-iz-polikarbonata-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес для бассейна из поликарбоната" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/">Навес для бассейна из поликарбоната</a>
+                </div> 
+            </div> 
+                             
+             <div class="related__blog">
+                <div class="related__blog-img">
+                    <a href="/blog/naves-dlya-balkona/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-balkona5-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
+                </div>
+                <div class="related__blog-title">
+                    <a href="/blog/naves-dlya-balkona/">Навес для балкона</a>
+                </div> 
+            </div> 
+                
+        <h3>СНиПы</h3>
+
+                <a class="s-file" href="/uploads/2021/05/SNiP_2.01.07-85_Nagruzki_i_vozdejstvija.pdf" target="_blank">Нагрузки и воздействия</a>
+        
+                <a class="s-file" href="/uploads/2021/05/SNiP_2-23-81_Normy_proektirovanija._Stalnye_konstrukcii.pdf" target="_blank">Нормы проектирования</a>
+        
+                <a class="s-file" href="/uploads/2021/05/SNiP_3.04.03-85_Zashhita_stroitelnyh_konstrukcij_i_sooruzhenij_ot_korrozii.pdf" target="_blank">Защита строительных конструкций от коррозии</a>
+        
+        
+</div>
+            <main>
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive post-blog-archive current-item">Блог</span><meta property="url" content="/blog/"><meta property="position" content="2"></span></div>                
+
+                <h1></h1>
+                
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес на даче из полика" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/navesy-dlya-dachi-iz-polikarbonata/">Навесы для дачи из поликарбоната</a></h3>
+                                <p>Навесы для дачи из поликарбоната, будут служить вам не только надёжной защитой от всякого рода осадков, но и сыграют важную роль в украшении вашего дачного домика и участка прилежащего к…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/vopros-otvet/"><img width="290" height="250" src="/uploads/2021/05/vopros-otvet2-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/vopros-otvet/">Вопрос ответ</a></h3>
+                                <p>Какой поликарбонат подойдёт для изготовления навесов?   Ответ: При выборе поликарбоната в первую очередь нужно руководствоваться стилем и дизайнерским решением вашего будущего навеса. Монолитный поликарбонат, несомненно, выглядит богаче, чем сотовый,…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/besedki-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/besedki-iz-polikarbonata3-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/besedki-iz-polikarbonata/">Беседки из поликарбоната</a></h3>
+                                <p>Беседки из поликарбоната ставят на дачных участках, на игровых площадках для детей, а так же в детских садах. Такого рода беседку можно увидеть на территориях санаториев, пансионатов, частных владений. Беседки…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-mashiny-iz-polikarbonata-na-dachu6-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="Навес для машины из поликарбоната на дачу10" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/">Навес для машины из поликарбоната на дачу</a></h3>
+                                <p>Задаетесь вопросом: «как защитить свой автомобиль от погодных невзгод и осадков?» – Здесь на выручку придет проверенная конструкция. Навес для машины из поликарбоната на дачу станет прекрасной альтернативой и эффективной…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-bassejna-iz-polikarbonata-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес для бассейна из поликарбоната" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/naves-dlya-bassejna-iz-polikarbonata/">Навес для бассейна из поликарбоната</a></h3>
+                                <p>Навесом для бассейна из поликарбоната называется, сооружение, ведущая роль которого состоит в крыше, накрывающей непосредственно сам бассейн. Навес предназначен для оптимальной защиты содержимого бассейна т.е. воды, от всякого рода загрязнений…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/naves-dlya-balkona/"><img width="290" height="250" src="/uploads/2021/05/naves-dlya-balkona5-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/naves-dlya-balkona/">Навес для балкона</a></h3>
+                                <p>Многих людей проживающих на последних этажах общих домов или владельцев частных жилищ, беспокоит проблема защиты балкона от различных осадков и яркого солнечного света. Лучшим решением этой проблемы будет установка  навеса…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/polikarbonat-dlya-navesov-kak-vybrat/"><img width="290" height="250" src="/uploads/2021/05/sot-monolit-768x576-1-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/polikarbonat-dlya-navesov-kak-vybrat/">Поликарбонат для навесов: как выбрать?</a></h3>
+                                <p>Поликарбонат для навесов – современный полимер, отличающийся от других материалов, используемых для устройства крыш, высокой прочностью, гибкостью, легкостью и прозрачностью. Он широко применяется для создания зон отдыха или парковки от…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/naves-k-domu-iz-polikarbonata-podrobnyj-razbor/"><img width="290" height="250" src="/uploads/2021/05/naves_dlja_mashiny1-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/naves-k-domu-iz-polikarbonata-podrobnyj-razbor/">Навес к дому из поликарбоната-подробный разбор</a></h3>
+                                <p>Строительство красивого и большого дома – это всегда радостное событие для многих семей. Поэтому владельцы таких домов хотят сделать свой двор более уютным и удобным, чтобы там можно было проводить…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/naves-nad-krylcom-iz-polikarbonata/"><img width="290" height="250" src="/uploads/2021/05/Kozyr12-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/naves-nad-krylcom-iz-polikarbonata/">Навес над крыльцом из поликарбоната</a></h3>
+                                <p>В наше время всё чаще можно увидеть навес над крыльцом из поликарбоната, размещённый перед входом в жилище, изготовленный в виде террасы, такой вид крыльца очень удобен и функционален. Крыльцо –…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/navesy-iz-polikarbonata-60-fotografij/"><img width="290" height="250" src="/uploads/2021/05/IMG_20140708_115839-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/navesy-iz-polikarbonata-60-fotografij/">Навесы из поликарбоната: 60 фотографий</a></h3>
+                                <p>Всё более распространёнными в наши дни становятся навесы из поликарбоната фото, этих конструкций вы можете увидеть на нашем сайте в разделе Наши работы. Повышенную популярность данные навесы получили благодаря своей…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/navesy-s-narusheniem-snipa/"><img width="290" height="250" src="/uploads/2021/05/brak1-290x250.jpg" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/navesy-s-narusheniem-snipa/">Навесы с нарушением СНиПА</a></h3>
+                                <p>Причины обрушений навесов из поликарбоната. Одним из более опасных периодов обрушения навесных конструкций считается зима, ведь именно в этот период происходит испытание вашего навеса на прочность, особенно если это время…</p>
+                            </div>
+                        </div>
+                    
+
+                
+                        <div class="blog__item">
+                            <div class="blog__item-img">
+                                <a href="/blog/odnoskatnyj-naves-iz-polikarbonata-chto-v-nem-osobennogo/"><img width="290" height="250" src="/uploads/2021/05/naves-odnoskatniy2-290x250.png" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async" loading="lazy"></a>
+                            </div>
+                            <div class="blog__item-text">
+                                <h3><a href="/blog/odnoskatnyj-naves-iz-polikarbonata-chto-v-nem-osobennogo/">Односкатный навес из поликарбоната. Что в нем особенного?</a></h3>
+                                <p>Навес из поликарбоната украшает фасад дома. Разные типы конструкций – арочные или полуарочные, односкатные или двухскатные – позволяют владельцу жилища реализовать любые дизайнерские решения. Но при любой форме конструкции, функциональное…</p>
+                            </div>
+                        </div>
+                    
+
+                
+               
+
+                
+	<nav class="navigation pagination" aria-label=" ">
+		<h2 class="screen-reader-text"> </h2>
+		<div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="/blog/page/2/">2</a>
+<a class="next page-numbers" href="/blog/page/2/">Далее</a></div>
+	</nav>                
+      
+
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+  <script is:inline src="/wp-content/themes/naves/js/script.js"></script>
+  <script is:inline src="/wp-content/themes/naves/js/main.js"></script>
+</body>
+</html>

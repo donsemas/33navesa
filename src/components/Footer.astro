@@ -1,0 +1,276 @@
+---
+// Footer.astro - общий подвал сайта
+---
+<footer>
+
+    <div class="container footer__row">
+
+        <div class="footer__box">
+            <div class="footer__logo">
+                <a href="/"><img src="/wp-content/uploads/2021/05/Logo.png" alt="Фабрика навесов" width="220" height="43">
+                </a>
+            </div>
+            <div class="footer__text">
+                Мы осуществляем бесплатную доставку в пределах 50 км от МКАД. Установка производится по договоренности, как нашими силами так и силами клиента.             </div>
+        </div>
+
+        <div class="footer__box2">
+
+            <div class="footer__title">Меню</div>
+
+            <nav class="footer-navigation"><ul class="footer-navigation__list"><li id="menu-item-363" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-363"><a href="/nashi-raboty/">Наши работы</a></li>
+<li id="menu-item-362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-362"><a href="/cena/">Цена</a></li>
+<li id="menu-item-360" class="menu-item menu-item-type-post_type_archive menu-item-object-blog menu-item-360"><a href="/blog/">Блог</a></li>
+<li id="menu-item-358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="/partneram/">Партнерам</a></li>
+<li id="menu-item-359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-359"><a href="/kontakty/">Контакты</a></li>
+</ul></nav>
+        </div>
+
+        <div class="footer__box2">
+
+            <div class="footer__title">Каталог</div>
+
+            <nav class="footer-navigation"><ul class="footer-navigation__list"><li id="menu-item-354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-354"><a href="/katalog/navesy/">Навесы</a></li>
+<li id="menu-item-353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-353"><a href="/katalog/kozyrki/">Козырьки</a></li>
+<li id="menu-item-348" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-348"><a href="/katalog/besedki/">Беседки</a></li>
+<li id="menu-item-352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-352"><a href="/katalog/zabory/">Заборы</a></li>
+<li id="menu-item-2493" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2493"><a href="/katalog/garazhi-iz-polikarbonata/">Гаражи</a></li>
+</ul></nav>
+        </div>
+
+        <div class="footer__box2">
+
+            <div class="footer__title">Контакты</div>
+            
+            <div class="footer__phone">
+                <a href="tel:+79051492388" class="footer__phone-num">+7(905) 149-23-88</a>
+            </div>
+
+            <div class="footer__work">
+                Режим работы: <br>Пн-Пт с 09:00 до 18:00            </div>
+
+            <div class="messangers">
+                <a href="tg://resolve?domain=v_dons" target="_blank"></a>
+                <a href="whatsapp://send?phone=+7(905)%20149-23-88" target="_blank"></a>
+            </div>
+            
+        </div>
+
+    </div> 
+    
+</footer>
+
+<div class="copyright">
+    <div class="container copyright__row">
+        <div class="copyright__left">
+            © 2021 Все права защищены ООО "Донгрупп"        </div>
+        <div class="copyright__right">
+            <a href="#">Политика обработки персональных данных</a>
+        </div>
+    </div>
+</div>
+<a href="#top" class="btt">
+    <div class="btt__arrow"></div>
+</a>
+<div id="callback" class="modal">
+	<div class="modal__title">Обратный звонок</div>
+	<form action="" id="callback-form" class="form callback-form" method="post">
+		<input type="hidden" name="subject" value="Обратный звонок">
+		<input type="text" name="name" value="" style="position: absolute; left: -9999px; display: none;">
+        <div class="form-group">
+            <input type="text" class="form__field" name="fio" placeholder="Ваше имя" required>
+		</div>
+		<div class="form-group">
+            <input type="tel" name="phone" placeholder="Телефон" class="form__field" required>
+        </div>
+        <div class="form-group form-check">
+			<label class="form-check-label">
+                <input name="checkpolit" type="checkbox" checked class="form-check-input" required>
+                <span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+			</label>
+		</div>
+		<div class="form-group  form-submit">
+			<input type="submit" class="btn btn-white" name="submit" value="Заказать звонок">
+		</div>
+	</form>
+</div>
+<div id="feedback" class="modal">
+	<div class="modal__title">Написать Нам</div>
+	<form action="" id="feedback-form" class="form feedback-form" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="subject" value="Написать Нам">
+		<input type="text" name="name" value="" style="position: absolute; left: -9999px; display: none;">
+		<div class="form-group">
+			<input type="text" class="form__field" name="fio" placeholder="Ваше имя" required>
+		</div>
+		<div class="form-group">
+            <input type="tel" name="phone" placeholder="Телефон" class="form__field" required>
+        </div>
+		<div class="form-group">
+			<input type="email" name="email" placeholder="Email" class="form__field" required>
+		</div>
+		<div class="form-group">
+			<textarea name="comment" placeholder="Введите текст" class="form__field"></textarea>
+		</div>
+
+		<div class="form-group files">
+			<div class="files__left">
+				Разрешенные типы файлов: docx, xlsx, jpg, bmp, png, pdf, rar, zip
+			</div>	
+			<div class="files__right">
+				<label for="myfile" class="form__file">
+				<span class="count">Прикрепить файлы</span>
+			</label>
+			<input type="file" name="file[]" id="myfile" multiple class="form__field-file">
+			</div>
+		
+		</div>
+		
+		<div class="form-group form-check">
+			<label class="form-check-label">
+				<input name="checkpolit" type="checkbox" checked class="form-check-input" required>
+				<span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+			</label>
+		</div>
+		<div class="form-group form-submit">
+			<input type="submit" class="btn" name="submit" value="Отправить">
+		</div>
+	</form>
+</div>
+<div id="feedback2" class="modal">
+	<div class="modal__title">Рассчитать стоимость</div>
+                <form action="" id="home-form" class="form home-form" method="post">
+                    <input type="hidden" name="subject" value="Написать Нам">
+                    <input type="text" name="name" value="" style="position: absolute; left: -9999px; display: none;">
+                    <div class="form-group">
+                        <select name="custom_field" class="form__field">
+                            <option>Выбрать изделие</option>
+                            <option value="Навес по назначению">Навес по назначению</option>
+                            <option value="Козырёк для здания">Козырёк для здания</option> 
+                            <option value="Нужна беседка для дома, дачи">Нужна беседка для дома, дачи</option> 
+                            <option value="Обсудить рассчёт забора">Обсудить рассчёт забора</option> 
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Телефон" class="form__field" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" class="form__field">
+                    </div>
+                    
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input name="checkpolit" type="checkbox" checked class="form-check-input" required>
+                            <span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    <div class="form-group form-submit">
+                        <input type="submit" class="btn" name="submit" value="Связаться с замерщиком">
+                    </div>
+                </form>
+</div>
+<div id="order2" class="modal">
+	<div class="modal__title">Заказать</div>
+	<form action="" id="order2-form" class="form order2-form" method="post">
+		<input type="hidden" name="subject" value="Заказ ">
+		<input type="text" name="name" value="" style="position: absolute; left: -9999px; display: none;">
+		<div class="form-group">
+            <input type="text" class="form__field" name="fio" placeholder="Ваше имя" required>
+		</div>
+		<div class="form-group">
+            <input type="tel" name="phone" placeholder="Телефон" class="form__field" required>
+        </div>
+        <div class="form-group form-check">
+			<label class="form-check-label">
+                <input name="checkpolit" type="checkbox" checked class="form-check-input" required>
+                <span>Согласен с <a href="#" target="_blank">политикой конфиденциальности</a></span>
+			</label>
+		</div>
+		<div class="form-group  form-submit">
+			<input type="submit" class="btn btn-white" name="submit" value="Заказать звонок">
+		</div>
+	</form>
+</div>
+<div id="thanks" class="modal">
+	<div class="modal__title">Спасибо за заказ</div>
+	<p>Скоро мы Вам перезвоним!</p>
+</div>
+<div id="search" class="modal">
+	<form role="search" method="get" id="searchform" action="/"> 
+		<input class="s-inp" type="text" placeholder="Поиск по сайту" value="" name="s" id="s">
+		<input class="s-sub" type="submit" id="searchsubmit" value="Найти">
+	</form>
+</div>
+<div class="mob-box">
+	<div class="container">
+	<div class="close-bt"><span></span></div>
+	<nav class="m_menu-navigation"><ul class="m_menu-navigation__list"><li id="menu-item-2394" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2394"><a href="/katalog/">Каталог</a></li>
+<li id="menu-item-2403" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2403"><a href="/katalog/navesy/">Навесы</a>
+<ul class="sub-menu">
+	<li id="menu-item-2445" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2445"><a href="/katalog/navesy/metallicheskie-navesy/">Металлические навесы</a></li>
+	<li id="menu-item-2452" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2452"><a href="/katalog/navesy/navesy-iz-polikarbonata/">Навесы из поликарбоната</a></li>
+	<li id="menu-item-2453" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2453"><a href="/katalog/navesy/odnoskatnye-navesy/">Односкатные навесы</a></li>
+	<li id="menu-item-2442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2442"><a href="/katalog/navesy/dvuhskatnye-navesy/">Двухскатные навесы</a></li>
+	<li id="menu-item-2405" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2405"><a href="/katalog/navesy/arochnye-navesy/">Арочные навесы</a></li>
+	<li id="menu-item-2444" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2444"><a href="/katalog/navesy/krytye-navesy/">Крытые навесы</a></li>
+	<li id="menu-item-2450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2450"><a href="/katalog/navesy/navesy-dlya-mashin/">Навесы для автомобилей</a></li>
+	<li id="menu-item-2454" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2454"><a href="/katalog/navesy/sadovye-navesy/">Садовые навесы</a></li>
+	<li id="menu-item-2448" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2448"><a href="/katalog/navesy/navesy-dlya-dachi/">Навесы для дачи</a></li>
+	<li id="menu-item-2446" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2446"><a href="/katalog/navesy/navesy-dlya-barbekju/">Навесы для барбекю</a></li>
+	<li id="menu-item-2455" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2455"><a href="/katalog/navesy/navesy-dlya-bassejna/">Навесы для бассейна</a></li>
+	<li id="menu-item-2449" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2449"><a href="/katalog/navesy/navesy-dlya-mangala/">Навесы для мангала</a></li>
+	<li id="menu-item-2451" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2451"><a href="/katalog/navesy/navesy-dlya-terrasy/">Навесы для террасы</a></li>
+	<li id="menu-item-2457" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2457"><a href="/katalog/navesy/navesy-dlya-krylca/">Навесы для крыльца</a></li>
+	<li id="menu-item-2465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2465"><a href="/katalog/garazhi-iz-polikarbonata/">Навесы для гаража</a></li>
+	<li id="menu-item-2458" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2458"><a href="/katalog/navesy/navesy-dlya-balkona/">Навесы для балкона</a></li>
+</ul>
+</li>
+<li id="menu-item-2460" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2460"><a href="/katalog/kozyrki/">Козырьки</a>
+<ul class="sub-menu">
+	<li id="menu-item-2459" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2459"><a href="/katalog/kozyrki/kovanye-kozyrki/">Кованые козырьки</a></li>
+	<li id="menu-item-2461" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2461"><a href="/katalog/kozyrki/kozyrki-iz-polikarbonata/">Козырьки из поликарбоната</a></li>
+	<li id="menu-item-2525" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2525"><a href="/katalog/kozyrki/kozyrki-nad-kryltsom/">Козырьки над крыльцом</a></li>
+</ul>
+</li>
+<li id="menu-item-2462" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2462"><a href="/katalog/besedki/">Беседки</a>
+<ul class="sub-menu">
+	<li id="menu-item-2463" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2463"><a href="/katalog/besedki/besedki-iz-metalla/">Беседки из металла</a></li>
+	<li id="menu-item-2464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2464"><a href="/katalog/besedki/besedki-iz-polikarbonata/">Беседки из поликарбоната</a></li>
+</ul>
+</li>
+<li id="menu-item-2466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2466"><a href="/katalog/zabory/">Заборы</a>
+<ul class="sub-menu">
+	<li id="menu-item-2467" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2467"><a href="/katalog/zabory/zabory-iz-polikarbonata/">Заборы из поликарбоната</a></li>
+	<li id="menu-item-2526" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2526"><a href="/katalog/zabory/zabori-dlya-dachi/">Заборы для дачи</a></li>
+	<li id="menu-item-2527" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2527"><a href="/katalog/zabory/kovannie-zabori/">Кованые заборы</a></li>
+	<li id="menu-item-2528" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2528"><a href="/katalog/zabory/kombinirovannie-zabory/">Комбинированные заборы</a></li>
+	<li id="menu-item-2529" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2529"><a href="/katalog/zabory/metallicheskie-zabory/">Металлические заборы</a></li>
+	<li id="menu-item-2530" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2530"><a href="/katalog/zabory/svarnye-zabory/">Сварные заборы</a></li>
+</ul>
+</li>
+<li id="menu-item-2468" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-2468"><a href="/" aria-current="page">Главная</a></li>
+<li id="menu-item-2473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2473"><a href="/uslugi/">Услуги</a>
+<ul class="sub-menu">
+	<li id="menu-item-2476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2476"><a href="/uslugi/zamena-polikarbonata/">Замена поликарбоната</a></li>
+	<li id="menu-item-2474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2474"><a href="/uslugi/vyezd-zamershhika/">Выезд замерщика</a></li>
+	<li id="menu-item-2475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2475"><a href="/uslugi/demontazh/">Демонтаж</a></li>
+	<li id="menu-item-2478" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2478"><a href="/uslugi/montazh/">Монтаж</a></li>
+	<li id="menu-item-2477" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2477"><a href="/uslugi/izgotovlenie/">Изготовление</a></li>
+</ul>
+</li>
+<li id="menu-item-2471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2471"><a href="/nashi-raboty/">Наши работы</a></li>
+<li id="menu-item-2479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2479"><a href="/cena/">Цена</a></li>
+<li id="menu-item-2480" class="menu-item menu-item-type-post_type_archive menu-item-object-blog menu-item-2480"><a href="/blog/">Блог</a></li>
+<li id="menu-item-2472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2472"><a href="/partneram/">Партнерам</a></li>
+<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2470"><a href="/kontakty/">Контакты</a></li>
+</ul></nav>	</div>
+</div><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/naves/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript" src="/wp-content/themes/naves/js/script.js?ver=1.0" id="naves-scripts-js"></script>
+<script type="text/javascript" src="/wp-content/themes/naves/js/main.js?ver=1.2" id="naves-main-js"></script>
+ 
+<!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ <script src="/wp-content/themes/naves/js/form.js"></script>
+<script src="/wp-content/themes/naves/js/maskedinput.js"></script>
+<script src="/wp-content/themes/naves/js/swip.js"></script> -->
