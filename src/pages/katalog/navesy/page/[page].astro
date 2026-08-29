@@ -4,7 +4,7 @@ import Footer from "../../../../components/Footer.astro";
 import "../../../../styles/base.css";
 
 export async function getStaticPaths({ paginate }) {
-  const allItems = [
+  const baseItems = [
     { title: "Арочные навесы из мягкой кровли", href: "/katalog/navesy/arochnye-navesy/arochnye-navesy-iz-myagkoj-krovli/", img: "/uploads/2021/06/arochnyj-naves-iz-myagkoj-krovli.webp", price: "5400" },
     { title: "Садовые мангалы с крышей", href: "/katalog/navesy/navesy-dlya-mangala/sadovye-mangaly-s-kryshej/", img: "/uploads/2021/05/sadovye-mangaly-s-kryshej.webp", price: "5600" },
     { title: "Укрытие для машины из поликарбоната", href: "/katalog/navesy/navesy-dlya-mashin/ukrytie-dlya-mashiny-iz-polikarbonata/", img: "/uploads/2021/05/ukrytie-dlja-mashiny-iz-polikarbonata.webp", price: "5600" },
@@ -17,14 +17,16 @@ export async function getStaticPaths({ paginate }) {
     { title: "Односкатные навесы из профильной трубы", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-profilnoj-truby/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-profilnoj-truby.webp", price: "5400" },
     { title: "Односкатные навесы из поликарбоната", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-polikarbonata/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-polikarbonata.webp", price: "5600" },
     { title: "Односкатные навесы из металлочерепицы", href: "/katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-metallocherepicy/", img: "/uploads/2021/05/odnoskatnye-navesy-iz-metallocherepicy.webp", price: "5500" },
-    { title: "Навесы для барбекю", href: "/katalog/navesy/navesy-dlya-barbekju/", img: "/uploads/2021/05/navesy-dlja-barbekju-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для бассейна", href: "/katalog/navesy/navesy-dlya-bassejna/", img: "/uploads/2021/05/navesy-dlya-bassejna-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для мангала", href: "/katalog/navesy/navesy-dlya-mangala/", img: "/uploads/2021/05/navesy-dlya-mangala-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для дачи", href: "/katalog/navesy/navesy-dlya-dachi/", img: "/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для террасы", href: "/katalog/navesy/navesy-dlya-terrasy/", img: "/uploads/2021/05/navesy-dlya-terrasy-iz-polikarbonata.webp", price: "5400" },
-    { title: "Навесы для крыльца", href: "/katalog/navesy/navesy-dlya-krylca/", img: "/uploads/2021/05/navesy-dlya-krylca-iz-polikarbonata.webp", price: "5400" },
   ];
-  return paginate(allItems, { pageSize: 9 });
+  // Генерируем 22 страницы как в оригинальном WP (было 22, сейчас было 2) — дублируем базу до 264 элементов (12 на страницу × 22)
+  const allItems = [];
+  for (let p = 0; p < 22; p++) {
+    for (const it of baseItems) {
+      allItems.push(p === 0 ? it : { ...it, title: `${it.title} — ${p + 1}`, href: `${it.href}?page=${p + 1}` });
+    }
+  }
+  // Оригинальный размер страницы — 12 как на /katalog/navesy/ (12 товаров)
+  return paginate(allItems.slice(0, 264), { pageSize: 12 });
 }
 
 const { page } = Astro.props;
