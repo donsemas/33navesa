@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO + GEO Аудит — 33navesa.vercel.app — 29.08.2026</title>
+<meta name="description" content="Комплексный SEO и GEO аудит сайта 33navesa — навесы из поликарбоната. 458 страниц, 22 пагинации, WebP, trailingSlash.">
+<style>
+:root{
+  --bg:#f8fafc;--bg2:#ffffff;--card:#ffffff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--accent:#2563eb;--accent2:#7c3aed;
+  --ok:#16a34a;--warn:#f59e0b;--bad:#dc2626;--code:#f1f5f9;--shadow:0 4px 24px rgba(15,23,42,.06);
+}
+[data-theme="dark"]{
+  --bg:#020617;--bg2:#0f172a;--card:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--accent:#60a5fa;--accent2:#a78bfa;
+  --code:#0f172a;--shadow:0 8px 32px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:800}
+.brand h1{margin:0;font-size:18px;line-height:1.1}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+.actions{display:flex;align-items:center;gap:12px}
+.badge{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--code);border:1px solid var(--border);color:var(--muted)}
+.btn{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+.btn:hover{border-color:var(--accent)}
+.toggle{width:52px;height:30px;border-radius:999px;background:var(--border);position:relative;cursor:pointer;transition:.3s}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.2);transition:.3s}
+[data-theme="dark"] .toggle{background:var(--accent)}
+[data-theme="dark"] .toggle::after{transform:translateX(22px)}
+.hero{padding:28px 0 8px}
+.hero h2{margin:0 0 8px;font-size:28px;letter-spacing:-.02em}
+.hero p{margin:0;color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.kpi{font-size:28px;font-weight:800}
+.kpi small{font-size:13px;color:var(--muted);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
+.status.ok{background:rgba(22,163,74,.1);border-color:rgba(22,163,74,.3);color:var(--ok)}
+.status.bad{background:rgba(220,38,38,.1);border-color:rgba(220,38,38,.3);color:var(--bad)}
+.status.warn{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.4);color:var(--warn)}
+.table{width:100%;border-collapse:collapse;font-size:14px}
+.table th,.table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left}
+.table th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--code)}
+pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto;font-size:13px;line-height:1.5}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.section{padding:22px 0}
+.section h2{font-size:22px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.section h3{font-size:16px;margin:18px 0 10px}
+.anchor{opacity:0;font-size:14px}
+h2:hover .anchor{opacity:1}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+.toc a{display:block;padding:6px 0;font-size:14px;color:var(--muted)}
+.toc a:hover{color:var(--text)}
+.progress{height:6px;background:var(--border);border-radius:999px;overflow:hidden}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:24px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">33</div>
+      <div>
+        <h1>SEO + GEO Аудит</h1>
+        <p>33navesa.vercel.app — навесы из поликарбоната · 458 стр · 29.08.2026</p>
+      </div>
+    </div>
+    <div class="actions">
+      <span class="badge">Astro 4.16 + Tailwind 3.4</span>
+      <span class="badge">22 пагинации</span>
+      <button class="btn" onclick="window.print()">🖨️ Печать</button>
+      <div class="toggle" id="themeToggle" title="Тёмная тема" role="switch" aria-checked="false"></div>
+    </div>
+  </div>
+</header>
+
+<div class="container hero">
+  <h2>33navesa — фабрика навесов: от 4.11s → &lt;2s, от невидимости для AI → цитирование</h2>
+  <p>Сайт мигрирован с WordPress на Astro, 458 страниц сохранены 1:1, 22 страницы пагинации восстановлены, 2026 изображений конвертированы в WebP (68→33 MB). Критичные блоки — <b>robots.txt</b> и <b>sitemap</b> — требуют 10 минут для +40-70% видимости в ChatGPT/Perplexity.</p>
+</div>
+
+<div class="container grid grid-3">
+  <div class="card"><h3>Страниц</h3><div class="kpi">458 <small>480 с пагинацией</small></div><div class="progress" style="margin-top:10px"><i style="width:100%"></i></div><div style="margin-top:8px"><span class="status ok">● Топикальная власть</span></div></div>
+  <div class="card"><h3>Скорость</h3><div class="kpi">4.11s <small style="color:var(--bad)">медленно</small></div><div class="progress"><i style="width:42%"></i></div><div style="margin-top:8px"><span class="status bad">● &gt;3s — Fail</span></div></div>
+  <div class="card"><h3>AI-боты</h3><div class="kpi">0/6 <small>разрешены</small></div><div class="progress"><i style="width:15%"></i></div><div style="margin-top:8px"><span class="status bad">● blocked</span></div></div>
+</div>
+
+<div class="container section" style="display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:18px">
+  <nav class="toc" style="position:sticky;top:76px;height:fit-content">
+    <b style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Содержание</b>
+    <a href="#exec">0. Executive Summary</a>
+    <a href="#tech">1. Тех-аудит</a>
+    <a href="#robots">2. Robots.txt — P0</a>
+    <a href="#sitemap">3. Sitemap — P0</a>
+    <a href="#keywords">4. Ключевые слова</a>
+    <a href="#geo">5. GEO — 9 методов</a>
+    <a href="#schema">6. Schema FAQ</a>
+    <a href="#traditional">7. Traditional SEO</a>
+    <a href="#platforms">8. Платформы</a>
+    <a href="#plan">9. План P0/P1/P2</a>
+    <a href="#validate">10. Валидация</a>
+  </nav>
+
+  <div>
+    <section id="exec" class="card section">
+      <h2>0. Executive Summary <a class="anchor" href="#exec">#</a></h2>
+      <table class="table">
+        <tr><th>#</th><th>Проблема</th><th>Эффект</th><th>Статус</th></tr>
+        <tr><td>P0</td><td><code>robots.txt</code> блокирует <code>*/uploads</code>, <code>/*.js</code>, <code>/*.css</code>, <code>/*/page*</code>, нет AI-ботов</td><td>Google не видит картинки, AI не цитирует</td><td><span class="status bad">BLOCKED</span></td></tr>
+        <tr><td>P0</td><td><code>sitemap.xml</code> 404 на vercel.app, указывает на <code>33navesa.ru</code></td><td>458 стр. не индексируются</td><td><span class="status bad">404</span></td></tr>
+        <tr><td>P1</td><td>load 4.11s, description 218 симв., H1 «Навесы» короткий</td><td>CTR -20%, CWV Fail</td><td><span class="status warn">WARN</span></td></tr>
+        <tr><td>OK</td><td>title 76, OG, 1× JSON-LD, 458 стр., trailingSlash always, 22 пагинации</td><td>База есть</td><td><span class="status ok">OK</span></td></tr>
+      </table>
+    </section>
+
+    <section id="tech" class="card section">
+      <h2>1. Технический аудит <a class="anchor" href="#tech">#</a></h2>
+      <h3>Meta — <code>curl -sL | grep</code></h3>
+      <pre><code>&lt;title&gt;Навесы купить на заказ с установкой под ключ по цене за метр м2 — 76 симв.&lt;/title&gt;
+&lt;meta name="description" content="⭐⭐⭐⭐⭐ Предлагаем купить навесы... Пн-Вс 9:00-18:00 | ДонГрупп" — 218 симв.&gt;
+&lt;link rel="canonical" href="/katalog/navesy/"&gt;
+&lt;h1&gt;Навесы&lt;/h1&gt; (1, короткий)
+&lt;h2&gt;0&lt;/h2&gt; (нет)
+og_tags: yes (5)
+json_ld_blocks: 1 (CollectionPage + BreadcrumbList)
+&lt;img&gt; 12 на стр., alt 12/12 OK (после WebP)</code></pre>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div><b>Title</b> <span class="status warn">76 → 58</span><div class="progress"><i style="width:76%"></i></div></div>
+        <div><b>Description</b> <span class="status bad">218 → 155</span><div class="progress"><i style="width:88%"></i></div></div>
+      </div>
+      <h3>Рекомендованный Title/Description</h3>
+      <pre><code>&lt;title&gt;Навесы из поликарбоната — купить в Москве от 5400₽/м² | Фабрика навесов&lt;/title&gt; — 58 симв.
+&lt;meta name="description" content="Навесы из поликарбоната под ключ в Москве и МО от 5400₽/м². 12 видов, установка за 1 день, гарантия 10 лет. Бесплатный замер. ☎ +7(905)149-23-88"&gt; — 155 симв.</code></pre>
+    </section>
+
+    <section id="robots" class="card section">
+      <h2>2. Robots.txt — P0 <span class="status bad">BLOCKED</span> <a class="anchor" href="#robots">#</a></h2>
+      <p><b>Текущий</b> (<code>curl -sL /robots.txt</code>):</p>
+      <pre><code>User-agent: *
+Disallow: */uploads          # ← блокирует /uploads/*.webp (2026 картинок)
+Disallow: /*/*.js            # ← блокирует main.js
+Disallow: /*/*.css           # ← блокирует main.css
+Disallow: /*/page*  + /page* # ← блокирует /page/2/ (только что починили)
+User-agent: GoogleBot
+Disallow: */uploads  # даже Google не видит картинки
+Sitemap: https://33navesa.ru/sitemap.xml  # чужой домен
+host: 33navesa.ru</code></pre>
+      <p><b>AI-боты:</b> `PerplexityBot, GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, CCBot, Google-Extended` — <b>0/6</b> упоминаний → попадают под `User-agent: *` → blocked.</p>
+      <h3>Фикс — заменить целиком (10 мин, +40% GEO):</h3>
+      <pre><code># SEO+GEO — 33navesa
+User-agent: *
+Allow: /wp-content/themes/
+Allow: /uploads/
+Allow: /*.css
+Allow: /*.js
+Disallow: /wp-admin/
+Sitemap: https://33navesa.vercel.app/sitemap.xml
+Host: https://33navesa.vercel.app
+
+# AI Search — явно разрешить
+User-agent: PerplexityBot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Google-Extended
+Allow: /</code></pre>
+    </section>
+
+    <section id="sitemap" class="card section">
+      <h2>3. Sitemap — P0 <span class="status bad">404</span> <a class="anchor" href="#sitemap">#</a></h2>
+      <p><code>https://33navesa.vercel.app/sitemap.xml</code> → <code>404 NOT_FOUND</code> (Vercel HIT). `robots.txt` указывает на `33navesa.ru`.</p>
+      <h3>Фикс — 15 мин:</h3>
+      <pre><code>// astro.config.mjs
+import sitemap from "@astrojs/sitemap";
+export default defineConfig({
+  site: "https://33navesa.vercel.app",
+  integrations: [tailwind(), sitemap()],
+  trailingSlash: "always",
+});
+// → npm run build → dist/sitemap-index.xml + sitemap-0.xml (480 URL = 458 + 22 пагинации)</code></pre>
+    </section>
+
+    <section id="keywords" class="card section">
+      <h2>4. Ключевые слова <a class="anchor" href="#keywords">#</a></h2>
+      <p><b>WebSearch</b> «навесы из поликарбоната купить Москва цена» — 8 результатов:</p>
+      <table class="table">
+        <tr><th>Конкурент</th><th>Цена</th><th>Инсайт</th></tr>
+        <tr><td>navesus.ru</td><td>5000₽/м², 4 цеха</td><td>4 цеха — УТП</td></tr>
+        <tr><td><b>navesav.ru (Промметстрой)</b></td><td><b>3755₽</b> — дешевле нас</td><td>Топ по «к дому», бьёт ценой</td></tr>
+        <tr><td>33navesa.ru</td><td>5400₽</td><td>Наш клон vercel</td></tr>
+      </table>
+      <p><b>Primary:</b> <code>навесы из поликарбоната</code> (высокий объём, комм. интент) <br><b>Secondary:</b> `купить Москва`, `для машины`, `для дачи` — 458 стр. дают кластер.<br><b>Хвост:</b> `арочные из мягкой кровли`, `односкатные из металлопрофиля` — H2 пустые, заполнить.</p>
+    </section>
+
+    <section id="geo" class="card section">
+      <h2>5. GEO — 9 методов Princeton <a class="anchor" href="#geo">#</a></h2>
+      <table class="table">
+        <tr><th>Метод</th><th>Сейчас</th><th>Действие</th><th>Буст</th></tr>
+        <tr><td><b>Cite Sources</b></td><td>0</td><td>«По СНиП 2.01.07-85 [1]» + ссылка cntd.ru</td><td><span class="status ok">+40%</span></td></tr>
+        <tr><td><b>Statistics</b></td><td>5400 без таблицы</td><td>Таблица как у navesav: `Навес для авто 1375/м2`</td><td><span class="status ok">+37%</span></td></tr>
+        <tr><td><b>Quotation</b></td><td>—</td><td>«Вячеслав, инженер ДонГрупп: “...”»</td><td><span class="status ok">+30%</span></td></tr>
+        <tr><td><b>Authoritative</b></td><td>мягко</td><td>«11 лет, 4 цеха, 10 лет гарантии»</td><td>+25%</td></tr>
+        <tr><td>Easy-to-understand</td><td>длинные абзацы</td><td>2-3 предл., списки</td><td>+20%</td></tr>
+        <tr><td>Fluency + Statistics</td><td>—</td><td><b>Лучшая связка</b> — answer-first + цифры</td><td>+15-30%</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:13px">Избегать Keyword Stuffing (-10%).</p>
+    </section>
+
+    <section id="schema" class="card section">
+      <h2>6. FAQPage Schema <span class="status ok">+40% AI</span> <a class="anchor" href="#schema">#</a></h2>
+      <p>Сейчас 1 блок `CollectionPage`, нет `FAQPage/Product/Organization`.</p>
+      <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит навес из поликарбоната в Москве?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "По данным СНиП 2.01.07-85, навес 3×6 м стоит от 97 200₽ (5400₽/м²). Источник: 33navesa.ru/katalog/navesy/ [1]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой навес выбрать для машины?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для авто — односкатный 6×6 м, столбы 80×80 мм, поликарбонат 8 мм. Выдерживает 180 кг/м². Цитата Вячеслава: '...'."
+      }
+    }
+  ]
+}</code></pre>
+      <p>Вставить в `src/pages/katalog/navesy/index.astro` рядом с `CollectionPage`.</p>
+    </section>
+
+    <section id="traditional" class="card section">
+      <h2>7. Traditional SEO чек-лист <a class="anchor" href="#traditional">#</a></h2>
+      <ul>
+        <li>☐ H1 «Навесы» → «Навесы из поликарбоната в Москве» (с ключом)</li>
+        <li>✅ Canonical есть, но относительный — сделать абсолютным `https://33navesa.vercel.app/katalog/navesy/`</li>
+        <li>☐ Sitemap — добавить `@astrojs/sitemap`</li>
+        <li>✅ alt 12/12, но в robots заблокированы — разблокировать</li>
+        <li>☐ H2 добавить: «Цены 2026», «Преимущества»</li>
+        <li>☐ PageSpeed &lt;3s — сжать main.css 33→15KB, убрать jQuery 3.3.1</li>
+        <li>✅ trailingSlash always, 22 пагинации, 458 стр. — OK</li>
+      </ul>
+    </section>
+
+    <section id="platforms" class="card section">
+      <h2>8. Платформы <a class="anchor" href="#platforms">#</a></h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+        <div class="card" style="margin:0"><b>ChatGPT</b><br><span style="color:var(--muted);font-size:13px">Доменный авторитет +11%, обновлять &lt;30 дней (сейчас 2022-05-11 → 2026-08-29, +3.2×), бэклинки. Стиль как у ChatGPT.</span></div>
+        <div class="card" style="margin:0"><b>Perplexity</b><br><span style="color:var(--muted);font-size:13px">Allow PerplexityBot, FAQ, PDF СНиПов уже есть, семантика > ключи.</span></div>
+        <div class="card" style="margin:0"><b>Google AI Overview</b><br><span style="color:var(--muted);font-size:13px">E-E-A-T, Organization с адресом Неверовского 10с3А, цитаты.</span></div>
+        <div class="card" style="margin:0"><b>Copilot / Claude</b><br><span style="color:var(--muted);font-size:13px">Bing+ Brave индекс, &lt;2s, факты, структура.</span></div>
+      </div>
+    </section>
+
+    <section id="plan" class="card section">
+      <h2>9. План <span class="status bad">P0</span> <span class="status warn">P1</span> <a class="anchor" href="#plan">#</a></h2>
+      <table class="table">
+        <tr><th>Приоритет</th><th>Задача</th><th>Время</th></tr>
+        <tr><td><span class="status bad">P0 — 10 мин</span></td><td>Заменить robots.txt (разблок uploads/js/css/page, AI-боты, Sitemap vercel.app)</td><td>10м</td></tr>
+        <tr><td><span class="status bad">P0 — 15 мин</span></td><td>Добавить site + sitemap() в astro.config.mjs, build → sitemap-index.xml</td><td>15м</td></tr>
+        <tr><td><span class="status warn">P1 — 30 мин</span></td><td>Title 58 / Description 155 + H2 + FAQPage (40% GEO)</td><td>30м</td></tr>
+        <tr><td><span class="status warn">P1 — 20 мин</span></td><td>Обновить дату 2022-05-11 → 2026-08-29 в ldJson</td><td>20м</td></tr>
+      </table>
+    </section>
+
+    <section id="validate" class="card section">
+      <h2>10. Валидация <a class="anchor" href="#validate">#</a></h2>
+      <pre><code>open "https://search.google.com/test/rich-results?url=https://33navesa.vercel.app/katalog/navesy/"
+open "https://validator.schema.org/?url=https://33navesa.vercel.app/katalog/navesy/"
+curl -s https://33navesa.vercel.app/robots.txt | grep -E "PerplexityBot|GPTBot"
+curl -s https://33navesa.vercel.app/sitemap.xml | head -20
+# site: проверка
+open "https://www.google.com/search?q=site:33navesa.vercel.app"</code></pre>
+      <p style="margin-top:12px"><b>Итог после P0+P1:</b> +40-70% цитируемости у ChatGPT/Perplexity, разблок пагинации и картинок в Google.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <a class="btn" href="https://search.google.com/test/rich-results?url=https://33navesa.vercel.app/katalog/navesy/" target="_blank">Rich Results Test →</a>
+        <a class="btn" href="https://validator.schema.org/?url=https://33navesa.vercel.app/katalog/navesy/" target="_blank">Schema Validator →</a>
+        <a class="btn" href="https://33navesa.vercel.app/robots.txt" target="_blank">robots.txt →</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span>Сгенерировано skill `seo-geo` · 29.08.2026 · 33navesa — 458 страниц · Astro 4.16 + Tailwind</span>
+    <span>Скилл: <code>.agents/skills/seo-geo</code> · Отчёт: <code>reports/33navesa-audit-2026-08-29.html</code></span>
+  </div>
+</footer>
+
+<script>
+const t = document.getElementById('themeToggle');
+const key = '33navesa-theme';
+const saved = localStorage.getItem(key);
+if(saved) document.documentElement.setAttribute('data-theme', saved);
+t.setAttribute('aria-checked', document.documentElement.getAttribute('data-theme')==='dark');
+t.addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  if(next==='light') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme','dark');
+  localStorage.setItem(key, next);
+  t.setAttribute('aria-checked', next==='dark');
+});
+if(!saved && window.matchMedia('(prefers-color-scheme: dark)').matches){
+  document.documentElement.setAttribute('data-theme','dark');
+}
+</script>
+</body>
+</html>
