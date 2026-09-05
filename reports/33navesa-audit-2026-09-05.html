@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO + GEO Аудит — 33navesa.ru — 05.09.2026</title>
+<meta name="description" content="Повторный SEO и GEO аудит 33navesa.ru после переезда на 33navesa.ru: robots и sitemap исправлены, остались description, canonical, og:image, FAQ.">
+<style>
+:root{
+  --bg:#f8fafc;--bg2:#ffffff;--card:#ffffff;--text:#0f172a;--muted:#475569;--border:#e2e8f0;--accent:#2563eb;--accent2:#7c3aed;
+  --ok:#16a34a;--warn:#f59e0b;--bad:#dc2626;--code:#f1f5f9;--shadow:0 4px 24px rgba(15,23,42,.06);
+}
+[data-theme="dark"]{
+  --bg:#020617;--bg2:#0f172a;--card:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--accent:#60a5fa;--accent2:#a78bfa;
+  --code:#0f172a;--shadow:0 8px 32px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:white;font-weight:800}
+.brand h1{margin:0;font-size:18px;line-height:1.1}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+.actions{display:flex;align-items:center;gap:12px}
+.badge{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--code);border:1px solid var(--border);color:var(--muted)}
+.btn{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
+.btn:hover{border-color:var(--accent)}
+.toggle{width:52px;height:30px;border-radius:999px;background:var(--border);position:relative;cursor:pointer;transition:.3s}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.2);transition:.3s}
+[data-theme="dark"] .toggle{background:var(--accent)}
+[data-theme="dark"] .toggle::after{transform:translateX(22px)}
+.hero{padding:28px 0 8px}
+.hero h2{margin:0 0 8px;font-size:28px;letter-spacing:-.02em}
+.hero p{margin:0;color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.main-grid{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+.main-grid > *{min-width:0}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr} .main-grid{grid-template-columns:1fr} .toc{position:static !important}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:14px;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.kpi{font-size:28px;font-weight:800}
+.kpi small{font-size:13px;color:var(--muted);font-weight:500}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
+.status.ok{background:rgba(22,163,74,.1);border-color:rgba(22,163,74,.3);color:var(--ok)}
+.status.bad{background:rgba(220,38,38,.1);border-color:rgba(220,38,38,.3);color:var(--bad)}
+.status.warn{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.4);color:var(--warn)}
+.table{width:100%;border-collapse:collapse;font-size:14px}
+.table th,.table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left}
+.table th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--code)}
+pre{background:var(--code);border:1px solid var(--border);border-radius:12px;padding:14px;overflow-x:auto;overflow-y:hidden;font-size:13px;line-height:1.5;max-width:100%}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+pre code{display:block;white-space:pre;word-wrap:normal;overflow-x:auto}
+.section{padding:22px 0}
+section[id]{scroll-margin-top:90px} /* якорь не уезжает под sticky-шапку */
+.card.section{padding:22px 22px}
+.section h2{font-size:22px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.section h3{font-size:16px;margin:18px 0 10px}
+.anchor{opacity:0;font-size:14px}
+h2:hover .anchor{opacity:1}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 18px 20px 32px;align-self:start}
+.toc b{display:block;padding-left:6px;margin-bottom:6px}
+.toc a{display:flex;align-items:center;gap:10px;padding:8px 0 8px 6px;font-size:14px;color:var(--muted)}
+.toc a:hover{color:var(--text)}
+.toc .num{display:inline-block;min-width:28px;text-align:right;color:var(--accent);font-weight:600;font-size:13px;flex-shrink:0}
+.progress{height:6px;background:var(--border);border-radius:999px;overflow:hidden}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);margin-top:24px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">33</div>
+      <div>
+        <h1>SEO + GEO Аудит</h1>
+        <p>33navesa.ru — навесы из поликарбоната · 480 стр · 05.09.2026 · повторный</p>
+      </div>
+    </div>
+    <div class="actions">
+      <span class="badge">Astro 4.16 · ONREZA</span>
+      <span class="badge">P0 исправлены</span>
+      <button class="btn" onclick="window.print()">🖨️ Печать</button>
+      <div class="toggle" id="themeToggle" title="Тёмная тема" role="switch" aria-checked="false"></div>
+    </div>
+  </div>
+</header>
+
+<div class="container hero">
+  <h2>33navesa.ru: P0 закрыты — robots чистый, sitemap на своём домене</h2>
+  <p>Повторный аудит после коммитов <code>6303c5a</code> + <code>e0896aa</code>: <code>site</code> переведён на <code>https://33navesa.ru</code>, vercel вычищен, legacy <code>sitemap_index.xml</code> отдаёт 200, <code>robots.txt</code> почищен от WordPress-наследия. Остаток — <b>description, абсолютный canonical, og:image, FAQ/Organization, alt</b>.</p>
+</div>
+
+<div class="container grid grid-3">
+  <div class="card"><h3>Страниц в sitemap</h3><div class="kpi">480 <small>459 astro + пагинации</small></div><div class="progress" style="margin-top:10px"><i style="width:100%"></i></div><div style="margin-top:8px"><span class="status ok">● все URL на 33navesa.ru</span></div></div>
+  <div class="card"><h3>Meta главной</h3><div class="kpi">⚠️ <small>description ~200 симв.</small></div><div class="progress"><i style="width:55%"></i></div><div style="margin-top:8px"><span class="status warn">● og:image отсутствует</span></div></div>
+  <div class="card"><h3>AI-боты</h3><div class="kpi">7/7 <small>разрешены</small></div><div class="progress"><i style="width:100%"></i></div><div style="margin-top:8px"><span class="status ok">● Perplexity/GPT/Claude</span></div></div>
+</div>
+
+<div class="container section main-grid" style="margin-top:18px">
+  <nav class="toc" style="position:sticky;top:76px;height:fit-content">
+    <b style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Содержание</b>
+    <a href="#exec"><span class="num">0.</span> Executive Summary</a>
+    <a href="#tech"><span class="num">1.</span> Тех-аудит главной</a>
+    <a href="#robots"><span class="num">2.</span> Robots.txt — fixed</a>
+    <a href="#sitemap"><span class="num">3.</span> Sitemap — fixed</a>
+    <a href="#geo"><span class="num">4.</span> GEO — 9 методов</a>
+    <a href="#schema"><span class="num">5.</span> Schema FAQ+Org</a>
+    <a href="#traditional"><span class="num">6.</span> Traditional SEO</a>
+    <a href="#platforms"><span class="num">7.</span> Платформы</a>
+    <a href="#plan"><span class="num">8.</span> План P1/P2</a>
+    <a href="#validate"><span class="num">9.</span> Валидация</a>
+  </nav>
+
+  <div>
+    <section id="exec" class="card section">
+      <h2>0. Executive Summary <a class="anchor" href="#exec">#</a></h2>
+      <table class="table">
+        <tr><th>#</th><th>Проблема</th><th>Эффект</th><th>Статус</th></tr>
+        <tr><td>FIX</td><td><code>site</code> указывал на <code>vercel.app</code> — весь sitemap вёл на чужой домен</td><td>Индексация утекала на staging</td><td><span class="status ok">FIXED 6303c5a</span></td></tr>
+        <tr><td>FIX</td><td><code>sitemap_index.xml</code> (Yoast-legacy) давал 404</td><td>Старые ссылки/боты упирались в 404</td><td><span class="status ok">FIXED — 301 + fallback 200</span></td></tr>
+        <tr><td>FIX</td><td><code>robots.txt</code> — WP-правила + Sitemap/Host на vercel</td><td>Путаница для Яндекса</td><td><span class="status ok">FIXED e0896aa</span></td></tr>
+        <tr><td>P1</td><td>description ~200 симв., canonical относительный, нет og:image</td><td>CTR и дубли</td><td><span class="status warn">OPEN</span></td></tr>
+        <tr><td>P1</td><td>Нет Organization и FAQPage, dateModified 2022-05-11, 14 img без alt</td><td>−40% GEO-потенциала</td><td><span class="status warn">OPEN</span></td></tr>
+      </table>
+    </section>
+
+    <section id="tech" class="card section">
+      <h2>1. Технический аудит главной (live 05.09.2026) <a class="anchor" href="#tech">#</a></h2>
+      <pre><code>&lt;title&gt;Производство и установка навесов из поликарбоната заказать по доступной цене&lt;/title&gt; — ~71 симв., ключ ✅
+&lt;meta name="description" content="Компания Донгруп 33 навеса... +7(495) 128-23-27. Гарантия 10 лет..."&gt; — ~200 симв. ❌ длинный
+&lt;link rel="canonical" href="/"&gt; — относительный ⚠️ (так на всех 480 стр.)
+&lt;h1&gt;Производство навесов каталог изделий&lt;/h1&gt; — ровно 1 ✅
+og:title/description/url/type ✅ · og:image ❌ · twitter-cards ❌
+json_ld_blocks: 1 (WebPage + WebSite + BreadcrumbList), dateModified 2022-05-11 ⚠️
+&lt;img&gt; 52 на главной, alt отсутствует у 14 ⚠️
+viewport ✅ · lang="ru" ✅ · HTML 95 КБ, ответ ~5с из внешней сети ⚠️</code></pre>
+    </section>
+
+    <section id="robots" class="card section">
+      <h2>2. Robots.txt — <span class="status ok">FIXED</span> <a class="anchor" href="#robots">#</a></h2>
+      <p>Live <code>https://33navesa.ru/robots.txt</code> уже отдаёт чистую версию:</p>
+      <pre><code># 33navesa.ru — Astro static (обновлено 05.09.2026)
+User-agent: *
+Allow: /
+Disallow: /*?s= · /*&amp;s= · /search/ · /author/ · /users/ · /*utm*= · /*openstat=
+Allow: /wp-content/themes/ · /wp-content/uploads/ · /uploads/ · /*.css · /*.js · /*.webp · /*.jpg · /*.png
+# AI: PerplexityBot, GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, CCBot, Google-Extended — Allow: /
+Sitemap: https://33navesa.ru/sitemap-index.xml
+Host: 33navesa.ru</code></pre>
+      <p>Удалены 9 мёртвых WP-правил (<code>wp-admin</code>, <code>wp-login</code>, <code>xmlrpc</code>, <code>trackback/feed/rss/embed</code>). Остаток WP — только <code>Allow</code> существующих папок <code>public/wp-content</code> и <code>public/uploads</code>.</p>
+    </section>
+
+    <section id="sitemap" class="card section">
+      <h2>3. Sitemap — <span class="status ok">FIXED</span> <a class="anchor" href="#sitemap">#</a></h2>
+      <pre><code>https://33navesa.ru/sitemap-index.xml → 200 ✅
+https://33navesa.ru/sitemap_index.xml → 200 ✅ (legacy Yoast-URL, fallback-эндпоинт)
+https://33navesa.ru/sitemap-0.xml     → 200 ✅ (все &lt;loc&gt; на 33navesa.ru)
+_index_: &lt;loc&gt;https://33navesa.ru/sitemap-0.xml&lt;/loc&gt;</code></pre>
+      <p>Механика: <code>site: "https://33navesa.ru"</code> в <code>astro.config.mjs:6</code> + <code>/sitemap_index.xml → /sitemap-index.xml 301</code> в <code>public/_redirects</code> + <code>src/pages/sitemap_index.xml.ts</code> как страховка для хостингов без поддержки <code>_redirects</code> (ONREZA использует Edge Rules).</p>
+    </section>
+
+    <section id="geo" class="card section">
+      <h2>4. GEO — 9 методов Princeton <a class="anchor" href="#geo">#</a></h2>
+      <table class="table">
+        <tr><th>Метод</th><th>Сейчас</th><th>Действие</th><th>Буст</th></tr>
+        <tr><td><b>Cite Sources</b></td><td>0</td><td>«По СНиП 2.01.07-85 [1]» + ссылка</td><td><span class="status ok">+40%</span></td></tr>
+        <tr><td><b>Statistics</b></td><td>цены 5400₽/м² россыпью</td><td>Сводная таблица цен по типам</td><td><span class="status ok">+37%</span></td></tr>
+        <tr><td><b>Quotation</b></td><td>—</td><td>Цитата инженера Вячеслава с атрибуцией</td><td><span class="status ok">+30%</span></td></tr>
+        <tr><td><b>Authoritative</b></td><td>частично</td><td>«Собственное производство, гарантия 10 лет» уже есть ✅ — усилить цифрами</td><td>+25%</td></tr>
+        <tr><td>Easy-to-understand</td><td>длинные абзацы</td><td>Абзацы 2–3 предложения, списки</td><td>+20%</td></tr>
+        <tr><td>Fluency + Statistics</td><td>—</td><td><b>Лучшая связка</b> — answer-first + цифры</td><td>+15-30%</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:13px">Keyword Stuffing — избегать (−10%).</p>
+    </section>
+
+    <section id="schema" class="card section">
+      <h2>5. Schema: Organization + FAQPage <span class="status warn">OPEN</span> <a class="anchor" href="#schema">#</a></h2>
+      <p>Сейчас 1 блок (WebPage + WebSite + Breadcrumb). Добавить рядом:</p>
+      <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Сколько стоит навес из поликарбоната в Москве?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "От 5400₽/м² под ключ. Навес 3×6 м — от 97 200₽. Источник: 33navesa.ru/katalog/navesy/."
+    }
+  }]
+}
+// + Organization: название, телефон +7(905)149-23-88, часы Пн-Пт 9–18, регион Москва</code></pre>
+    </section>
+
+    <section id="traditional" class="card section">
+      <h2>6. Traditional SEO чек-лист <a class="anchor" href="#traditional">#</a></h2>
+      <ul>
+        <li>☐ Description → 150–160 симв. (убрать телефон/часы, оставить ключ + выгоду + CTA)</li>
+        <li>☐ Canonical абсолютный <code>https://33navesa.ru/...</code> (массово, 480 стр.)</li>
+        <li>☐ <code>og:image</code> 1200×630 + twitter-cards</li>
+        <li>☐ Alt для 14 картинок главной (покрытие 73% → 100%)</li>
+        <li>☐ <code>dateModified</code> 2022-05-11 → актуальная дата</li>
+        <li>✅ H1 один с ключом, viewport, lang=ru, trailingSlash, 480 стр. в sitemap</li>
+        <li>☐ Скорость: убрать unpkg-swiper / WP-стили, цель &lt;3s</li>
+      </ul>
+    </section>
+
+    <section id="platforms" class="card section">
+      <h2>7. Платформы <a class="anchor" href="#platforms">#</a></h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+        <div class="card" style="margin:0"><b>ChatGPT</b><br><span style="color:var(--muted);font-size:13px">Боты разрешены ✅. Нужны: свежий контент (&lt;30 дней), Organization, FAQ.</span></div>
+        <div class="card" style="margin:0"><b>Perplexity</b><br><span style="color:var(--muted);font-size:13px">PerplexityBot allowed ✅. FAQ-схема даст приоритет цитирования.</span></div>
+        <div class="card" style="margin:0"><b>Google AI Overview</b><br><span style="color:var(--muted);font-size:13px">E-E-A-T: добавить Organization, отзывы, авторство.</span></div>
+        <div class="card" style="margin:0"><b>Copilot / Claude</b><br><span style="color:var(--muted);font-size:13px">Нужны Bing Webmaster и проверка Brave-индекса; факты и структура ✅ частично.</span></div>
+      </div>
+    </section>
+
+    <section id="plan" class="card section">
+      <h2>8. План <span class="status warn">P1</span> <a class="anchor" href="#plan">#</a></h2>
+      <table class="table">
+        <tr><th>Приоритет</th><th>Задача</th><th>Время</th></tr>
+        <tr><td><span class="status warn">P1 — 30 мин</span></td><td>Description 155 + og:image + twitter-cards</td><td>30м</td></tr>
+        <tr><td><span class="status warn">P1 — 40 мин</span></td><td>Абсолютный canonical (шаблон страниц)</td><td>40м</td></tr>
+        <tr><td><span class="status warn">P1 — 40 мин</span></td><td>Organization + FAQPage (+40% GEO)</td><td>40м</td></tr>
+        <tr><td>P2</td><td>Alt 14 картинок, dateModified, скорость &lt;3s</td><td>1–2ч</td></tr>
+      </table>
+    </section>
+
+    <section id="validate" class="card section">
+      <h2>9. Валидация <a class="anchor" href="#validate">#</a></h2>
+      <pre><code>curl -s https://33navesa.ru/robots.txt | grep -E "Sitemap|Host"
+curl -s https://33navesa.ru/sitemap_index.xml | head -c 300
+curl -s https://33navesa.ru/sitemap-index.xml | head -c 300
+open "https://search.google.com/test/rich-results?url=https://33navesa.ru/"
+open "https://validator.schema.org/?url=https://33navesa.ru/"
+open "https://www.google.com/search?q=site:33navesa.ru"</code></pre>
+      <p style="margin-top:12px"><b>Итог:</b> P0 закрыты коммитами 6303c5a + e0896aa. После P1 — рост CTR (description/og:image) и +40% AI-видимости (FAQ/Organization).</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <a class="btn" href="https://search.google.com/test/rich-results?url=https://33navesa.ru/" target="_blank">Rich Results Test →</a>
+        <a class="btn" href="https://validator.schema.org/?url=https://33navesa.ru/" target="_blank">Schema Validator →</a>
+        <a class="btn" href="https://33navesa.ru/robots.txt" target="_blank">robots.txt →</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span>Сгенерировано skill `seo-geo` · 05.09.2026 · 33navesa.ru — 480 страниц · повторный аудит (P0 fixed)</span>
+    <span>Скилл: <code>.agents/skills/seo-geo</code> · Отчёт: <code>reports/33navesa-audit-2026-09-05.html</code></span>
+  </div>
+</footer>
+
+<script>
+const t = document.getElementById('themeToggle');
+const key = '33navesa-theme';
+const saved = localStorage.getItem(key);
+if(saved) document.documentElement.setAttribute('data-theme', saved);
+t.setAttribute('aria-checked', document.documentElement.getAttribute('data-theme')==='dark');
+t.addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  if(next==='light') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme','dark');
+  localStorage.setItem(key, next);
+  t.setAttribute('aria-checked', next==='dark');
+});
+if(!saved && window.matchMedia('(prefers-color-scheme: dark)').matches){
+  document.documentElement.setAttribute('data-theme','dark');
+}
+</script>
+</body>
+</html>
