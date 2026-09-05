@@ -1,23 +1,15 @@
-# 33navesa — SEO+GEO (P0 30.08.2026)
+# 33navesa.ru — Astro static (обновлено 05.09.2026)
 User-agent: *
 Allow: /
-Disallow: /wp-admin/
-Disallow: /wp-login.php
-Disallow: /wp-register.php
-Disallow: /cgi-bin
+
+# Мусорные и дублирующие URL — не индексировать
 Disallow: /*?s=
 Disallow: /*&s=
 Disallow: /search/
 Disallow: /author/
 Disallow: /users/
-Disallow: /*/trackback
-Disallow: /*/feed
-Disallow: /*/rss
-Disallow: /*/embed
-Disallow: /xmlrpc.php
 Disallow: /*utm*=
 Disallow: /*openstat=
-Disallow: /author-sitemap.xml
 
 # Разрешить ресурсы для рендера
 Allow: /wp-content/themes/
