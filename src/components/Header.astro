@@ -137,3 +137,12 @@
         <div class="nav-mob__bt"><span></span></div>
     </div>
 </div>
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function () {
+  var bt = document.querySelector('.nav-mob__bt');
+  var box = document.querySelector('.mob-box');
+  var close = document.querySelector('.close-bt');
+  if (bt && box) bt.addEventListener('click', function () { box.classList.add('visible'); });
+  if (close && box) close.addEventListener('click', function () { box.classList.remove('visible'); });
+});
+</script>

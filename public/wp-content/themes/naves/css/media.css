@@ -61,6 +61,19 @@
 		border-radius: 3px;
 	}
 
+    .mob-box{
+        position: fixed;
+        top: 0;
+        left: -110%;
+        width: 85%;
+        max-width: 360px;
+        height: 100%;
+        overflow-y: auto;
+        background: #fff;
+        z-index: 1000;
+        transition: left .3s ease;
+        padding: 20px 15px;
+    }
     .mob-box.visible{
         left: 0;
     }
