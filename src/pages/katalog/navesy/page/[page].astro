@@ -31,8 +31,8 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 const title = page.currentPage === 1 ? "Навесы купить на заказ с установкой под ключ по цене за метр м2" : `Навесы — страница ${page.currentPage}`;
-const description = page.currentPage === 1 ? "⭐⭐⭐⭐⭐ Предлагаем купить навесы на заказ с установкой под ключ по цене за метр м2. Доставка и монтаж под ключ 🔧 в Москве и Московской обл. 👷‍♂️ Работаем с Пн-Вс с 9:00 до 18:00 | Строительная компания ДонГрупп" : `Каталог навесов — страница ${page.currentPage}. Доставка и монтаж под ключ в Москве и МО.`;
-const canonical = page.currentPage === 1 ? "/katalog/navesy/" : `/katalog/navesy/page/${page.currentPage}/`;
+const description = page.currentPage === 1 ? "⭐⭐⭐⭐⭐ Предлагаем купить навесы на заказ с установкой под ключ по цене за метр м2. Доставка и монтаж под ключ в Москве и Московской области." : `Каталог навесов — страница ${page.currentPage}. Доставка и монтаж под ключ в Москве и МО. Гарантия 10 лет.`;
+const canonical = page.currentPage === 1 ? "https://33navesa.ru/katalog/navesy/" : `https://33navesa.ru/katalog/navesy/page/${page.currentPage}/`;
 ---
 
 <!DOCTYPE html>
