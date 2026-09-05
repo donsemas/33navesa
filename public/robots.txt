@@ -45,5 +45,5 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://33navesa.vercel.app/sitemap-index.xml
-Host: https://33navesa.vercel.app
+Sitemap: https://33navesa.ru/sitemap-index.xml
+Host: 33navesa.ru

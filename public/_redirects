@@ -3,6 +3,10 @@
 # Сгенерировано: сравнение WP33navesa.ru.txt + ASTRO_33navesa.txt
 # 455 URL совпадают один-в-один, редиректы только для отсутствующих
 
+# Legacy Yoast/WordPress sitemap (с подчёркиванием) → актуальный Astro (с дефисом)
+/sitemap_index.xml	/sitemap-index.xml	301
+/sitemap.xml	/sitemap-index.xml	301
+
 /404/	/	301
 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata2/	/blog/	301
 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata3/	/blog/	301

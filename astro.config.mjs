@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://33navesa.vercel.app",
+  site: "https://33navesa.ru",
   output: "static",
   integrations: [tailwind(), sitemap()],
   trailingSlash: "always",
