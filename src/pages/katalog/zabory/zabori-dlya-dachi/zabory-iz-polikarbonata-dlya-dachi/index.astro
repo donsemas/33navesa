@@ -1,5 +1,6 @@
 ---
-import Header from "../../../../../components/Header.astro";
+import Header from "../../../../../components/Header.astro"
+import Sidebar from "../../../../../components/Sidebar.astro";;
 import Footer from "../../../../../components/Footer.astro";
 import "../../../../../styles/base.css";
 const title = 'Заборы из поликарбоната для дачи купить в Москве | Доступные цены в МСК под ключ.';
@@ -40,80 +41,11 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"Article","@
 </head>
 <body>
   <Header />
-  <div set:html={`<div class="content">
+  <div class="content">
     <div class="container">
         <div class="row">
-
-            <div class="sitebar">
-    
-    <h3>Статьи по теме</h3>
-
-                         
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/navesy-dlya-dachi-iz-polikarbonata3.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес на даче из полика" decoding="async" fetchpriority="high"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/navesy-dlya-dachi-iz-polikarbonata/">Навесы для дачи из поликарбоната</a>
-                </div> 
-            </div> 
-                             
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/vopros-otvet/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/vopros-otvet2.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/vopros-otvet/">Вопрос ответ</a>
-                </div> 
-            </div> 
-                             
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/besedki-iz-polikarbonata/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/besedki-iz-polikarbonata3.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/besedki-iz-polikarbonata/">Беседки из поликарбоната</a>
-                </div> 
-            </div> 
-                             
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/naves-dlya-mashiny-iz-polikarbonata-na-dachu6.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="Навес для машины из поликарбоната на дачу10" decoding="async"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/naves-dlya-mashiny-iz-polikarbonata-na-dachu/">Навес для машины из поликарбоната на дачу</a>
-                </div> 
-            </div> 
-                             
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/naves-dlya-bassejna-iz-polikarbonata.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="навес для бассейна из поликарбоната" decoding="async"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/naves-dlya-bassejna-iz-polikarbonata/">Навес для бассейна из поликарбоната</a>
-                </div> 
-            </div> 
-                             
-             <div class="related__blog">
-                <div class="related__blog-img">
-                    <a href="/blog/naves-dlya-balkona/"><img loading="lazy" decoding="async" width="290" height="250" src="/uploads/2021/05/naves-dlya-balkona5.webp" class="attachment-blog-thumbnails size-blog-thumbnails wp-post-image" alt="" decoding="async"></a>
-                </div>
-                <div class="related__blog-title">
-                    <a href="/blog/naves-dlya-balkona/">Навес для балкона</a>
-                </div> 
-            </div> 
-                
-        <h3>СНиПы</h3>
-
-                <a class="s-file" href="/uploads/2021/05/SNiP_2.01.07-85_Nagruzki_i_vozdejstvija.pdf" target="_blank">Нагрузки и воздействия</a>
-        
-                <a class="s-file" href="/uploads/2021/05/SNiP_2-23-81_Normy_proektirovanija._Stalnye_konstrukcii.pdf" target="_blank">Нормы проектирования</a>
-        
-                <a class="s-file" href="/uploads/2021/05/SNiP_3.04.03-85_Zashhita_stroitelnyh_konstrukcij_i_sooruzhenij_ot_korrozii.pdf" target="_blank">Защита строительных конструкций от коррозии</a>
-        
-        
-</div>
-            <main>
+            <Sidebar currentCategory="zabory" />
+            <main set:html={`
 
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
 	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Каталог." href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Заборы." href="/katalog/zabory/" class="taxonomy category"><span property="name">Заборы</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Заборы для дачи." href="/katalog/zabory/zabori-dlya-dachi/" class="taxonomy category"><span property="name">Заборы для дачи</span></a><meta property="position" content="4"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-post current-item">Заборы из поликарбоната для дачи</span><meta property="url" content="/katalog/zabory/zabori-dlya-dachi/zabory-iz-polikarbonata-dlya-dachi/"><meta property="position" content="5"></span></div>
@@ -180,7 +112,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"Article","@
                 </table>
                 
                 <p class="dark">Описание</p>
-                <p>Мы предлагаем Заборы из поликарбоната для дачи от производителя навесов и козырьков из поликарбоната и металла. Приобрести данный товар вы можете позвонив нам по телефону указанному на сайте или заказать обратный звонок. Работаем с Пн по Вс с 9:00 до 18:00</p>
+                <p>Мы предлагаем Заборы из поликарбоната для дачи от производителя навесов из поликарбоната и металла. Приобрести данный товар вы можете позвонив нам по телефону указанному на сайте или заказать обратный звонок. Работаем с Пн по Вс с 9:00 до 18:00</p>
 
                 
                 

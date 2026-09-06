@@ -23,7 +23,8 @@
 /dlya-dachi/	/katalog/navesy/navesy-dlya-dachi/	301
 /kak-zakazat/na-konstrukcii-e/	/kak-zakazat/	301
 /kontakty/dscn0079/	/kontakty/	301
-/kozyrki/	/katalog/kozyrki/	301
+/kozyrki/	/katalog/navesy/navesy-dlya-dachi/	301
+/katalog/kozyrki/*	/katalog/navesy/navesy-dlya-dachi/	301
 /nashi-raboty/naves-iz-polikarbonata1/	/nashi-raboty/	301
 /nashi-raboty/naves-iz-polikarbonata12/	/nashi-raboty/	301
 /nashi-raboty/naves-iz-polikarbonata15/	/nashi-raboty/	301
