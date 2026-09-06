@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Макет 1020px на десктопе */
+@media (min-width: 1200px) {
+  .container { max-width: 1020px !important; }
+}
+
 /* Цветовые блоки: поликарбонат / покраска каркаса */
 .block__color__block__title { text-align: center; margin: 30px 0 20px; }
 .block__color__container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
@@ -17,10 +22,52 @@
 .slide__column .podpis { margin-top: 8px; font-size: 14px; }
 .swiper-button-next, .swiper-button-prev { display: none; }
 
-/* Ровные карточки товаров */
-.tovar-row { align-items: stretch; row-gap: 24px; }
+/* Ровные карточки товаров */.tovar-row { align-items: stretch; row-gap: 24px; }
 .tovar_oblozka { display: flex; margin-bottom: 12px; }
 .tovar_oblozka { display: flex; }
 .tovar__card { display: flex; flex-direction: column; height: 100%; width: 100%; }
 .tovar__card__t1 h3 { line-height: 1.3; margin: 8px 0; }
 .tovar__price { margin-top: auto; }
+
+/* Выпадашка каталога — только по наведению (иначе висит открытой) */
+.catalog .catalog-navigation { display: none; }
+.catalog:hover .catalog-navigation,
+.nav-box__row:has(.catalog-navigation:hover) .catalog-navigation { display: block; }
+/* мост через возможный зазор между кнопкой и панелью */
+.catalog .catalog-navigation::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+
+/* Кнопка каталога — оранжевая со стрелкой */
+.catalog__bt { background: #f26522 !important; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding-right: 15px; }
+.catalog__bt::after { content: ''; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #fff; }
+
+/* Мега-меню каталога на всю ширину панели */
+.nav-box__row { position: relative; }
+.catalog { position: static; }
+.catalog .catalog-navigation { width: 100%; left: 0; top: 100%; background: #fff; }
+.catalog-navigation__list { display: flex; flex-wrap: wrap; }
+.catalog-navigation__list > li { flex: 1 1 180px; }
+.catalog-navigation__list .sub-menu { top: 100%; min-width: 240px; }
+.catalog-navigation__list > li:hover > a ~ .sub-menu { left: 0; top: 100%; }
+.catalog-navigation__list .menu-item-51 .sub-menu { display: flex; flex-wrap: wrap; min-width: 560px; }
+.catalog-navigation__list .menu-item-51 .sub-menu li { width: 50%; }
+/* подменю не схлопывается, пока курсор идёт к нему */
+.catalog-navigation__list .sub-menu { transition: left 0s linear .35s; }
+.catalog-navigation__list > li:hover > a ~ .sub-menu { transition-delay: 0s; }
+
+/* Адаптив шапки: телефон не рвётся, логотип и отступы ужаты */
+.header__phone a { white-space: nowrap; }
+@media (max-width: 1199px) {
+  .header__logo { padding-right: 15px; }
+  .header__logo img { width: 170px; height: auto; }
+  .header__sity { padding-right: 15px; }
+  .messangers { padding-left: 15px; }
+  .header__phone a { font-size: 20px; }
+  .header__search { margin-left: 15px; }
+}
+@media (max-width: 767px) {
+  .header__row { flex-wrap: wrap; gap: 8px 12px; }
+  .header__sity { display: none; }
+  .header__logo img { width: 150px; }
+  .header__phone { margin-left: 0; padding-left: 30px; }
+  .header__phone a { font-size: 18px; }
+}
