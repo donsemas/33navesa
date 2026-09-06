@@ -5,6 +5,7 @@ import "../../styles/base.css";
 const title = 'Стоимость изготовления навесов за 1 м2 под ключ прайс лист';
 const description = 'Фабрика Донгруп 33 навеса. Предлагаем прайс лист по изготовлению навесов за 1 м2 под ключ. Выгодные условия сотрудничества. Гарантия 10 лет. Бесплатный замер.';
 const canonical = 'https://33navesa.ru/cena/';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит навес из поликарбоната за м²?","acceptedAnswer":{"@type":"Answer","text":"От 5400₽ за м² под ключ. Точная цена зависит от размеров навеса, толщины поликарбоната, сечения опорных стоек, количества ферм и декоративных элементов."}},{"@type":"Question","name":"Сколько стоит навес для машины с установкой?","acceptedAnswer":{"@type":"Answer","text":"Цена считается по площади — от 5400₽ за м², монтаж уже включён. Точную смету составит замерщик после выезда на участок."}},{"@type":"Question","name":"Что входит в цену под ключ?","acceptedAnswer":{"@type":"Answer","text":"Замер, доставка, изготовление и монтаж. Доплачивать за установку не нужно."}},{"@type":"Question","name":"Замер платный?","acceptedAnswer":{"@type":"Answer","text":"Нет, замер бесплатный. Оставьте заявку через форму обратной связи — инженер свяжется с вами."}},{"@type":"Question","name":"Какая гарантия на навес?","acceptedAnswer":{"@type":"Answer","text":"10 лет на конструкцию и монтаж."}},{"@type":"Question","name":"Есть ли доставка?","acceptedAnswer":{"@type":"Answer","text":"Да, бесплатная доставка в пределах 50 км от МКАД."}}]}';
 const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/cena/","url":"/cena/","name":"Стоимость изготовления навесов за 1 м2 под ключ прайс лист","isPartOf":{"@id":"/#website"},"datePublished":"2021-05-10T11:08:08+00:00","dateModified":"2026-09-05T12:00:00+00:00","description":"Фабрика Донгруп 33 навеса. Предлагаем прайс лист по изготовлению навесов за 1 м2 под ключ. Выгодные условия сотрудничества. Гарантия 10 лет. Бесплатный замер.","inLanguage":"ru-RU","potentialAction":[{"@type":"ReadAction","target":["/cena/"]}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
 ---
 
@@ -35,6 +36,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
   <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
   {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
 </head>
 <body>
   <Header />
@@ -116,6 +118,27 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
 	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">Цена</span><meta property="url" content="/cena/"><meta property="position" content="2"></span></div>
                 <h1>Цена</h1>
+
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:24px 0;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price details{border-top:1px solid rgba(255,255,255,.18);}
+.faq-price details:last-of-type{border-bottom:1px solid rgba(255,255,255,.18);}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы о ценах</h2>
+<details open><summary>Сколько стоит навес из поликарбоната за м²?</summary><p>От 5400₽ за м² под ключ. Точная цена зависит от размеров навеса, толщины поликарбоната, сечения опорных стоек, количества ферм и декоративных элементов.</p></details>
+<details><summary>Сколько стоит навес для машины с установкой?</summary><p>Цена считается по площади — от 5400₽ за м², монтаж уже включён. Точную смету составит замерщик после выезда на участок.</p></details>
+<details><summary>Что входит в цену под ключ?</summary><p>Замер, доставка, изготовление и монтаж. Доплачивать за установку не нужно.</p></details>
+<details><summary>Замер платный?</summary><p>Нет, замер бесплатный. Оставьте заявку через форму обратной связи — инженер свяжется с вами.</p></details>
+<details><summary>Какая гарантия на навес?</summary><p>10 лет на конструкцию и монтаж.</p></details>
+<details><summary>Есть ли доставка?</summary><p>Да, бесплатная доставка в пределах 50 км от МКАД.</p></details>
+</div>
 
                
                 <p class="dark">ВНИМАНИЕ!<br>
