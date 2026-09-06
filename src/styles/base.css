@@ -1,3 +1,26 @@
 ﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Цветовые блоки: поликарбонат / покраска каркаса */
+.block__color__block__title { text-align: center; margin: 30px 0 20px; }
+.block__color__container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+.block__color__container .elementor-image { text-align: center; }
+.block__color__container .elementor-image img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.podpis__color { margin-top: 8px; font-size: 14px; }
+
+/* Мёртвые swiper-слайдеры (JS слайдера нет) — статичная сетка */
+.slide_cher .swiper-wrapper, .slide_poly .swiper-wrapper, .slider-otzivy .swiper-wrapper { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; transform: none !important; }
+.slide_cher .swiper-slide, .slide_poly .swiper-slide, .slider-otzivy .swiper-slide { width: auto !important; margin: 0 !important; }
+.slide__column { text-align: center; }
+.slide__column img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.slide__column .podpis { margin-top: 8px; font-size: 14px; }
+.swiper-button-next, .swiper-button-prev { display: none; }
+
+/* Ровные карточки товаров */
+.tovar-row { align-items: stretch; row-gap: 24px; }
+.tovar_oblozka { display: flex; margin-bottom: 12px; }
+.tovar_oblozka { display: flex; }
+.tovar__card { display: flex; flex-direction: column; height: 100%; width: 100%; }
+.tovar__card__t1 h3 { line-height: 1.3; margin: 8px 0; }
+.tovar__price { margin-top: auto; }
