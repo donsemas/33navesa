@@ -1,0 +1,30 @@
+schema = "EDGE_RULE_SET_V1"
+
+# Удалённая страница-категория -> главная
+[[rule]]
+id = "navesy-iz-polikarbonata-parent"
+when.path = { exact = "/katalog/navesy/navesy-iz-polikarbonata/" }
+action.redirect = { target = "/", status_code = 301 }
+
+# Дочерние товарные страницы -> новый уровень вложенности
+[[rule]]
+id = "navesy-iz-polikarbonata-children"
+when.path = { glob = "/katalog/navesy/navesy-iz-polikarbonata/{rest...}" }
+action.redirect = { target = "/katalog/navesy/{rest}", status_code = 301 }
+
+# Удалённый раздел козырьков -> навесы для дачи
+[[rule]]
+id = "kozyrki-root"
+when.path = { exact = "/kozyrki/" }
+action.redirect = { target = "/katalog/navesy/navesy-dlya-dachi/", status_code = 301 }
+
+[[rule]]
+id = "kozyrki-children"
+when.path = { glob = "/katalog/kozyrki/{rest...}" }
+action.redirect = { target = "/katalog/navesy/navesy-dlya-dachi/", status_code = 301 }
+
+# Legacy Yoast-sitemap -> актуальный Astro-sitemap
+[[rule]]
+id = "sitemap-legacy"
+when.path = { exact = "/sitemap_index.xml" }
+action.redirect = { target = "/sitemap-index.xml", status_code = 301 }
