@@ -20,11 +20,6 @@
       el.addEventListener("input", calc);
     });
     calc();
-    root.querySelector("[data-fix]").addEventListener("click", function () {
-      var msg = "Здравствуйте! Зафиксируйте цену: " + type.value + ", " +
-        len.value + "×" + wid.value + " м, " + out.textContent + ". 33navesa.ru";
-      window.open(WA + "?text=" + encodeURIComponent(msg), "_blank");
-    });
   }
 
   function initMeasure(root) {
