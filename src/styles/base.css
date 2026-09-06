@@ -29,10 +29,9 @@
 .tovar__card__t1 h3 { line-height: 1.3; margin: 8px 0; }
 .tovar__price { margin-top: auto; }
 
-/* Конверсионный сайдбар */
-.conv-sidebar { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; scrollbar-width: thin; }
-.conv-sidebar::-webkit-scrollbar { width: 6px; }
-.conv-sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+/* Конверсионный сайдбар — в потоке страницы */
+aside.conv-sidebar { padding-top: 20px; }
+.conv-fixed { position: static; width: 100%; }
 .conv-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
 .conv-title { font-weight: 700; font-size: 16px; margin-bottom: 10px; }
 .conv-label { display: block; font-size: 13px; color: #4b5563; }
@@ -51,7 +50,8 @@
 .conv-trust div { padding: 4px 0; font-size: 14px; }
 @media (max-width: 1199px) {
   .row:has(> aside.conv-sidebar) > main { order: 1; width: 100%; }
-  aside.conv-sidebar { position: static; max-height: none; overflow: visible; width: 100%; order: 2; display: block; margin-top: 20px; }
+  aside.conv-sidebar { position: static; width: 100%; order: 2; display: block; margin-top: 20px; padding-top: 0; }
+  .conv-fixed { position: static; width: 100%; max-height: none; overflow: visible; }
 }
 
 /* Выпадашка каталога — только по наведению (иначе висит открытой) */

@@ -16,6 +16,7 @@ const cats = [
 ];
 ---
 <aside class="sitebar conv-sidebar">
+<div class="conv-fixed">
   {showCalculator && (
     <div class="conv-card" data-conv-calc>
       <div class="conv-title">Быстрый расчет</div>
@@ -32,7 +33,7 @@ const cats = [
         <label class="conv-label">Длина (м)<input type="number" min="1" max="100" step="0.5" value="6" data-len /></label>
         <label class="conv-label">Ширина (м)<input type="number" min="1" max="100" step="0.5" value="4" data-wid /></label>
       </div>
-      <div class="conv-result" data-out>от 129 600 ₽</div>
+      <div class="conv-result" data-out>от 163 200 ₽</div>
       <button type="button" data-fix>Зафиксировать цену</button>
     </div>
   )}
@@ -55,5 +56,6 @@ const cats = [
     <div>✅ Собственное производство</div>
     <div>✅ Монтаж за 1 день</div>
   </div>
+</div>
 </aside>
 <script src="/js/sidebar.js" defer></script>

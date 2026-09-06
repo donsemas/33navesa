@@ -1,6 +1,6 @@
 // sidebar.js — логика конверсионного сайдбара (калькулятор + формы через WhatsApp).
 (function () {
-  var RATE = 5400; // ₽/м², базовая ставка
+  var RATE = 6800; // ₽/м², базовая ставка
   var WA = "https://wa.me/79051492388";
 
   function fmt(n) {
