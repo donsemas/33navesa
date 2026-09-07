@@ -105,9 +105,6 @@ header { padding: 8px 0 !important; }
   .rel-next { right: -6px; }
 }
 
-/* Заголовок каталога на главной: семантически H2 (H1 живёт в hero), вид как у H1 темы */
-.catalog-h1 { font-size: 34px !important; line-height: 44px !important; font-weight: 800; margin: 10px 0 30px !important; }
-
 /* Адаптив шапки: телефон не рвётся, логотип и отступы ужаты */
 .header__phone a { white-space: nowrap; }
 @media (max-width: 1199px) {
