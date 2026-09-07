@@ -79,6 +79,35 @@ aside.conv-sidebar { padding-top: 20px; }
 .catalog-navigation__list .sub-menu { transition: left 0s linear .35s; }
 .catalog-navigation__list > li:hover > a ~ .sub-menu { transition-delay: 0s; }
 
+/* Компактная шапка (09.2026): верхняя полоса и режим работы удалены */
+header { padding: 8px 0 !important; }
+.header__logo img { width: 190px !important; height: auto !important; }
+.header__phone a { font-size: 20px !important; }
+
+/* Похожие товары — слайдер: 3 ровные карточки в ряд, стрелки по краям (JS: /js/related-slider.js) */
+.related { padding: 28px 0 !important; }
+.related__items.rslide { display: flex !important; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 14px; }
+.related__items.rslide::-webkit-scrollbar { display: none; }
+.related__items .slide-box { flex: 0 0 calc((100% - 24px) / 3) !important; min-width: 0; scroll-snap-align: start; display: block !important; min-height: 0; }
+.related__items .related__item { width: auto !important; height: 100%; padding: 12px 10px !important; display: flex !important; flex-direction: column; }
+.related__item-title { font-size: 14px !important; line-height: 1.4 !important; flex-grow: 1; }
+.related__item-img img { width: 100%; height: 130px !important; object-fit: cover; border-radius: 6px; }
+.related__more { margin-top: auto; padding-top: 10px; }
+.related__more a { font-size: 14px; padding: 8px 0 !important; }
+.rel-wrap { position: relative; }
+.rel-arrow { position: absolute; top: 38%; width: 38px; height: 38px; border-radius: 50%; border: 1px solid #e5e7eb; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.18); font-size: 24px; line-height: 1; color: #2D3E53; cursor: pointer; z-index: 2; display: flex; align-items: center; justify-content: center; padding-bottom: 3px; }
+.rel-arrow:hover { background: #f26522; border-color: #f26522; color: #fff; }
+.rel-prev { left: -14px; }
+.rel-next { right: -14px; }
+@media (max-width: 640px) {
+  .related__items .slide-box { flex-basis: calc((100% - 12px) / 2) !important; }
+  .rel-prev { left: -6px; }
+  .rel-next { right: -6px; }
+}
+
+/* Заголовок каталога на главной: семантически H2 (H1 живёт в hero), вид как у H1 темы */
+.catalog-h1 { font-size: 34px !important; line-height: 44px !important; font-weight: 800; margin: 10px 0 30px !important; }
+
 /* Адаптив шапки: телефон не рвётся, логотип и отступы ужаты */
 .header__phone a { white-space: nowrap; }
 @media (max-width: 1199px) {
