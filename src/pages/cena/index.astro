@@ -2,6 +2,7 @@
 import Header from "../../components/Header.astro"
 import Sidebar from "../../components/Sidebar.astro";;
 import Footer from "../../components/Footer.astro";
+import PriceCalc from "../../components/PriceCalc.astro";
 import "../../styles/base.css";
 const title = 'Стоимость изготовления навесов за 1 м2 под ключ прайс лист';
 const description = 'Фабрика Донгруп 33 навеса. Предлагаем прайс лист по изготовлению навесов за 1 м2 под ключ. Выгодные условия сотрудничества. Гарантия 10 лет. Бесплатный замер.';
@@ -36,6 +37,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
   <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  <script src="/js/price-calc.js" defer></script>
   {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
   {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
 </head>
@@ -44,8 +46,10 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
   <div class="content">
     <div class="container">
         <div class="row">
-            <Sidebar />
-            <main set:html={`
+            <Sidebar showCalculator={false} />
+            <main>
+<PriceCalc />
+<div set:html={`
 
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
 	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">Цена</span><meta property="url" content="/cena/"><meta property="position" content="2"></span></div>
@@ -110,7 +114,8 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
 
         </div>
     </div>
-</div>`} />
+</div>`}></div>
+</main>
   <Footer />
 </body>
 </html>

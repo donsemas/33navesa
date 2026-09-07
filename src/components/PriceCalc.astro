@@ -1,0 +1,119 @@
+---
+---
+<section class="pcalc" data-pcalc>
+  <h2 class="pcalc-title">Рассчитайте стоимость навеса</h2>
+  <p class="pcalc-sub">Ответьте на 6 вопросов — покажем вилку цены. Точную смету составит замерщик бесплатно.</p>
+
+  <div class="pcalc-types" data-group="type">
+    <button type="button" class="pcalc-type is-active" data-value="odno">
+      <img src="/uploads/2021/05/odnoskatnye-navesy-iz-polikarbonata.webp" alt="Односкатный навес" loading="lazy" />
+      <span>Односкатный</span>
+    </button>
+    <button type="button" class="pcalc-type" data-value="dvuh">
+      <img src="/uploads/2021/05/dvuhskatnye-navesy-iz-polikarbonata.webp" alt="Двускатный навес" loading="lazy" />
+      <span>Двускатный</span>
+    </button>
+    <button type="button" class="pcalc-type" data-value="aroch">
+      <img src="/uploads/2021/05/arochnye-navesy-iz-polikarbonata.webp" alt="Арочный навес" loading="lazy" />
+      <span>Арочный</span>
+    </button>
+    <button type="button" class="pcalc-type" data-value="pristen">
+      <img src="/uploads/2021/05/navesy-pristennye.webp" alt="Пристенный навес" loading="lazy" />
+      <span>К дому</span>
+    </button>
+  </div>
+
+  <div class="pcalc-grid">
+    <div class="pcalc-field">
+      <span class="pcalc-label">Длина × ширина, м</span>
+      <div class="pcalc-sizes">
+        <input type="number" min="1" max="100" step="0.5" value="6" data-len aria-label="Длина" />
+        <span>×</span>
+        <input type="number" min="1" max="100" step="0.5" value="4" data-wid aria-label="Ширина" />
+      </div>
+    </div>
+    <div class="pcalc-field">
+      <span class="pcalc-label">Поликарбонат</span>
+      <div class="pcalc-seg" data-group="pk">
+        <button type="button" class="is-active" data-value="pk6">6 мм</button>
+        <button type="button" data-value="pk8">8 мм</button>
+        <button type="button" data-value="pk10">10 мм</button>
+      </div>
+    </div>
+    <div class="pcalc-field">
+      <span class="pcalc-label">Опоры</span>
+      <div class="pcalc-seg" data-group="op">
+        <button type="button" class="is-active" data-value="op60">60×60</button>
+        <button type="button" data-value="op80">80×80</button>
+        <button type="button" data-value="op100">100×100 +100 ₽</button>
+        <button type="button" data-value="nopil">На готовых столбах −20%</button>
+      </div>
+    </div>
+    <div class="pcalc-field">
+      <span class="pcalc-label">Фермы</span>
+      <div class="pcalc-seg" data-group="ferm">
+        <button type="button" class="is-active" data-value="std">Стандарт</button>
+        <button type="button" data-value="strong">Усиленные</button>
+      </div>
+    </div>
+    <div class="pcalc-field">
+      <span class="pcalc-label">Кровля</span>
+      <div class="pcalc-seg pcalc-seg--wrap" data-group="krov">
+        <button type="button" class="is-active" data-value="sota">Сотовый ПК</button>
+        <button type="button" data-value="mono">Монолит</button>
+        <button type="button" data-value="prof">Профнастил</button>
+        <button type="button" data-value="metch">Металлочерепица</button>
+        <button type="button" data-value="myag">Мягкая</button>
+      </div>
+    </div>
+    <div class="pcalc-field">
+      <span class="pcalc-label">Дополнительно</span>
+      <div class="pcalc-checks">
+        <label><input type="checkbox" data-paint /> Покраска в цвет</label>
+        <label><input type="checkbox" data-nomon /> Самовывоз без монтажа −10%</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="pcalc-result">
+    <div>
+      <div class="pcalc-fork" data-out>—</div>
+      <div class="pcalc-detail" data-detail></div>
+    </div>
+    <a class="pcalc-cta" href="tel:+79051492388">Вызвать замерщика — 0 ₽</a>
+  </div>
+  <p class="pcalc-micro">Вилка ±10%. Доставка до 50 км от МКАД — 0 ₽, дальше — 100 ₽/км. Точную стоимость фиксирует замерщик в смете.</p>
+</section>
+
+<style>
+  .pcalc { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px 20px; margin: 8px 0 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .pcalc-title { font-size: clamp(19px, 2.2vw, 24px); font-weight: 800; margin: 0 0 4px; }
+  .pcalc-sub { color: #6b7280; margin: 0 0 14px; font-size: 14px; }
+  .pcalc-types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+  .pcalc-type { border: 2px solid #e5e7eb; border-radius: 10px; background: #fff; padding: 5px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; transition: border-color .15s ease, box-shadow .15s ease; }
+  .pcalc-type img { width: 100%; height: 56px; object-fit: cover; border-radius: 6px; display: block; }
+  .pcalc-type span { font-size: 12.5px; font-weight: 600; color: #374151; }
+  .pcalc-type.is-active { border-color: #f97316; box-shadow: 0 0 0 1px #f97316; }
+  .pcalc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin-bottom: 14px; }
+  .pcalc-label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; margin-bottom: 6px; }
+  .pcalc-sizes { display: flex; align-items: center; gap: 8px; }
+  .pcalc-sizes input { width: 80px; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; }
+  .pcalc-seg { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pcalc-seg button { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; font-size: 13.5px; font-weight: 600; color: #374151; cursor: pointer; }
+  .pcalc-seg button.is-active { background: #f97316; border-color: #f97316; color: #fff; }
+  .pcalc-checks { display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; }
+  .pcalc-checks label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .pcalc-checks input { width: 18px; height: 18px; accent-color: #f97316; }
+  .pcalc-result { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: #1f2937; border-radius: 10px; padding: 14px 18px; }
+  .pcalc-fork { color: #fff; font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; }
+  .pcalc-detail { color: #d1d5db; font-size: 13px; margin-top: 2px; }
+  .pcalc-cta { display: inline-flex; align-items: center; background: #f97316; color: #fff; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: background .2s ease; }
+  .pcalc-cta:hover { background: #ea580c; color: #fff; }
+  .pcalc-micro { color: #9ca3af; font-size: 12px; margin: 8px 0 0; }
+  @media (max-width: 640px) {
+    .pcalc { padding: 20px 16px; }
+    .pcalc-types { grid-template-columns: repeat(3, 1fr); }
+    .pcalc-grid { grid-template-columns: 1fr; }
+    .pcalc-cta { width: 100%; justify-content: center; }
+  }
+</style>
