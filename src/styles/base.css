@@ -105,6 +105,14 @@ header { padding: 8px 0 !important; }
   .rel-next { right: -6px; }
 }
 
+/* Хлебные крошки — компактные */
+.breadcrumbs, .breadcrumbs a, .breadcrumbs span { font-size: 12.5px !important; }
+
+/* Контентный текст (статьи, описания) — 14px как в траст-блоке сайдбара */
+main p, main li { font-size: 14px; line-height: 1.65; }
+/* Фото внутри текста −10% ширины: меньше растягивание и мыльность исходников */
+main p img { width: 90% !important; max-width: 90% !important; height: auto !important; display: block; margin: 12px auto; }
+
 /* Адаптив шапки: телефон не рвётся, логотип и отступы ужаты */
 .header__phone a { white-space: nowrap; }
 @media (max-width: 1199px) {
