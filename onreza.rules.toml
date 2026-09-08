@@ -28,3 +28,10 @@ action.redirect = { target = "/katalog/navesy/navesy-dlya-dachi/", status_code =
 id = "sitemap-legacy"
 when.path = { exact = "/sitemap_index.xml" }
 action.redirect = { target = "/sitemap-index.xml", status_code = 301 }
+
+# Заявка "Бесплатный замер" -> ONREZA Function (SMS владельцу, без WhatsApp)
+[[rule]]
+id = "api-send-sms"
+when.path = { exact = "/api/send-sms" }
+when.methods = ["POST"]
+action.pipeline = { override = true, steps = [{ handle = "send-sms" }] }

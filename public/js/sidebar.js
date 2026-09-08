@@ -1,7 +1,6 @@
 // sidebar.js — логика конверсионного сайдбара (калькулятор + формы через WhatsApp).
 (function () {
   var RATE = 6800; // ₽/м², базовая ставка
-  var WA = "https://wa.me/79051492388";
 
   function fmt(n) {
     return "от " + Math.round(n).toLocaleString("ru-RU") + " ₽";
@@ -43,11 +42,55 @@
 
   function initMeasure(root) {
     var phone = root.querySelector("[data-phone]");
+    var btn = root.querySelector("[data-call]");
+    var honey = root.querySelector("[data-honey]");
     maskPhone(phone);
-    root.querySelector("[data-call]").addEventListener("click", function () {
-      var msg = "Здравствуйте! Вызовите замерщика, мой телефон: " +
-        (phone.value.trim() || "перезвоните мне") + ". 33navesa.ru";
-      window.open(WA + "?text=" + encodeURIComponent(msg), "_blank");
+    function fail(text) {
+      var err = root.querySelector("[data-form-err]");
+      if (!err) {
+        err = document.createElement("p");
+        err.setAttribute("data-form-err", "");
+        err.className = "conv-micro";
+        err.style.color = "#D01127";
+        btn.parentNode.insertBefore(err, btn);
+      }
+      err.textContent = text;
+    }
+    btn.addEventListener("click", function () {
+      var d = phone.value.replace(/\D/g, "");
+      if (d.charAt(0) === "8") d = "7" + d.slice(1);
+      if (!/^7\d{10}$/.test(d)) {
+        fail("Введите номер полностью: +7 (___) ___-__-__");
+        phone.focus();
+        return;
+      }
+      btn.disabled = true;
+      var btnText = btn.textContent;
+      btn.textContent = "Отправляем...";
+      fetch("/api/send-sms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: d, name: honey ? honey.value : "" })
+      }).then(function (r) {
+        return r.json().then(function (j) { return { s: r.status, j: j }; });
+      }).then(function (res) {
+        if (res.s === 200 && res.j && res.j.ok) {
+          root.innerHTML = '<div class="conv-title">Спасибо!</div>' +
+            '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 15 минут.</p>';
+        } else if (res.j && res.j.error === "phone") {
+          btn.disabled = false;
+          btn.textContent = btnText;
+          fail("Введите номер полностью: +7 (___) ___-__-__");
+        } else {
+          btn.disabled = false;
+          btn.textContent = btnText;
+          fail("Не получилось отправить. Позвоните нам: +7 (905) 149-23-88");
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = btnText;
+        fail("Нет связи с сервером. Позвоните нам: +7 (905) 149-23-88");
+      });
     });
   }
 
