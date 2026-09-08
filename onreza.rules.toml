@@ -65,6 +65,12 @@ id = "mangaly-besedka-dlya"
 when.path = { exact = "/katalog/besedki/besedki-iz-metalla/besedki-dlya-mangala-iz-metalla/" }
 action.redirect = { target = "/katalog/besedki/besedki-iz-metalla/", status_code = 301 }
 
+# Удалённая страница "Партнерам" -> главная
+[[rule]]
+id = "partneram-root"
+when.path = { exact = "/partneram/" }
+action.redirect = { target = "/", status_code = 301 }
+
 # Legacy Yoast-sitemap -> актуальный Astro-sitemap
 [[rule]]
 id = "sitemap-legacy"
