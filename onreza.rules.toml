@@ -23,6 +23,54 @@ id = "kozyrki-children"
 when.path = { glob = "/katalog/kozyrki/{rest...}" }
 action.redirect = { target = "/katalog/navesy/navesy-dlya-dachi/", status_code = 301 }
 
+# Удалённый раздел мангалов -> каталог навесов
+[[rule]]
+id = "mangaly-root"
+when.path = { exact = "/katalog/navesy/navesy-dlya-mangala/" }
+action.redirect = { target = "/katalog/navesy/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-children"
+when.path = { glob = "/katalog/navesy/navesy-dlya-mangala/{rest...}" }
+action.redirect = { target = "/katalog/navesy/", status_code = 301 }
+
+# Одиночные страницы мангалов -> смежные разделы
+[[rule]]
+id = "mangaly-single-polikarbonat"
+when.path = { exact = "/katalog/navesy/navesy-iz-polikarbonata-dlya-mangala/" }
+action.redirect = { target = "/katalog/navesy/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-single-metal"
+when.path = { exact = "/katalog/navesy/metallicheskie-navesy/metallicheskie-navesy-dlya-mangala/" }
+action.redirect = { target = "/katalog/navesy/metallicheskie-navesy/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-single-metal-dacha"
+when.path = { exact = "/katalog/navesy/metallicheskie-navesy/metallicheskie-navesy-dlya-dachi-dlya-mangala/" }
+action.redirect = { target = "/katalog/navesy/metallicheskie-navesy/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-single-kovanye"
+when.path = { exact = "/katalog/navesy/drugie/kovanye-navesy-dlya-mangala/" }
+action.redirect = { target = "/katalog/navesy/drugie/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-besedka-metal"
+when.path = { exact = "/katalog/besedki/besedki-iz-metalla/metallicheskie-besedki-s-mangalom/" }
+action.redirect = { target = "/katalog/besedki/besedki-iz-metalla/", status_code = 301 }
+
+[[rule]]
+id = "mangaly-besedka-dlya"
+when.path = { exact = "/katalog/besedki/besedki-iz-metalla/besedki-dlya-mangala-iz-metalla/" }
+action.redirect = { target = "/katalog/besedki/besedki-iz-metalla/", status_code = 301 }
+
+# Удалённая страница "Партнерам" -> главная
+[[rule]]
+id = "partneram-root"
+when.path = { exact = "/partneram/" }
+action.redirect = { target = "/", status_code = 301 }
+
 # Legacy Yoast-sitemap -> актуальный Astro-sitemap
 [[rule]]
 id = "sitemap-legacy"
