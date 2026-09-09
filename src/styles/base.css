@@ -61,6 +61,10 @@ aside.conv-sidebar { padding-top: 20px; }
 /* мост через возможный зазор между кнопкой и панелью */
 .catalog .catalog-navigation::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
 
+/* Кнопка каталога — по ширине надписи (вместо фикс. 280px) */
+.catalog { width: auto !important; }
+.catalog__bt { white-space: nowrap; }
+
 /* Кнопка каталога — оранжевая со стрелкой */
 .catalog__bt { background: #f26522 !important; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding-right: 15px; }
 .catalog__bt::after { content: ''; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #fff; }
