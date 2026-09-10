@@ -1,5 +1,11 @@
 schema = "EDGE_RULE_SET_V1"
 
+# Дубль монтажа (без -2) -> основной монтаж
+[[rule]]
+id = "montazh-dubl"
+when.path = { exact = "/uslugi/montazh-2/" }
+action.redirect = { target = "/uslugi/montazh/", status_code = 301 }
+
 # Удалённая страница-категория -> главная
 [[rule]]
 id = "navesy-iz-polikarbonata-parent"
