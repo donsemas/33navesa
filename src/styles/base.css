@@ -130,7 +130,11 @@ main p img { width: 90% !important; max-width: 90% !important; height: auto !imp
 @media (max-width: 767px) {
   .header__row { flex-wrap: wrap; gap: 8px 12px; }
   .header__sity { display: none; }
+  .header__logo { margin-left: -8px; padding-right: 10px; }
   .header__logo img { width: 150px; }
-  .header__phone { margin-left: 0; padding-left: 30px; }
-  .header__phone a { font-size: 18px; }
+  .messangers { padding-left: 0; display: flex; align-items: center; }
+  .header__phone { margin-left: 0 !important; padding-left: 30px !important; }
+  /* номер скрыт, трубка осталась и кликабельна (tel-ссылка растянута на иконку) */
+  .header__phone a { font-size: 0 !important; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; }
+  .header__search { display: none !important; }
 }
