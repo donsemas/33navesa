@@ -64,23 +64,30 @@
         phone.focus();
         return;
       }
+      if (honey && honey.value) { // бот в мёде — тихо "успех", ничего не шлём
+        root.innerHTML = '<div class="conv-title">Спасибо!</div>' +
+          '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 20 минут.</p>';
+        return;
+      }
       btn.disabled = true;
       var btnText = btn.textContent;
       btn.textContent = "Отправляем...";
-      fetch("/api/send-lead", {
+      fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: d, name: honey ? honey.value : "", source: "Сайдбар: бесплатный замер", page: window.location.pathname })
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: "081e039c-978d-4197-8c9a-68947e22fc5e", // публичный ключ формы 33navesa
+          subject: "Заявка на замер — 33navesa.ru (сайдбар)",
+          from_name: "Сайдбар: бесплатный замер",
+          phone: "+" + d,
+          page: window.location.pathname
+        })
       }).then(function (r) {
         return r.json().then(function (j) { return { s: r.status, j: j }; });
       }).then(function (res) {
-        if (res.s === 200 && res.j && res.j.ok) {
+        if (res.j && res.j.success) {
           root.innerHTML = '<div class="conv-title">Спасибо!</div>' +
             '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 20 минут.</p>';
-        } else if (res.j && res.j.error === "phone") {
-          btn.disabled = false;
-          btn.textContent = btnText;
-          fail("Введите номер полностью: +7 (___) ___-__-__");
         } else {
           btn.disabled = false;
           btn.textContent = btnText;

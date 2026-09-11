@@ -1,7 +1,10 @@
-// lead.js — заявки с сайта: маска телефона, модалки, отправка на /api/send-lead.
+// lead.js — заявки с сайта: маска телефона, модалки, отправка в Web3Forms.
+// Напрямую из браузера (ключ публичный по дизайну Web3Forms):
+// свой /api/send-lead на домене не отвечает (edge-правила там не исполняются).
 // Vanilla JS (jQuery на сайте нет). Подключён в Footer на всех страницах.
 (function () {
-  var ENDPOINT = "/api/send-lead";
+  var ENDPOINT = "https://api.web3forms.com/submit";
+  var ACCESS_KEY = "081e039c-978d-4197-8c9a-68947e22fc5e"; // публичный ключ формы 33navesa
   var overlay = null;
 
   function normPhone(raw) {
@@ -114,28 +117,32 @@
         if (phone) phone.focus();
         return;
       }
+      if (honey && honey.value) { // бот в мёде — тихо "успех", ничего не шлём
+        closeModal();
+        form.reset();
+        showThanks();
+        return;
+      }
       if (submitBtn) { submitBtn.disabled = true; submitBtn.value = "Отправляем..."; }
       fetch(ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
-          phone: d,
-          fio: fio ? fio.value : "",
-          name: honey ? honey.value : "",
-          subject: subject ? subject.value : document.title,
-          page: window.location.pathname
+          access_key: ACCESS_KEY,
+          subject: "Заявка на замер — 33navesa.ru",
+          from_name: fio && fio.value ? fio.value : "Форма с сайта",
+          phone: "+" + d,
+          page: window.location.pathname,
+          form: subject ? subject.value : document.title
         })
       }).then(function (r) {
         return r.json().then(function (j) { return { s: r.status, j: j }; });
       }).then(function (res) {
-        if (res.s === 200 && res.j && res.j.ok) {
+        if (res.j && res.j.success) {
           closeModal();
           form.reset();
           if (submitBtn) { submitBtn.disabled = false; submitBtn.value = submitBtn.getAttribute("data-label") || "Отправить"; }
           showThanks();
-        } else if (res.j && res.j.error === "phone") {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.value = "Отправить"; }
-          formError(form, "Введите номер полностью: +7 (___) ___-__-__");
         } else {
           if (submitBtn) { submitBtn.disabled = false; submitBtn.value = "Отправить"; }
           formError(form, "Не получилось отправить. Позвоните нам: +7 (905) 149-23-88");
