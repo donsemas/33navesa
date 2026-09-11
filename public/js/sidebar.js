@@ -67,16 +67,16 @@
       btn.disabled = true;
       var btnText = btn.textContent;
       btn.textContent = "Отправляем...";
-      fetch("/api/send-sms", {
+      fetch("/api/send-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: d, name: honey ? honey.value : "" })
+        body: JSON.stringify({ phone: d, name: honey ? honey.value : "", source: "Сайдбар: бесплатный замер", page: window.location.pathname })
       }).then(function (r) {
         return r.json().then(function (j) { return { s: r.status, j: j }; });
       }).then(function (res) {
         if (res.s === 200 && res.j && res.j.ok) {
           root.innerHTML = '<div class="conv-title">Спасибо!</div>' +
-            '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 15 минут.</p>';
+            '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 20 минут.</p>';
         } else if (res.j && res.j.error === "phone") {
           btn.disabled = false;
           btn.textContent = btnText;

@@ -83,6 +83,13 @@ id = "sitemap-legacy"
 when.path = { exact = "/sitemap_index.xml" }
 action.redirect = { target = "/sitemap-index.xml", status_code = 301 }
 
+# Заявка с сайта -> ONREZA Function (письмо владельцу)
+[[rule]]
+id = "api-send-lead"
+when.path = { exact = "/api/send-lead" }
+when.methods = ["POST"]
+action.pipeline = { override = true, steps = [{ handle = "send-lead" }] }
+
 # Заявка "Бесплатный замер" -> ONREZA Function (SMS владельцу, без WhatsApp)
 [[rule]]
 id = "api-send-sms"
