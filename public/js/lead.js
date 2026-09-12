@@ -80,10 +80,10 @@
     var thanks = document.getElementById("thanks");
     if (thanks) {
       thanks.innerHTML = '<div class="modal__title">Заявка принята!</div>' +
-        "<p>Перезвоним вам в течение 20 минут.</p>";
+        "<p>Мы вам перезвоним через двадцать минут.</p>";
       openModal("thanks");
     } else {
-      alert("Заявка принята! Перезвоним вам в течение 20 минут.");
+      alert("Заявка принята! Мы вам перезвоним через двадцать минут.");
     }
   }
 

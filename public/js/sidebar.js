@@ -87,7 +87,7 @@
       }).then(function (res) {
         if (res.j && res.j.success) {
           root.innerHTML = '<div class="conv-title">Спасибо!</div>' +
-            '<p class="conv-micro">Заявка принята, мы перезвоним вам в течение 20 минут.</p>';
+          '<p class="conv-micro">Заявка принята, мы перезвоним вам через двадцать минут.</p>';
         } else {
           btn.disabled = false;
           btn.textContent = btnText;
