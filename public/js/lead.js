@@ -17,7 +17,7 @@
   function maskPhone(input) {
     input.addEventListener("input", function () {
       var d = normPhone(input.value);
-      if (d.length <= 1) { input.value = ""; return; }
+      if (!d) { input.value = ""; return; }
       var out = "+7 (" + d.slice(1, 4);
       if (d.length >= 4) out += ") " + d.slice(4, 7);
       if (d.length >= 7) out += "-" + d.slice(7, 9);

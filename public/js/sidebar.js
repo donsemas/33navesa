@@ -28,7 +28,7 @@
       if (d.charAt(0) === "8") d = "7" + d.slice(1);
       if (d.charAt(0) !== "7") d = "7" + d;
       d = d.slice(0, 11);
-      if (d.length <= 1) {
+      if (!d) {
         input.value = "";
         return;
       }
