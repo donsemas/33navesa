@@ -15,9 +15,12 @@
   }
 
   function maskPhone(input) {
-    input.addEventListener("input", function () {
+    input.addEventListener("input", function (e) {
       var d = normPhone(input.value);
-      if (!d) { input.value = ""; return; }
+      var deleting = (e && e.inputType && e.inputType.indexOf("delete") === 0) ||
+        d.length < (input._ld || "").length;
+      input._ld = d;
+      if (!d || (deleting && d.length <= 1)) { input.value = ""; return; }
       var out = "+7 (" + d.slice(1, 4);
       if (d.length >= 4) out += ") " + d.slice(4, 7);
       if (d.length >= 7) out += "-" + d.slice(7, 9);

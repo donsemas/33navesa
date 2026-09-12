@@ -22,13 +22,17 @@
   }
 
   function maskPhone(input) {
-    // Маска +7 (___) ___-__-__: цифры группируются при вводе, формат виден сразу
-    input.addEventListener("input", function () {
+    // Маска +7 (___) ___-__-__: цифры группируются при вводе, формат виден сразу.
+    // Стирание отличаем от набора: при удалении до голого "+7 (" поле очищается.
+    input.addEventListener("input", function (e) {
       var d = input.value.replace(/\D/g, "");
       if (d.charAt(0) === "8") d = "7" + d.slice(1);
       if (d.charAt(0) !== "7") d = "7" + d;
       d = d.slice(0, 11);
-      if (!d) {
+      var deleting = (e && e.inputType && e.inputType.indexOf("delete") === 0) ||
+        d.length < (input._ld || "").length;
+      input._ld = d;
+      if (!d || (deleting && d.length <= 1)) {
         input.value = "";
         return;
       }
