@@ -10,22 +10,32 @@
   function normPhone(raw) {
     var d = String(raw || "").replace(/\D/g, "");
     if (d.charAt(0) === "8") d = "7" + d.slice(1);
-    if (d.charAt(0) !== "7") d = "7" + d;
+    if (d && d.charAt(0) !== "7") d = "7" + d;
     return d.slice(0, 11);
   }
 
   function maskPhone(input) {
-    input.addEventListener("input", function (e) {
-      var d = normPhone(input.value);
-      var deleting = (e && e.inputType && e.inputType.indexOf("delete") === 0) ||
-        d.length < (input._ld || "").length;
-      input._ld = d;
-      if (!d || (deleting && d.length <= 1)) { input.value = ""; return; }
+    // Одно стирание = минус одна цифра: если стёрли скобку/дефис (цифр не убавилось),
+    // убираем последнюю цифру, иначе стирание зацикливается на разделителях.
+    input.addEventListener("input", function () {
+      var raw = input.value;
+      var prev = input._lv || "";
+      var d = normPhone(raw);
+      var prevD = normPhone(prev);
+      if (raw.length < prev.length && d.length >= prevD.length && d.length > 0) {
+        d = d.slice(0, -1);
+      }
+      if (!d) {
+        input.value = "";
+        input._lv = "";
+        return;
+      }
       var out = "+7 (" + d.slice(1, 4);
       if (d.length >= 4) out += ") " + d.slice(4, 7);
       if (d.length >= 7) out += "-" + d.slice(7, 9);
       if (d.length >= 9) out += "-" + d.slice(9, 11);
       input.value = out;
+      input._lv = out;
     });
   }
 

@@ -21,19 +21,28 @@
     calc();
   }
 
+  function normD(s) {
+    var d = String(s || "").replace(/\D/g, "");
+    if (d.charAt(0) === "8") d = "7" + d.slice(1);
+    if (d && d.charAt(0) !== "7") d = "7" + d;
+    return d.slice(0, 11);
+  }
+
   function maskPhone(input) {
     // Маска +7 (___) ___-__-__: цифры группируются при вводе, формат виден сразу.
-    // Стирание отличаем от набора: при удалении до голого "+7 (" поле очищается.
-    input.addEventListener("input", function (e) {
-      var d = input.value.replace(/\D/g, "");
-      if (d.charAt(0) === "8") d = "7" + d.slice(1);
-      if (d.charAt(0) !== "7") d = "7" + d;
-      d = d.slice(0, 11);
-      var deleting = (e && e.inputType && e.inputType.indexOf("delete") === 0) ||
-        d.length < (input._ld || "").length;
-      input._ld = d;
-      if (!d || (deleting && d.length <= 1)) {
+    // Одно стирание = минус одна цифра: если стёрли скобку/дефис (цифр не убавилось),
+    // убираем последнюю цифру, иначе стирание зацикливается на разделителях.
+    input.addEventListener("input", function () {
+      var raw = input.value;
+      var prev = input._lv || "";
+      var d = normD(raw);
+      var prevD = normD(prev);
+      if (raw.length < prev.length && d.length >= prevD.length && d.length > 0) {
+        d = d.slice(0, -1);
+      }
+      if (!d) {
         input.value = "";
+        input._lv = "";
         return;
       }
       var out = "+7 (" + d.slice(1, 4);
@@ -41,6 +50,7 @@
       if (d.length >= 7) out += "-" + d.slice(7, 9);
       if (d.length >= 9) out += "-" + d.slice(9, 11);
       input.value = out;
+      input._lv = out;
     });
   }
 
