@@ -160,3 +160,16 @@ img { max-width: 100%; height: auto; }
   .header__phone a { font-size: 0 !important; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 26px; height: 24px; }
   .header__search { display: none !important; }
 }
+
+/* Подменю каталога — всегда строгий столбик друг под другом */
+.catalog-navigation { width: max-content !important; max-width: calc(100vw - 40px); }
+.catalog-navigation__list { display: block !important; }
+.catalog-navigation__list > li { display: block !important; width: 100% !important; float: none !important; }
+.catalog-navigation__list > li > a { white-space: nowrap !important; }
+.intent-nav { padding: 34px 0 8px; }
+.intent-nav__title { text-align: center; font-size: 28px; margin: 0 0 22px; }
+@media (max-width: 767px) {
+  .intent-nav { padding: 24px 0 4px; }
+  .intent-nav__title { font-size: 21px; margin-bottom: 16px; }
+  .intent-nav .box { width: 50%; }
+}

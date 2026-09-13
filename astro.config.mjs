@@ -56,6 +56,7 @@ const MERGED_TO_AVTO = [
   "navesy-iz-polikarbonata-dlya-avtomobilej", "navesy-iz-polikarbonata-dlya-avto",
   "navesy-iz-polikarbonata-pod-avtomobil", "navesy-iz-polikarbonata-pod-avto",
   "navesy-iz-polikarbonata-dlya-dachi-pod-mashinu",
+  "garazhi-iz-polikarbonata",
 ];
 
 export default defineConfig({
