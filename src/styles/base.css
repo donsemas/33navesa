@@ -161,6 +161,9 @@ img { max-width: 100%; height: auto; }
   .header__search { display: none !important; }
 }
 
+/* Кнопка в конце текста категории — строго по центру */
+.cat__cta { text-align: center !important; margin: 26px 0 10px !important; }
+.cat__cta .btn { margin: 0 auto; }
 /* Подменю каталога — всегда строгий столбик друг под другом */
 .catalog-navigation { width: max-content !important; max-width: calc(100vw - 40px); }
 .catalog-navigation__list { display: block !important; }

@@ -57,6 +57,17 @@ const MERGED_TO_AVTO = [
   "navesy-iz-polikarbonata-pod-avtomobil", "navesy-iz-polikarbonata-pod-avto",
   "navesy-iz-polikarbonata-dlya-dachi-pod-mashinu",
   "garazhi-iz-polikarbonata",
+  "navesy-dlya-dachi/navesy-na-dache-iz-polikarbonata", "navesy-dlya-dachi/navesy-dachnye-iz-polikarbonata",
+  "navesy-dlya-dachi/dachnye-navesy-iz-polikarbonata", "navesy-na-dachu",
+  "navesy-dlya-dachnogo-domika", "navesy-dlya-dachi-iz-polikarbonata",
+  "navesy-dlya-dachi-iz-metalla", "navesy-iz-polikarbonata-dlya-dachi",
+  "navesy-dlya-stola-na-dache", "navesy-ot-dozhdya-dlya-dachi",
+  "navesy-u-dachnogo-domika", "navesy-dlya-drov-na-dachu",
+  "sadovye-navesy", "metallicheskie-navesy-dlya-dachi",
+  "metallicheskie-navesy-besedki-dlya-dachi",
+  "navesy-dlya-terrasy/navesy-", "navesy-iz-polikarbonata-dlya-terrasy",
+  "navesy-dlya-krylca/navesy-", "navesy-dlya-krylca/krylco-",
+  "navesy-dlya-krylca/metallichesk", "drugie/kovanye-navesy-nad-krylcom",
 ];
 
 export default defineConfig({
