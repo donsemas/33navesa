@@ -75,7 +75,7 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !MERGED_TO_AVTO.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });
