@@ -13,12 +13,6 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.nav-mob__bt').click(function() {
-        $('.mob-box').addClass('visible');
-    });
-    $('.close-bt').click(function() {
-        $('.mob-box').removeClass('visible');
-    });
     $('.ctags__all').click(function() {
         $('.ctags ul').toggleClass('visible');
     });
