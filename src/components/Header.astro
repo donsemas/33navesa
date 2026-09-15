@@ -22,6 +22,8 @@
             
             <a class="header__search" href="#search" data-fancybox=""></a>
 
+            <div class="nav-mob__bt"><span></span></div>
+
         </div>
 </header>
 
@@ -70,15 +72,18 @@
     </div>
 </div>
 
-<div class="nav-mob">
-    <div class="container">
-        <div class="nav-mob__bt"><span></span></div>
-    </div>
-</div>
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function () {
   var bt = document.querySelector('.nav-mob__bt');
   var box = document.querySelector('.mob-box');
-  if (bt && box) bt.addEventListener('click', function () { box.classList.toggle('visible'); });
+  if (bt && box) bt.addEventListener('click', function () {
+    var opened = box.classList.toggle('visible');
+    bt.classList.toggle('open', opened);
+    document.body.classList.toggle('menu-open', opened);
+  });
+  var catHead = document.querySelector('.mob-catalog__head');
+  if (catHead) catHead.addEventListener('click', function () {
+    catHead.parentElement.classList.toggle('open');
+  });
 });
 </script>
