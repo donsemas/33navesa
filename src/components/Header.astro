@@ -85,5 +85,18 @@ document.addEventListener('DOMContentLoaded', function () {
   if (catHead) catHead.addEventListener('click', function () {
     catHead.parentElement.classList.toggle('open');
   });
+  /* Фиксированная мобильная шапка: компенсируем её высоту отступом body */
+  function fixHeader() {
+    var h = document.querySelector('header');
+    if (!h) return;
+    if (window.matchMedia('(max-width: 1199px)').matches) {
+      document.body.style.paddingTop = h.offsetHeight + 'px';
+    } else {
+      document.body.style.paddingTop = '';
+    }
+  }
+  fixHeader();
+  window.addEventListener('load', fixHeader);
+  window.addEventListener('resize', fixHeader);
 });
 </script>

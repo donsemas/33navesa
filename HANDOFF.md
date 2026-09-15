@@ -35,6 +35,7 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Дополнительно: липкая шапка `header{position:sticky;top:0}` ≤1199px — крестик не уезжает при скролле
 - Шторка: высота по контенту (height:auto + min-height:0 против min-height:100vh из style.css), max-height:92vh, скругление низа 18px + тень; шрифты меню 19px/подменю 16px
 - overflow-x:hidden ломал sticky шапку → замена на overflow-x:clip через @supports (fallback hidden для старых браузеров)
+- Финал: шапка `position:fixed` ≤1199px (sticky умирал при body.menu-open overflow:hidden), высота компенсируется JS (`fixHeader()` в Header.astro: padding-top body = offsetHeight шапки, пересчёт на load/resize, на десктопе снимается)
 - Локальный preview: http://localhost:4321/ (python http.server 4321, может быть запущен)
 
 ## Следующий шаг
