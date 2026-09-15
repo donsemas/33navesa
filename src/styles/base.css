@@ -171,7 +171,7 @@ img { max-width: 100%; height: auto; }
 .nav-mob__bt { display: none; }
 @media (max-width: 1199px) {
   .nav-mob { display: none !important; }
-  header { position: relative; z-index: 1001; background: #fff; }
+  header { position: sticky !important; top: 0; z-index: 1001; background: #fff; }
   .nav-mob__bt { display: block !important; margin-left: auto !important; margin-right: -10px !important; flex-shrink: 0; height: 40px !important; width: 40px !important; cursor: pointer; position: relative; }
   .nav-mob__bt span, .nav-mob__bt span:before, .nav-mob__bt span:after { background-color: #2d3e53 !important; }
   .nav-mob__bt span:before { top: -10px !important; }
