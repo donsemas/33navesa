@@ -160,6 +160,9 @@ main h1 { font-size: 30px !important; line-height: 1.25 !important; }
 .cat__text h2 { font-size: 26px !important; line-height: 1.3 !important; margin: 32px 0 12px !important; font-weight: 800 !important; }
 .cat__text h2:first-of-type { margin-top: 10px !important; }
 
+/* Подвал вплотную к предыдущей секции — без белой полосы */
+footer { margin-top: 0 !important; }
+
 /* Кнопка в конце текста категории — строго по центру */
 .cat__cta { text-align: center !important; margin: 26px 0 10px !important; }
 .cat__cta .btn { margin: 0 auto; }

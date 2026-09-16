@@ -33,6 +33,9 @@
 - [x] Шапка fixed вместо sticky (sticky ломался при открытом меню из-за body overflow:hidden) + JS-компенсация высоты через padding-top body (15.09.2026)
 - [x] H1 30px / H2 26px в cat__text, FAQ тёмный блок как на /cena/ после карточек (10 хвостов из 101 URL), шов подвала убран (`} />` в index.astro) (16.09.2026)
 - [x] Авто-Faq: 101 хвост → 10 FAQ, якоря #ceny/#polikarbonat/#profnastil/#metal/#odnoskatnye/#dvuhskatnye/#arochnye/#na-dve-mashiny/#na-dachu, FAQ перед H2-текстом (16.09.2026)
+- [x] Дача-FAQ: 8 вопросов из хвостов кластера, тёмный блок после карточек + FAQPage JSON-LD (16.09.2026)
+- [x] Фото в H2/FAQ: дача 3 шт (stol/drova/domik), авто 6 шт (profnastil/metal/arochnye/na-dve-mashiny + 2 в FAQ), alt = заголовки (16.09.2026)
+- [x] Белая полоса подвала: footer margin-top:50px → 0 в base.css (16.09.2026)
 
 ## В работе
 - Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов — демо в dist/demo/
