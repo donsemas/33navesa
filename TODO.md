@@ -31,9 +31,11 @@
 - [x] Шторка меню по высоте контента: шрифты 19/16px, скругление низа + тень, фикс min-height:100vh из style.css (15.09.2026)
 - [x] Липкость шапки починена: overflow-x:hidden → clip (@supports), sticky снова работает (15.09.2026)
 - [x] Шапка fixed вместо sticky (sticky ломался при открытом меню из-за body overflow:hidden) + JS-компенсация высоты через padding-top body (15.09.2026)
+- [x] H1 30px / H2 26px в cat__text, FAQ тёмный блок как на /cena/ после карточек (10 хвостов из 101 URL), шов подвала убран (`} />` в index.astro) (16.09.2026)
+- [x] Авто-Faq: 101 хвост → 10 FAQ, якоря #ceny/#polikarbonat/#profnastil/#metal/#odnoskatnye/#dvuhskatnye/#arochnye/#na-dve-mashiny/#na-dachu, FAQ перед H2-текстом (16.09.2026)
 
 ## В работе
-- Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов (ждёт ревью демо `demo-gorod-podolsk.html`)
+- Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов — демо в dist/demo/
 
 ## Бэклог
 - [ ] Проверить hero-кнопки на iPhone (Safari)

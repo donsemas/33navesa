@@ -38,10 +38,16 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Финал: шапка `position:fixed` ≤1199px (sticky умирал при body.menu-open overflow:hidden), высота компенсируется JS (`fixHeader()` в Header.astro: padding-top body = offsetHeight шапки, пересчёт на load/resize, на десктопе снимается)
 - Локальный preview: http://localhost:4321/ (python http.server 4321, может быть запущен)
 
+## Сессия 16.09.2026 — авто FAQ + типографика + фикс шва
+- Авто: 9 H2 из текста заказчика уже стояли; добавлен FAQ 10 вопросов (101 хвост → FAQ) в стиле /cena/ (тёмный блок #161616, +/×), перенесён сразу после карточек (карточки → FAQ → H2-текст → CTA) — лучше вовлечённость
+- Типографика: main h1 30px, .cat__text h2 26px (фикс, было clamp) — чёткая иерархия; якоря #ceny/#polikarbonat/#profnastil/#metal/#odnoskatnye/#dvuhskatnye/#arochnye/#na-dve-mashiny/#na-dachu объяснены
+- Фикс шва: убран хвост `} />` в index.astro после партнёров — белая полоса между дипломами и подвалом ушла
+- Файлы: navesy-dlya-mashin/index.astro (+faqJson + FAQ-блок + style), base.css (H1/H2), index.astro (шов). Билд 431 стр.
+- Демо: dist/demo/faq-avto.html, dist/demo/demo-avto-final.html
+
 ## Следующий шаг
-1. Ревью демо-лендинга пользователем (`demo-gorod-podolsk.html`, локально, не коммитить)
-2. Дропдаун городов в хедере (клик по «Москва») + мобильная модалка
-3. Шаблон лендинга → раскатка на 35 городов
+1. Города: дропдаун в хедере + 35 лендингов
+2. Следующие FAQ: Бассейн 12 хвостов, Дача
 
 ## Правила обновления
 Перед каждым коммитом: обновить TODO.md + HANDOFF.md, включить в git add.
