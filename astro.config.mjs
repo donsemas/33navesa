@@ -70,6 +70,11 @@ const MERGED_TO_AVTO = [
   "navesy-dlya-krylca/metallichesk", "drugie/kovanye-navesy-nad-krylcom",
 ];
 
+// 34 URL кластера «беседки», слитые редиректом в /katalog/besedki/
+const MERGED_TO_BESEDKI = [
+  "katalog/besedki/besedki-iz-polikarbonata", "katalog/besedki/besedki-iz-metalla",
+];
+
 // 12 URL кластера «бассейн», слитые редиректом в /katalog/navesy/navesy-dlya-bassejna/
 const MERGED_TO_BASSEJNA = [
   "navesy-dlya-bassejna/navesy-u-bassejna",
@@ -91,7 +96,7 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });

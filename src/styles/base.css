@@ -163,8 +163,24 @@ main h1 { font-size: 30px !important; line-height: 1.25 !important; }
 /* Подвал вплотную к предыдущей секции — без белой полосы */
 footer { margin-top: 0 !important; }
 
+/* Полоса на карточках каталога — оранжевая вместо красной */
+.catalog-list__item-title { background: #f26522 !important; }
+.catalog-list__item:hover .catalog-list__item-title { background: #f26522 !important; }
+/* Карточки интентов без рамок — на всех экранах, с тенью и единой высотой фото */
+.catalog-list__item { padding: 0 !important; overflow: hidden; border: none !important; box-shadow: 0 10px 30px rgba(0,0,0,.22) !important; }
+.catalog-list__item:hover { box-shadow: 0 14px 36px rgba(0,0,0,.28) !important; }
+.catalog-list__item-image img { width: 100% !important; aspect-ratio: 8/5; object-fit: cover; }
+
+/* Кнопка «наверх» скрыта на мобильных */
+@media (max-width: 767px) {
+  .btt { display: none !important; }
+  /* Фото в карточках интентов — строго в рамке, не уезжает */
+  .catalog-list__item-image { justify-content: center !important; }
+  .catalog-list__item-image img { width: 100% !important; height: auto !important; aspect-ratio: 8/5; object-fit: cover; }
+}
+
 /* Кнопка в конце текста категории — строго по центру */
-.cat__cta { text-align: center !important; margin: 26px 0 10px !important; }
+.cat__cta { text-align: center !important; margin: 26px 0 36px !important; }
 .cat__cta .btn { margin: 0 auto; }
 /* Подменю каталога — всегда строгий столбик друг под другом */
 .catalog-navigation { width: max-content !important; max-width: calc(100vw - 40px); }
