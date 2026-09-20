@@ -67,7 +67,9 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Файлы: zabory/index.astro, index.astro (главная), zakazat-naves-iz-polikarbonata/index.astro. Билд 431 стр., без ошибок
 - Проверено скриншотами Playwright локально (десктоп: шапка, H1+оффер, карточки; H2+фото)
 - Редирект /sitemap.xml → /sitemap-index.xml (`sitemap-xml` в onreza.rules.toml; в _redirects правило уже было, но Onreza читает только toml)
+- 20.09 вечер: /sitemap.xml в проде всё равно 404 — проверка показала, что edge-правила toml не срабатывают вообще (montazh-2 → 200, кэш-баст не помог). Решение по образцу sitemap_index.xml.ts: новый src/pages/sitemap.xml.ts отдаёт валидный индекс с 200. ВАЖНО: весь onreza.rules.toml под вопросом — редиректы секций (мангалы, козырьки, montazh-2) в проде, вероятно, тоже не работают, проверить отдельно
 - Пустой H1 на /blog/ → «Блог о навесах из поликарбоната: статьи, фото, советы» (проверено в dist: один H1, перед H3)
+- Битые ссылки: `check-links.cjs` нашёл 10 URL → исправлены все (скрипт: 0 битых). Пагинации-призраки: blog/drugie/odnoskatnye/gorodakh — nav удалён целиком; navesy — убраны …/22 (2–21 живые via [page].astro). /portfolio/ → /nashi-raboty/, /zakazat/ → /zakazat-naves-iz-polikarbonata/. maskedinput.js — ложное срабатывание (ссылка в HTML-комменте), dead-коммент удалён из Footer.astro
 
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
