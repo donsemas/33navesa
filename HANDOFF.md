@@ -67,6 +67,7 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Файлы: zabory/index.astro, index.astro (главная), zakazat-naves-iz-polikarbonata/index.astro. Билд 431 стр., без ошибок
 - Проверено скриншотами Playwright локально (десктоп: шапка, H1+оффер, карточки; H2+фото)
 - Редирект /sitemap.xml → /sitemap-index.xml (`sitemap-xml` в onreza.rules.toml; в _redirects правило уже было, но Onreza читает только toml)
+- Пустой H1 на /blog/ → «Блог о навесах из поликарбоната: статьи, фото, советы» (проверено в dist: один H1, перед H3)
 
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
