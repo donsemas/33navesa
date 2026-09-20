@@ -66,6 +66,7 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - 26 редиректов и MERGED_TO_ZABORY в sitemap-фильтре уже были (проверено: хвосты = 0, главная = 1); ссылки главной (6 cat-item) и zakazat-naves (5) → якоря
 - Файлы: zabory/index.astro, index.astro (главная), zakazat-naves-iz-polikarbonata/index.astro. Билд 431 стр., без ошибок
 - Проверено скриншотами Playwright локально (десктоп: шапка, H1+оффер, карточки; H2+фото)
+- Редирект /sitemap.xml → /sitemap-index.xml (`sitemap-xml` в onreza.rules.toml; в _redirects правило уже было, но Onreza читает только toml)
 
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
