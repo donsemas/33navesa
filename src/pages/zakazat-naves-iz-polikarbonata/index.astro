@@ -2,11 +2,13 @@
 import Header from "../../components/Header.astro"
 import Sidebar from "../../components/Sidebar.astro";;
 import Footer from "../../components/Footer.astro";
+import PriceCalc from "../../components/PriceCalc.astro";
 import "../../styles/base.css";
 const title = 'Навесы из поликарбоната в Москве цена на навесы к дому купить по фото';
 const description = '⭐⭐⭐⭐⭐ Изготовление навесов из поликарбоната любой сложности в Москве и Московской области ⭐ Купить навес по каталогу с фото с установкой и монтажом по...';
 const canonical = 'https://33navesa.ru/zakazat-naves-iz-polikarbonata/';
 const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"/zakazat-naves-iz-polikarbonata/","url":"/zakazat-naves-iz-polikarbonata/","name":"Навесы из поликарбоната в Москве цена на навесы к дому купить по фото","isPartOf":{"@id":"/#website"},"datePublished":"2021-08-11T09:48:48+00:00","dateModified":"2026-09-05T12:00:00+00:00","description":"⭐⭐⭐⭐⭐ Изготовление навесов из поликарбоната любой сложности в Москве и Московской области ⭐ Купить навес по каталогу с фото с установкой и монтажом по...","inLanguage":"ru-RU","potentialAction":[{"@type":"ReadAction","target":["/zakazat-naves-iz-polikarbonata/"]}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит навес из поликарбоната под ключ?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от размера, формы и комплектации. Точную смету назовёт замерщик после выезда: замер бесплатный, цену фиксируем в договоре — после этого она не меняется."}},{"@type":"Question","name":"Сколько времени занимает изготовление и монтаж?","acceptedAnswer":{"@type":"Answer","text":"Монтаж занимает 1 день, замерщик выезжает в день обращения. Каркас варим в цеху, на участке только собираем и крепим листы — поэтому быстро и без грязи."}},{"@type":"Question","name":"Какая толщина поликарбоната нужна для навеса?","acceptedAnswer":{"@type":"Answer","text":"Для автомобильных и дачных навесов чаще всего берём сотовый поликарбонат 6 мм. Для больших пролётов и снеговых районов — толще, варианты есть в разделе «Доступная толщина» выше."}},{"@type":"Question","name":"Выдержит ли навес снег зимой?","acceptedAnswer":{"@type":"Answer","text":"Да — при проектировании учитываем ветровую и снеговую нагрузку: шаг ферм, толщину трубы и поликарбоната подбираем под ваш район. Для снежных мест предлагаем усиленные фермы."}},{"@type":"Question","name":"Какая гарантия на навес?","acceptedAnswer":{"@type":"Answer","text":"Гарантия прописывается в договоре. Каркас из профильной трубы с покраской служит от 15 лет, поликарбонат с УФ-защитой — от 10 лет без помутнения."}},{"@type":"Question","name":"Замер платный? Когда приедете?","acceptedAnswer":{"@type":"Answer","text":"Замер бесплатный, специалист выезжает в день обращения с образцами материалов. На месте считает точную смету — цена после этого не меняется."}},{"@type":"Question","name":"Можно ли заказать навес нестандартной формы или цвета?","acceptedAnswer":{"@type":"Answer","text":"Да, делаем навесы любой сложности: арочные, односкатные, примыкающие. Цвет поликарбоната и покраски каркаса выбираете из каталога выше — подберём под дом и забор."}}]}';
 ---
 
 <!DOCTYPE html>
@@ -35,7 +37,9 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
   <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
   <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  <script src="/js/price-calc.js?v=2" defer></script>
   {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
 </head>
 <body>
   <Header />
@@ -43,7 +47,8 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
     <div class="container">
         <div class="row">
             <Sidebar />
-            <main set:html={`
+            <main>
+<div set:html={`
 
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
 	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="post post-page current-item">Навесы из поликарбоната</span><meta property="url" content="/zakazat-naves-iz-polikarbonata/"><meta property="position" content="2"></span></div>
@@ -77,7 +82,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                     <div class="banner__right">
                         <div class="banner__action__text">
                             <div class="banner__action__text__action">АКЦИЯ!!!</div>
-                            <div class="banner__action__text__p">Оформи заявку до конца лета и получи скидку!</div>
+                            <div class="banner__action__text__p">Оформи заявку сегодня и получи скидку!</div>
                             <div class="banner__action__text__img"><img loading="lazy" decoding="async" src="/uploads/2021/08/Discount96.webp" alt=""> </div>
                         </div>
                     </div>
@@ -98,7 +103,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/avtonavesy-p84xfdiu5gll8p9xnmwu56y2jgnfzdgvy26eld3qog.jpg" title="avtonavesy" alt="avtonavesy">								</a>
                   </div>
                   <div class="tovar__button">
-                    <a href="/cena/" role="button">
+                    <a href="#callback" data-fancybox role="button">
 						<span class="button-text">Уточнить цену</span>
 		
 					</a>
@@ -115,7 +120,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/sadovye-navesy-dlja-dachi-p7b4mrnd5jwdn7v2vnzk8yvimwpkmcc0rstn1k9hw0.jpg" title="sadovye-navesy-dlja-dachi" alt="sadovye-navesy-dlja-dachi">								</a>
                 </div>
                 <div class="tovar__button">
-                  <a href="/cena/" role="button">
+                  <a href="#callback" data-fancybox role="button">
                       <span class="button-text">Уточнить цену</span>
       
                   </a>
@@ -132,7 +137,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/navesy-k-terrase-p7b4m8ulcv6n70mdxfv0v3mar7a8ce9e17rxg11dcg.jpg" title="navesy-k-terrase" alt="navesy-k-terrase">								</a>
                 </div>
                 <div class="tovar__button">
-                  <a href="/cena/" role="button">
+                  <a href="#callback" data-fancybox role="button">
                       <span class="button-text">Уточнить цену</span>
       
                   </a>
@@ -149,7 +154,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/navesy-nad-krylcom-vhodnye-p7b4mehmhved4oe70iasa272biifmkvs1zoubot0b4.jpg" title="navesy-nad-krylcom-vhodnye" alt="navesy-nad-krylcom-vhodnye">								</a>
                 </div>
                 <div class="tovar__button">
-                  <a href="/cena/" role="button">
+                  <a href="#callback" data-fancybox role="button">
                       <span class="button-text">Уточнить цену</span>
       
                   </a>
@@ -166,7 +171,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/navesy-shirinoj-10-metrov-p7b4mprorvtszzxt6n6b3zclg4yu6y4k3jio30ca8g.jpg" title="navesy-shirinoj-10-metrov" alt="navesy-shirinoj-10-metrov">								</a>
                 </div>
                 <div class="tovar__button">
-                  <a href="/cena/" role="button">
+                  <a href="#callback" data-fancybox role="button">
                       <span class="button-text">Уточнить цену</span>
       
                   </a>
@@ -183,7 +188,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/navesy-nad-krylcom-iz-metalla-p7b4mehmhved4oe70iasa272biifmkvs1zoubot0b4.jpg" title="navesy-nad-krylcom-iz-metalla" alt="navesy-nad-krylcom-iz-metalla">								</a>
                 </div>
                 <div class="tovar__button">
-                  <a href="/cena/" role="button">
+                  <a href="#callback" data-fancybox role="button">
                       <span class="button-text">Уточнить цену</span>
       
                   </a>
@@ -194,129 +199,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
            </div>  
 </section>
 <!----------------------- Конец карточки-1----------------------->  
-      <!----------------------Table---------------------->
-       <section>
-        <h2 class="table__title">Цены на стандартные навесы из сотового поликарбоната</h2>
-            <div class="div-wrap">
-            <table class="table">
-            <tbody>
-            <tr class="table-head">
-            <th style="text-align: center; color: #ffffff; padding-top: 10px; padding-bottom: 10px;">Размер по стойкам</th>
-            <th style="text-align: center; color: #ffffff; padding-top: 10px; padding-bottom: 10px;">Размер по кровле</th>
-            <th style="text-align: center; color: #ffffff; padding-top: 10px; padding-bottom: 10px;">Площадь по стойкам,м²</th>
-            <th style="text-align: center; color: #ffffff; padding-top: 10px; padding-bottom: 10px;">Полная площадь,м²</th>
-            <th style="text-align: center; color: #ffffff; padding-top: 10px; padding-bottom: 10px;">Стоимость под "ключ", руб</th>
-            </tr>
-            <tr>
-            <td>3,0×6,0</td>
-            <td>3,4×6,3</td>
-            <td>18</td>
-            <td>21,6</td>
-            <td>97 200</td>
-            </tr>
-            <tr>
-            <td>3,0×7,0</td>
-            <td>3,4×7,3</td>
-            <td>21</td>
-            <td>24,82</td>
-            <td>113 400</td>
-            </tr>
-            <tr>
-            <td>3,0×8,0</td>
-            <td>3,4×8,3</td>
-            <td>24</td>
-            <td>28,22</td>
-            <td>129 600</td>
-            </tr>
-            <tr>
-            <td>3,0×9,0</td>
-            <td>3,4×9,3</td>
-            <td>27</td>
-            <td>31,62</td>
-            <td>145 800</td>
-            </tr>
-            <tr>
-            <td>3,0×10</td>
-            <td>3,4×10,3</td>
-            <td>30</td>
-            <td>35,02</td>
-            <td>162 000</td>
-            </tr>
-            <tr>
-            <td>4,0×6,0</td>
-            <td>4,4×6,3</td>
-            <td>24</td>
-            <td>27,72</td>
-            <td>129 600</td>
-            </tr>
-            <tr>
-            <td>4,0×7,0</td>
-            <td>4,4×7,3</td>
-            <td>28</td>
-            <td>32,12</td>
-            <td>151 200</td>
-            </tr>
-            <tr>
-            <td>4,0×8,0</td>
-            <td>4,4×8,3</td>
-            <td>32</td>
-            <td>36,52</td>
-            <td>172 800</td>
-            </tr>
-            <tr>
-            <td>4,0×9,0</td>
-            <td>4,4×9,3</td>
-            <td>36</td>
-            <td>40,92</td>
-            <td>194 400</td>
-            </tr>
-            <tr>
-            <td>4,0×10</td>
-            <td>4,4×10,3</td>
-            <td>40</td>
-            <td>45,32</td>
-            <td>216 000</td>
-            </tr>
-            <tr>
-            <td>5,0×6,0</td>
-            <td>5,4×6,3</td>
-            <td>30</td>
-            <td>34,02</td>
-            <td>162 000</td>
-            </tr>
-            <tr>
-            <td>5,0×7,0</td>
-            <td>5,4×7,3</td>
-            <td>35</td>
-            <td>39,42</td>
-            <td>189 000</td>
-            </tr>
-            <tr>
-            <td>5,0×8,0</td>
-            <td>5,4×8,3</td>
-            <td>40</td>
-            <td>44,82</td>
-            <td>216 000</td>
-            </tr>
-            <tr>
-            <td>5,0×9,0</td>
-            <td>5,4×9,3</td>
-            <td>45</td>
-            <td>50,22</td>
-            <td>238 500</td>
-            </tr>
-            <tr>
-            <td>5,0×10</td>
-            <td>5,4×10,3</td>
-            <td>50</td>
-            <td>55,62</td>
-            <td>270 000</td>
-            </tr>
-            </tbody>
-            </table>
-            </div>
-       </section>
-              <!----------------------Kartochki 2---------------------->
+       <!----------------------Kartochki 2---------------------->
      <section>
         <h2 class="tovar__title">Популярные навесы из поликарбоната</h2>
           <div class="tovar-row"> 
@@ -419,7 +302,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
     <div class="text__block__title">
         <h2>Купить навес из поликарбоната в Москве и Московской области</h2></div>
         <div class="text__block__row">
-            <div class="text__block__p "><p>Мы предлагаем заказать навес у нас, так как специалисты нашей компании имеют огромный практический опыт и навыки в их изготовлении, независимо от сложности конструкции. Наша задача — это создать для вас оптимальный навес для автомобиля, открытых площадок или просто отдыха в максимально кротчайший срок и за разумную цену.</p><p>Навес является довольно сложной конструкцией и потому мы подходим к его созданию с профессионализмом и знанием всех нюансов и деталей этой работы. При их создании, специалистами учитывается ветровая нагрузка, площадь покрываемой территории, воздействие снеговых наметов и многое другое. Чтобы вас не постигла неприятность, по вопросу создания навесов обязательно стоит обращаться к опытным специалистам, которые работают у нас.</p></div>
+            <div class="text__block__p "><p>Мы предлагаем заказать навес у нас, так как специалисты нашей компании имеют огромный практический опыт и навыки в их изготовлении, независимо от сложности конструкции. Наша задача — это создать для вас оптимальный навес для автомобиля, открытых площадок или просто отдыха в максимально кратчайший срок и за разумную цену.</p><p>Навес является довольно сложной конструкцией и потому мы подходим к его созданию с профессионализмом и знанием всех нюансов и деталей этой работы. При их создании, специалистами учитывается ветровая нагрузка, площадь покрываемой территории, воздействие снеговых наметов и многое другое. Чтобы вас не постигла неприятность, по вопросу создания навесов обязательно стоит обращаться к опытным специалистам, которые работают у нас.</p></div>
         </div>   
         <div class="text__block__title__2">
             <h2>Преимущества использования поликарбоната</h2></div>
@@ -468,15 +351,15 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
             </div>
             <!--таблица-->
             <div class="title__mini_price">
-                <h2 class="elementor-heading-title">Стоимость</h2>		</div>
+                <h3 class="elementor-heading-title">Комплектация</h3>		</div>
             <ul class="elementor-price-list">
 
                 <li class="elementor-price-list-item">
                     <div class="elementor-price-list-text">
                         <div class="elementor-price-list-header">
                             <span class="elementor-price-list-title">Каркас + сотовый<br> поликарбонат 6 мм</span>
-                            <span class="elementor-price-list-separator"></span>
-                            <span class="elementor-price-list-price">.......... 94 000 руб.</span>
+                            
+                            
                         </div>
                     </div>
                 </li>
@@ -485,8 +368,8 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                             <div class="elementor-price-list-header">
                                 <span class="elementor-price-list-title">Каркас + монолитный<br> поликарбонат 4
                                     мм</span>
-                                <span class="elementor-price-list-separator"></span>
-                                <span class="elementor-price-list-price">  ...... 103 000 руб.</span>
+                                
+                                
                             </div>
                         </div>
                     </a></li>
@@ -592,15 +475,15 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
          </div>
          <!--таблица-->
          <div class="title__mini_price">
-             <h2 class="elementor-heading-title">Стоимость</h2>		</div>
+             <h3 class="elementor-heading-title">Комплектация</h3>		</div>
          <ul class="elementor-price-list">
 
              <li class="elementor-price-list-item">
                  <div class="elementor-price-list-text">
                      <div class="elementor-price-list-header">
                          <span class="elementor-price-list-title">Каркас + сотовый<br> поликарбонат 6 мм</span>
-                         <span class="elementor-price-list-separator"></span>
-                         <span class="elementor-price-list-price">.......... 94 000 руб.</span>
+                         
+                         
                      </div>
                  </div>
              </li>
@@ -609,8 +492,8 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                          <div class="elementor-price-list-header">
                              <span class="elementor-price-list-title">Каркас + монолитный<br> поликарбонат 4
                                  мм</span>
-                             <span class="elementor-price-list-separator"></span>
-                             <span class="elementor-price-list-price">  ...... 103 000 руб.</span>
+                             
+                             
                          </div>
                      </div>
                  </a></li>
@@ -678,7 +561,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
         <!----------------Блок №3 со слайдером и прайсом----------------->
     <section>
     <div class="slider__block__title">
- <h2>Небольшой автомобильный арочный навес  из поликарбоната</h2></div>
+ <h2>Небольшой автомобильный односкатный навес из поликарбоната</h2></div>
     <div class="slider__block">
      <div class="slider__block__left">
          <div class="container">
@@ -716,15 +599,15 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
          </div>
          <!--таблица-->
          <div class="title__mini_price">
-             <h2 class="elementor-heading-title">Стоимость</h2>		</div>
+             <h3 class="elementor-heading-title">Комплектация</h3>		</div>
          <ul class="elementor-price-list">
 
              <li class="elementor-price-list-item">
                  <div class="elementor-price-list-text">
                      <div class="elementor-price-list-header">
                          <span class="elementor-price-list-title">Каркас + сотовый<br> поликарбонат 6 мм</span>
-                         <span class="elementor-price-list-separator"></span>
-                         <span class="elementor-price-list-price">.......... 94 000 руб.</span>
+                         
+                         
                      </div>
                  </div>
              </li>
@@ -733,8 +616,8 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                          <div class="elementor-price-list-header">
                              <span class="elementor-price-list-title">Каркас + монолитный<br> поликарбонат 4
                                  мм</span>
-                             <span class="elementor-price-list-separator"></span>
-                             <span class="elementor-price-list-price">  ...... 103 000 руб.</span>
+                             
+                             
                          </div>
                      </div>
                  </a></li>
@@ -853,37 +736,37 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/ondulin-min.jpg" alt="Ондулин">
-            <div class="podpis">Ондулин <br>от 4 400 руб/м2</div>
+            <div class="podpis">Ондулин <br>цена по запросу</div>
         </div> 
      </div>
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/profnastil-min.jpg" alt="Профнастил">
-            <div class="podpis">Профнастил <br>от 4 500 руб/м2</div>
+            <div class="podpis">Профнастил <br>цена по запросу</div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/meagkaea-krovlea-min.jpg" alt="Мягкая кровля">
-            <div class="podpis">Мягкая кровля <br>от 6 550 руб/м2</div>
+            <div class="podpis">Мягкая кровля <br>цена по запросу</div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/metallocerepita-min.jpg" alt="Металлочерепица">
-            <div class="podpis">Металлочерепица <br>от 4 500 руб/м2</div>
+            <div class="podpis">Металлочерепица <br>цена по запросу</div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/sotovii-polikarbonat-min.jpg" alt="Сотовый поликарбонат">
-            <div class="podpis">Сотовый поликарбонат <br>от 4 200 руб/м2</div>
+            <div class="podpis">Сотовый поликарбонат <br>цена по запросу</div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="slide__column"> 
             <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/1/monolitnii-polikarbonat-min.jpg" alt="Монолитный поликарбонат">
-            <div class="podpis">Монолитный поликарбонат <br>от 6 550 руб/м2</div>
+            <div class="podpis">Монолитный поликарбонат <br>цена по запросу</div>
         </div>
       </div>
     </div>
@@ -1110,7 +993,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
   <!----------------Конец Слайдер поликарбонат ---------------->
 <!----------------------- Карточки-навесы из поликарбона----------------------->         
 <section>
-         <h2 class="tovar__title">Каталог навесов из поликарбоната</h2>
+         <h2 class="tovar__title">Комплектации навесов: сборно-болтовая, «Стандарт», «Премиум»</h2>
            <div class="tovar-row"> 
            <div class="tovar_oblozka">
               <div class="tovar__card">
@@ -1121,7 +1004,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/polikor/sbor.png" title="Сборно-болтовой" alt="Сборно-болтовой">
                   </div>
                   <div class="tovar__button">
-                    <a href="/cena/" role="button">
+                    <a href="#callback" data-fancybox role="button">
 						<span class="button-text">Уточнить цену</span>
 					</a>
                   </div>
@@ -1136,7 +1019,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/polikor/standart-pat.png" title="Стандарт" alt="Сборно-болтовой">
                   </div>
                   <div class="tovar__button">
-                    <a href="/cena/" role="button">
+                    <a href="#callback" data-fancybox role="button">
 						<span class="button-text">Уточнить цену</span>
 					</a>
                   </div>
@@ -1151,7 +1034,7 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
                         <img loading="lazy" decoding="async" src="/wp-content/themes/naves/img/polikor/premium.png" title="Премиум" alt="Премиум">
                   </div>
                   <div class="tovar__button">
-                    <a href="/cena/" role="button">
+                    <a href="#callback" data-fancybox role="button">
 						<span class="button-text">Уточнить цену</span>
 					</a>
                   </div>
@@ -1211,392 +1094,9 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
 </div>       
        </section>
        <!----------------------Конец Table Цены на навесы из сотового поликарбоната---------------------->
-      <!--------------------Блок Табы ------------------------->
-<section>
-    <div class="h2__tabs"><h2>Цены на навесы <sup>₽</sup></h2></div> 
-     <div class="ac__row">
-       <div class="ac__col">
-         <h2>Открыть <b>для просмотра</b></h2>
-         <div class="tabs">
-           <div class="tab">
-             <input type="checkbox" id="chck1">
-             <label class="tab-label" for="chck1">Навес из поликарбоната  шириной 3 метра</label>
-             <div class="tab-content">
-                <div class="div-wrap">
-                    <table class="table">
-                    <tbody>
-                    <tr>
-                    <td colspan="8">Ширина 3 м.</td>
-                    </tr>
-                    <tr>
-                    <td>№</td>
-                    <td>размер навеса по кровле</td>
-                    <td>размер по крайним стойкам</td>
-                    <td>Каркас, руб.</td>
-                    <td>C поликарбонатом 8 мм, руб.</td>
-                    <td>монтирование</td>
-                    <td>Транспортировка по столице, далее 50 руб. за километр</td>
-                    <td>Сборка + поставка</td>
-                    </tr>
-                    <tr>
-                    <td>1</td>
-                    <td>3,5 x 2,1</td>
-                    <td>3,0 x 2,0</td>
-                    <td>53 687</td>
-                    <td>42 600</td>
-                    <td>7 700</td>
-                    <td>2 500</td>
-                    <td>75 429</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>3,5 x 4,2</td>
-                    <td>3,0 x 4,0</td>
-                    <td>69 744</td>
-                    <td>58 800</td>
-                    <td>9 300</td>
-                    <td>2 500</td>
-                    <td>100 857</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>3,5 x 6,3</td>
-                    <td>3,0 x 6,0</td>
-                    <td>86 716</td>
-                    <td>76 050</td>
-                    <td>10 900</td>
-                    <td>2 500</td>
-                    <td>127 786</td>
-                    </tr>
-                    <tr>
-                    <td>4</td>
-                    <td>3,5 x 8,4</td>
-                    <td>3,0 x 8,0</td>
-                    <td>103 801</td>
-                    <td>97 700</td>
-                    <td>12 600</td>
-                    <td>2 500</td>
-                    <td>161 143</td>
-                    </tr>
-                    <tr>
-                    <td>5</td>
-                    <td>3,5 x 10,5</td>
-                    <td>3,0 x 10,0</td>
-                    <td>131 944</td>
-                    <td>118 300</td>
-                    <td>14 100</td>
-                    <td>2 500</td>
-                    <td>192 714</td>
-                    </tr>
-                    <tr>
-                    <td>6</td>
-                    <td>3,5 x 12,6</td>
-                    <td>3,0 x 12,0</td>
-                    <td>156 387</td>
-                    <td>140 300</td>
-                    <td>15 800</td>
-                    <td>2 500</td>
-                    <td>226 571</td>
-                    </tr>
-                    <tr>
-                    <td class="left-button" style="padding-top: 20px;" colspan="8">
-                    <div class="left-1-button jet-popup-target elementor-element elementor-element-15c5f65 elementor-button-success elementor-align-center elementor-widget elementor-widget-button jet-popup-attach-event-inited jet-popup-cursor-pointer" data-id="15c5f65" data-element_type="widget" data-widget_type="button.default">
-                    <div class="elementor-widget-container">
-                    <div class="elementor-button-wrapper"><a id="popup-rascet" class="elementor-button-link elementor-button elementor-size-sm" role="button" href="#popup-rascet">
-                    <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-text">Оставить заявку на расчет</span>
-                    </span>
-                    </a></div>
-                    </div>
-                    </div></td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-             </div>
-           </div>
-           <div class="tab">
-             <input type="checkbox" id="chck2">
-             <label class="tab-label" for="chck2">Навес из поликарбоната  шириной 4 метра</label>
-             <div class="tab-content">
-                <div class="div-wrap">
-                    <table class="table">
-                    <tbody>
-                    <tr>
-                    <td colspan="8">Ширина 4 м.</td>
-                    </tr>
-                    <tr>
-                    <td>№</td>
-                    <td>Параметры по кровле</td>
-                    <td>По крайним стойкам</td>
-                    <td>Каркас, руб.</td>
-                    <td>С поликарбонатом 8 мм, руб.</td>
-                    <td>монтаж</td>
-                    <td>доставка, далее 50 руб километр.</td>
-                    <td>Установка + перевозка в пределах города</td>
-                    </tr>
-                    <tr>
-                    <td>13</td>
-                    <td>4,5 х 2,1</td>
-                    <td>4.0 х 2,0</td>
-                    <td>61 487</td>
-                    <td>50 000</td>
-                    <td>8 100</td>
-                    <td>2 500</td>
-                    <td>86 571</td>
-                    </tr>
-                    <tr>
-                    <td>14</td>
-                    <td>4,5 Х 4,2</td>
-                    <td>4,0 х 4,0</td>
-                    <td>76 001</td>
-                    <td>65 200</td>
-                    <td>10 100</td>
-                    <td>2 500</td>
-                    <td>111 143</td>
-                    </tr>
-                    <tr>
-                    <td>15</td>
-                    <td>4,5 х 6,3</td>
-                    <td>4,0 х 6,0</td>
-                    <td>102 701</td>
-                    <td>89 900</td>
-                    <td>12 100</td>
-                    <td>2 500</td>
-                    <td>149 286</td>
-                    </tr>
-                    <tr>
-                    <td>16</td>
-                    <td>4,5 х 8,4</td>
-                    <td>4,0 х 8,0</td>
-                    <td>133 544</td>
-                    <td>117 700</td>
-                    <td>13 300</td>
-                    <td>2 500</td>
-                    <td>190 714</td>
-                    </tr>
-                    <tr>
-                    <td>17</td>
-                    <td>4,5 х 10,5</td>
-                    <td>4,0 х 10,0</td>
-                    <td>158 816</td>
-                    <td>140 200</td>
-                    <td>16 200</td>
-                    <td>2 500</td>
-                    <td>227 000</td>
-                    </tr>
-                    <tr>
-                    <td>18</td>
-                    <td>4,5 х 12,0</td>
-                    <td>4,0 х 12,0</td>
-                    <td>185 230</td>
-                    <td>164 700</td>
-                    <td>18 200</td>
-                    <td>2 500</td>
-                    <td>264 857</td>
-                    </tr>
-                    <tr>
-                    <td class="left-button" style="padding-top: 20px;" colspan="8">
-                    <div class="left-1-button jet-popup-target elementor-element elementor-element-15c5f65 elementor-button-success elementor-align-center elementor-widget elementor-widget-button jet-popup-attach-event-inited jet-popup-cursor-pointer" data-id="15c5f65" data-element_type="widget" data-widget_type="button.default">
-                    <div class="elementor-widget-container">
-                    <div class="elementor-button-wrapper"><a id="popup-rascet" class="elementor-button-link elementor-button elementor-size-sm" role="button" href="#popup-rascet">
-                    <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-text">Оставить заявку на расчет</span>
-                    </span>
-                    </a></div>
-                    </div>
-                    </div></td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-             </div>
-           </div>
-           <div class="tab">
-            <input type="checkbox" id="chck3">
-            <label class="tab-label" for="chck3">Навес из поликарбоната  шириной 5 метров</label>
-            <div class="tab-content">
-                <div class="div-wrap">
-                    <table class="table">
-                    <tbody>
-                    <tr>
-                    <td colspan="8">Ширина 5 м.</td>
-                    </tr>
-                    <tr>
-                    <td>№</td>
-                    <td>размер навеса по кровле</td>
-                    <td>размер по крайним стойкам</td>
-                    <td>Каркас, руб.</td>
-                    <td>стоимость навеса с поликарбонатом 8 мм</td>
-                    <td>монтирование</td>
-                    <td>Транспортировка по столице, далее 50 руб. за километр</td>
-                    <td>Сборка + поставка</td>
-                    </tr>
-                    <tr>
-                    <td>25</td>
-                    <td>5,5 x 2,1</td>
-                    <td>5,0 x 2,0</td>
-                    <td>67 844</td>
-                    <td>59 200</td>
-                    <td>8 500</td>
-                    <td>2 500</td>
-                    <td>100 286</td>
-                    </tr>
-                    <tr>
-                    <td>26</td>
-                    <td>5,5 x 4,2</td>
-                    <td>5,0 x 4,0</td>
-                    <td>102 859</td>
-                    <td>85 500</td>
-                    <td>10 900</td>
-                    <td>2 500</td>
-                    <td>141 286</td>
-                    </tr>
-                    <tr>
-                    <td>27</td>
-                    <td>5,5 x 6,3</td>
-                    <td>5,0 x 6,0</td>
-                    <td>129 144</td>
-                    <td>109 800</td>
-                    <td>13 400</td>
-                    <td>2 500</td>
-                    <td>179 571</td>
-                    </tr>
-                    <tr>
-                    <td>28</td>
-                    <td>5,5 x 8,4</td>
-                    <td>5,0 x 8,0</td>
-                    <td>163 387</td>
-                    <td>139 600</td>
-                    <td>16 000</td>
-                    <td>2 500</td>
-                    <td>225 857</td>
-                    </tr>
-                    <tr>
-                    <td>29</td>
-                    <td>5,5 x 10,5</td>
-                    <td>5,0 x 10,0</td>
-                    <td>196 901</td>
-                    <td>170 000</td>
-                    <td>18 300</td>
-                    <td>2 500</td>
-                    <td>272 571</td>
-                    </tr>
-                    <tr>
-                    <td>30</td>
-                    <td>5,5 x 12,6</td>
-                    <td>5,0 x 12,0</td>
-                    <td>232 859</td>
-                    <td>200 400</td>
-                    <td>20 700</td>
-                    <td>2 500</td>
-                    <td>319 429</td>
-                    </tr>
-                    <tr>
-                    <td class="left-button" style="padding-top: 20px;" colspan="8">
-                    <div class="left-1-button jet-popup-target elementor-element elementor-element-15c5f65 elementor-button-success elementor-align-center elementor-widget elementor-widget-button jet-popup-attach-event-inited jet-popup-cursor-pointer" data-id="15c5f65" data-element_type="widget" data-widget_type="button.default">
-                    <div class="elementor-widget-container">
-                    <div class="elementor-button-wrapper"><a id="popup-rascet" class="elementor-button-link elementor-button elementor-size-sm" role="button" href="#popup-rascet">
-                    <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-text">Оставить заявку на расчет</span>
-                    </span>
-                    </a></div>
-                    </div>
-                    </div></td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-            </div>
-          </div>
-          <div class="tab">
-            <input type="checkbox" id="chck4">
-            <label class="tab-label" for="chck4">Дополнительные услуги</label>
-            <div class="tab-content">
-                <div class="div-wrap">
-                    <table class="table">
-                    <tbody>
-                    <tr>
-                    <td colspan="3"><b>Фундамент</b></td>
-                    </tr>
-                    <tr>
-                    <td>Монтаж на пятки (монтируется на бетонную площадку)</td>
-                    <td>шт.</td>
-                    <td>входит в стоимость</td>
-                    </tr>
-                    <tr>
-                    <td>Забутовка стоек (выполняется при монтаже навеса в грунт)</td>
-                    <td>шт.</td>
-                    <td>500 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Боковая стенка из поликарбоната 8 мм.</td>
-                    <td>м.кв.</td>
-                    <td>1 500 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Снегозадержание с монтажом</td>
-                    <td>м.п.</td>
-                    <td>1 400 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Водосток с монтажом</td>
-                    <td>м.п.</td>
-                    <td>1 400 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Бетонирование стоек</td>
-                    <td>шт.</td>
-                    <td>600 руб.</td>
-                    </tr>
-                    <tr>
-                    <td colspan="3"><b>Доставка</b></td>
-                    </tr>
-                    <tr>
-                    <td>Доставка в пределах столицы</td>
-                    <td></td>
-                    <td>2 500 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Доставка в область</td>
-                    <td>километр</td>
-                    <td>50 руб.</td>
-                    </tr>
-                    <tr>
-                    <td colspan="3"><b>Замер</b></td>
-                    </tr>
-                    <tr>
-                    <td>Замер до 50 км. От МКАД</td>
-                    <td></td>
-                    <td>2 000 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Замер от 50 до 100 км. от МКАД</td>
-                    <td></td>
-                    <td>2 500 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Замер от 100 до 150 от МКАД</td>
-                    <td></td>
-                    <td>3 000 руб.</td>
-                    </tr>
-                    <tr>
-                    <td>Для индивидуальных навесов из поликарбоната стоимость замера возвращается при заключении договора</td>
-                    <td></td>
-                    <td></td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    Применяются разные в длину и ширину листы поликарбоната, в зависимости какие необходимы к конкретным условиям. Произведем для Вас разные укрытия: 4х7, 4х5, 4х6, 80х80 и т.д. с разной глубиной слоя основания и высота труб до 5м.
-                    
-                    </div>
-            </div>
-          </div>
-         </div>
-       </div>
-     </div>
-    </section>
-     <!-------------------Конец блока Табы ------------------->
+`} />
+<PriceCalc />
+<div set:html={`
 
     <!----------------Блока с мини текстом----------------->
     <section>
@@ -1655,8 +1155,32 @@ const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@
 <div class="otzivy-grid">
 <div class="otziv-card"><p>Заказывали навес 4х8 примыкающий к дому со стороны дороги и остались очень довольны. Все сделали как мы и хотели, даже лучше, и раньше срока на 2 дня. Цена ниже чем у конкурентов. Особую благодарность хочу выразить Дмитрию инженеру — предложил нам хороший вариант. Работы выполнили во время, как указано в договоре. Буду советовать вас всем, кто спросит. Спасибо большое.</p><div class="otziv-author">Черный<span>г. Москва</span></div></div>
 <div class="otziv-card"><p>Делали мне в загородный дом кровлю-арку из сотового поликарбоната цвета янтаря. Замерщик сразу приехал, всё измерил — итого на 144 тысячи вышло с работой. Сделано профессионально, аккуратно и чисто — практически сразу поставил машину во дворе дома.</p><div class="otziv-author">Артур<span>г. Лобня</span></div></div>
+<div class="otziv-card"><p>Заказывали навес над крыльцом из монолитного поликарбоната. Сделали за два дня: первый — каркас и покраска, второй — монтаж листов. Всё чётко по договору, мусора после себя не оставили.</p><div class="otziv-author">Марина<span>г. Мытищи</span></div></div>
+<div class="otziv-card"><p>Нужен был навес для бассейна 5х10. Посчитали три варианта комплектации, выбрали «Стандарт». Пережил зиму со снегом без единого прогиба — теперь советую соседям по посёлку.</p><div class="otziv-author">Сергей<span>г. Домодедово</span></div></div>
+<div class="otziv-card"><p>Делали примыкающий навес к дому под две машины. Инженер предложил усиленные фермы из-за снеговой нагрузки — не пожалели. Цена вышла как в смете, без доплат по ходу работ.</p><div class="otziv-author">Ольга<span>г. Подольск</span></div></div>
 </div>
 </section>
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:28px 0 8px;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price details{border-top:1px solid rgba(255,255,255,.18);}
+.faq-price details:last-of-type{border-bottom:1px solid rgba(255,255,255,.18);}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы про навесы из поликарбоната</h2>
+<details open><summary>Сколько стоит навес из поликарбоната под ключ?</summary><p>Цена зависит от размера, формы и комплектации. Точную смету назовёт замерщик после выезда: замер бесплатный, цену фиксируем в договоре — после этого она не меняется.</p></details>
+<details><summary>Сколько времени занимает изготовление и монтаж?</summary><p>Монтаж занимает 1 день, замерщик выезжает в день обращения. Каркас варим в цеху, на участке только собираем и крепим листы — поэтому быстро и без грязи.</p></details>
+<details><summary>Какая толщина поликарбоната нужна для навеса?</summary><p>Для автомобильных и дачных навесов чаще всего берём сотовый поликарбонат 6 мм. Для больших пролётов и снеговых районов — толще, варианты есть в разделе «Доступная толщина» выше.</p></details>
+<details><summary>Выдержит ли навес снег зимой?</summary><p>Да — при проектировании учитываем ветровую и снеговую нагрузку: шаг ферм, толщину трубы и поликарбоната подбираем под ваш район. Для снежных мест предлагаем усиленные фермы.</p></details>
+<details><summary>Какая гарантия на навес?</summary><p>Гарантия прописывается в договоре. Каркас из профильной трубы с покраской служит от 15 лет, поликарбонат с УФ-защитой — от 10 лет без помутнения.</p></details>
+<details><summary>Замер платный? Когда приедете?</summary><p>Замер бесплатный, специалист выезжает в день обращения с образцами материалов. На месте считает точную смету — цена после этого не меняется.</p></details>
+<details><summary>Можно ли заказать навес нестандартной формы или цвета?</summary><p>Да, делаем навесы любой сложности: арочные, односкатные, примыкающие. Цвет поликарбоната и покраски каркаса выбираете из каталога выше — подберём под дом и забор.</p></details>
+</div>
 <!----------------Плитка тегов ---------------->
 <style>
 @media screen and (max-width: 600px) {
