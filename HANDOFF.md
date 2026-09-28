@@ -79,6 +79,8 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Файлы: zakazat-naves-iz-polikarbonata/index.astro, base.css. Билд 431 стр. Демо: dist/demo/zakazat-3col.html (НЕ коммитить)
 - /cena/ — топ-1 по Метрике 23.09: добавлен CTA «Получить точную смету — 0 ₽» после FAQ (контекстный текст вместо очередного «Вызвать замерщика»)
 - 24–28.09 переезд Onreza → Timeweb: деплой 65da33dc упал с EDGE_ROLLOUT_DESIRED_FENCED (сборка ок, ворота раскатки), кредит 250₽ съеден (233₽, прогноз 357₽) — причина блока; edge-правила toml в проде вообще не исполняются (проверено). Решение: Timeweb виртуал. хостинг, public/.htaccess в репо (70×301 + HTTPS/без-www), архив site.zip в Temp/opencode (НЕ коммитить), залит в public_html вручную; техдомен ca509135.tw1.ru отдавал пустоту — отдано в бесплатный «Перенести к нам»
+- 28.09 финал: файлы в public_html, 33navesa.ru привязан, SSL Let's Encrypt выпущен; петли 301 из-за HTTPS-блока .htaccess (диагн. по access_log: Guzzle/PetalBot в цикле) — блок убран и в панели, и в репо; http→https дожать тумблером панели
+- 28.09 автодеплой: .github/workflows/deploy.yml — push в main → npm ci/build → FTP-Deploy-Action в public_html (без clean-slate, demo исключена); секреты FTP_HOST/USER/PASS в GitHub
 
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
