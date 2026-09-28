@@ -48,7 +48,7 @@
 - [x] /cena/ (топ-1 по Метрике): CTA «Получить точную смету — 0 ₽» после FAQ (23.09.2026)
 - [x] Переезд на Timeweb: формы — Web3Forms (сервер не нужен), public/.htaccess в репозитории (70 правил + HTTPS, в dist при каждой сборке), демо-архив для заливки (НЕ коммитить)
 - [x] Timeweb: сайт залит в public_html, 33navesa.ru привязан, SSL выпущен; HTTPS-блок убран из .htaccess (петля https->https за прокси, диагн. по access_log) — редирект на HTTPS тумблером панели
-- [x] Автодеплой на Timeweb: .github/workflows/deploy.yml (push main → build → FTP в public_html, секреты FTP_HOST/USER/PASS)
+- [x] Автодеплой на Timeweb: .github/workflows/deploy.yml (push main → build → FTP в public_html, секреты FTP_HOST/USER/PASS); plain FTP вис на MKD → переключено на FTPS, первый зелёный прогон 36 мин, дальше по диффам
 
 ## В работе
 - Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов — демо в dist/demo/
