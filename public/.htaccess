@@ -5,9 +5,9 @@
 RewriteEngine On
 
 # HTTPS + без www (каноника: https://33navesa.ru)
-# Если на хостинге закольцует редирект — убрать этот блок, включить редирект тумблером в панели.
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# ВНИМАНИЕ: блок HTTPS-редиректа убран — за прокси Timeweb %{HTTPS} всегда off,
+# правило закольцовывало https->https (диагностировано по access_log 28.09.2026).
+# Редирект на HTTPS включать тумблером в панели, и только ПОСЛЕ выпуска сертификата.
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
