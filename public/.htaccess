@@ -1,0 +1,98 @@
+# 33navesa — Apache-редиректы (Timeweb; Onreza этот файл игнорирует).
+# Источники: public/_redirects (Netlify-формат) + onreza.rules.toml.
+# Проверка: curl -s -o /dev/null -w "%{http_code} %{redirect_url}\n" https://33navesa.ru/zabory/
+
+RewriteEngine On
+
+# HTTPS + без www (каноника: https://33navesa.ru)
+# Если на хостинге закольцует редирект — убрать этот блок, включить редирект тумблером в панели.
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# Дальше — только если нет такого файла/папки (статика важнее)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --- Точные 301 (старый WordPress / дубли) ---
+Redirect 301 /404/ /
+Redirect 301 /dlya-dachi/ /katalog/navesy/navesy-dlya-dachi/
+Redirect 301 /kak-zakazat/na-konstrukcii-e/ /kak-zakazat/
+Redirect 301 /kontakty/dscn0079/ /kontakty/
+Redirect 301 /kozyrki/ /katalog/navesy/navesy-dlya-dachi/
+Redirect 301 /navesy/ /katalog/navesy/
+Redirect 301 /zabory/ /katalog/zabory/
+Redirect 301 /partneram/ /
+Redirect 301 /uslugi/demontazh-2/ /uslugi/demontazh/
+Redirect 301 /uslugi/montazh-2/ /uslugi/montazh/
+Redirect 301 /uslugi/zamena/ /uslugi/zamena-polikarbonata/
+Redirect 301 /uslugi/zamershiki/ /uslugi/vyezd-zamershhika/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/ /
+Redirect 301 /katalog/navesy/navesy-dlya-mangala/ /katalog/navesy/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata-dlya-mangala/ /katalog/navesy/
+Redirect 301 /katalog/navesy/metallicheskie-navesy/metallicheskie-navesy-dlya-mangala/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/metallicheskie-navesy/metallicheskie-navesy-dlya-dachi-dlya-mangala/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/kovanye-navesy-dlya-mangala/ /katalog/navesy/drugie/
+Redirect 301 /katalog/besedki/besedki-iz-metalla/metallicheskie-besedki-s-mangalom/ /katalog/besedki/besedki-iz-metalla/
+Redirect 301 /katalog/besedki/besedki-iz-metalla/besedki-dlya-mangala-iz-metalla/ /katalog/besedki/besedki-iz-metalla/
+
+# --- Вложенности navesy-iz-polikarbonata (точные, цели отличаются от глоба) ---
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-dlya-avto/ /katalog/navesy/navesy-iz-polikarbonata-dlya-avto/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-dlya-avtomobilej/ /katalog/navesy/navesy-iz-polikarbonata-dlya-avtomobilej/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-dlya-barbekju/ /katalog/navesy/navesy-dlya-dachi/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-dlya-mangala/ /katalog/navesy/navesy-dlya-dachi/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-dlya-terrasy/ /katalog/navesy/navesy-iz-polikarbonata-dlya-terrasy/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-pod-avto/ /katalog/navesy/navesy-iz-polikarbonata-pod-avto/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-pod-avtomobil/ /katalog/navesy/navesy-iz-polikarbonata-pod-avtomobil/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-vo-dvore/ /katalog/navesy/navesy-iz-polikarbonata-vo-dvore/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma/ /katalog/navesy/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-polikarbonat/ /katalog/navesy/navesy-polikarbonat/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-s-polikarbonata/ /katalog/navesy/navesy-s-polikarbonata/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/polikarbonatnye-navesy/ /katalog/navesy/polikarbonatnye-navesy/
+
+# --- Аттачменты блога и портфолио -> разделы ---
+Redirect 301 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata2/ /blog/
+Redirect 301 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata3/ /blog/
+Redirect 301 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata4/ /blog/
+Redirect 301 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata5/ /blog/
+Redirect 301 /blog/naves-dlya-balkona/attachment/naves-dlya-balkona/ /blog/
+Redirect 301 /blog/naves-dlya-balkona/attachment/naves-dlya-balkona3/ /blog/
+Redirect 301 /blog/naves-dlya-balkona/attachment/naves-dlya-balkona4/ /blog/
+Redirect 301 /blog/naves-dlya-balkona/attachment/naves-dlya-balkona5/ /blog/
+Redirect 301 /blog/navesy-s-narusheniem-snipa/attachment/brak1-jpg/ /blog/
+Redirect 301 /blog/navesy-s-narusheniem-snipa/attachment/brak1/ /blog/
+Redirect 301 /blog/odnoskatnyj-naves-iz-polikarbonata-chto-v-nem-osobennogo/attachment/naves-odnoskatniy2/ /blog/
+Redirect 301 /blog/polikarbonat-dlya-navesov-kak-vybrat/attachment/polikarboat-sot/ /blog/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata1/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata12/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata15/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata17/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata2/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata20/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata21/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata24/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata25/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata28/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata29/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata33/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata34/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata38/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata40/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata41/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata43/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata44/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata45/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata46/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata49/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata50/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata53/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata54/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata58/ /nashi-raboty/
+Redirect 301 /nashi-raboty/naves-iz-polikarbonata60/ /nashi-raboty/
+
+# --- Глобы (после точных) ---
+RedirectMatch 301 ^/katalog/kozyrki/.*$ /katalog/navesy/navesy-dlya-dachi/
+RedirectMatch 301 ^/katalog/navesy/navesy-iz-polikarbonata/.+$ /katalog/navesy/
+RedirectMatch 301 ^/katalog/navesy/navesy-dlya-mangala/.+$ /katalog/navesy/
