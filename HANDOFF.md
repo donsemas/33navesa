@@ -82,6 +82,12 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - 28.09 финал: файлы в public_html, 33navesa.ru привязан, SSL Let's Encrypt выпущен; петли 301 из-за HTTPS-блока .htaccess (диагн. по access_log: Guzzle/PetalBot в цикле) — блок убран и в панели, и в репо; http→https дожать тумблером панели
 - 28.09 автодеплой: .github/workflows/deploy.yml — push в main → npm ci/build → FTP-Deploy-Action в public_html (без clean-slate, demo исключена); секреты FTP_HOST/USER/PASS в GitHub
 
+## Сессия — «для дома» (по скелету топ-5 конкурентов)
+- Новая главная /katalog/navesy/navesy-dlya-doma/: H1+оффер, 8 карточек→якоря, FAQ 8 + FAQPage JSON-LD, 7 H2 (#ceny/#vo-dvore/#dlya-avto/#pristennye/#nad-krylcom/#terrasa/#montazh), CTA; canonical/og на себя
+- 3 хвоста → Redirect.astro на главную (vo-dvore, vo-dvore-chastnogo-doma, drugie/vo-dvore-iz-polikarbonata); MERGED_TO_DOMA в sitemap-фильтре (хвосты=0, главная=1); 9 ссылок из polikarbonatnye/s-polikarbonata/polикарбонат → якоря
+- Билд 432 стр., check-links 0 битых; дачные «домики» (dachnogo-domika, u-dachnogo-domika) оставлены на dachi
+- Файлы: navesy-dlya-doma/index.astro (новый), 3 редиректа, astro.config.mjs, 3 перелинковки
+
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
 2. Конструкции / Материалы — после (риски пересечений)

@@ -1,0 +1,243 @@
+---
+import Header from "../../../../components/Header.astro"
+import Sidebar from "../../../../components/Sidebar.astro";;
+import Footer from "../../../../components/Footer.astro";
+import "../../../../styles/base.css";
+const title = 'Навесы для дома из поликарбоната купить с установкой под ключ в Москве и МО';
+const description = '⭐⭐⭐⭐⭐ Компания Донгруп 33 навеса. Навесы для частного дома и дачи из поликарбоната под ключ: во двор, для авто, над крыльцом, примыкающие к дому. Замер бесплатно, монтаж за 1–2 дня.';
+const canonical = 'https://33navesa.ru/katalog/navesy/navesy-dlya-doma/';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит навес для дома под ключ?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре."}},{"@type":"Question","name":"Какой навес лучше для частного дома — примыкающий или отдельный?","acceptedAnswer":{"@type":"Answer","text":"Примыкающий дешевле и ставится быстрее: одна сторона крепится к стене дома. Отдельный — если нужно укрытие в глубине двора, например для двух машин. Оба делаем из поликарбоната на металлическом каркасе."}},{"@type":"Question","name":"Можно ли сделать навес для авто во дворе дома?","acceptedAnswer":{"@type":"Answer","text":"Да, это самый частый заказ: навес для одной или двух машин во дворе частного дома. Ставим за 1–2 дня, поликарбонат защищает от града, снега и выгорания салона."}},{"@type":"Question","name":"Делаете ли навесы над крыльцом?","acceptedAnswer":{"@type":"Answer","text":"Да — козырьки и навесы над крыльцом и входом из поликарбоната и металла: от компактных козырьков до больших крылец с бетонированием стоек."}},{"@type":"Question","name":"Подойдёт ли поликарбонат для террасы у дома?","acceptedAnswer":{"@type":"Answer","text":"Да, поликарбонат 8–10 мм — стандартный вариант для террасы: светлый, тихий в дождь, не боится снега. Делаем примыкающие к дому и отдельно стоящие террасы."}},{"@type":"Question","name":"Выдержит ли навес снег зимой?","acceptedAnswer":{"@type":"Answer","text":"Да — при проектировании учитываем снеговую нагрузку Подмосковья: шаг ферм, сечение трубы и толщину поликарбоната подбираем под ваш участок."}},{"@type":"Question","name":"Сколько времени занимает монтаж навеса для дома?","acceptedAnswer":{"@type":"Answer","text":"Обычный навес — 1–2 дня: установка и бетонирование стоек, каркас, листы. Большие дворовые комплексы — до недели, срок называем в смете."}},{"@type":"Question","name":"Выезжаете ли на замер за город?","acceptedAnswer":{"@type":"Answer","text":"Да, замер по Москве и Московской области бесплатный при договоре. Доставка до 50 км от МКАД бесплатно."}}]}';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"/katalog/navesy/navesy-dlya-doma/","url":"/katalog/navesy/navesy-dlya-doma/","name":"Навесы для дома из поликарбоната купить с установкой под ключ в Москве и МО","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/katalog/navesy/navesy-dlya-doma/#primaryimage"},"image":{"@id":"/katalog/navesy/navesy-dlya-doma/#primaryimage"},"thumbnailUrl":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp","description":"Компания Донгруп 33 навеса. Навесы для частного дома и дачи из поликарбоната под ключ: во двор, для авто, над крыльцом, примыкающие к дому. Замер бесплатно, монтаж за 1–2 дня.","breadcrumb":{"@id":"/katalog/navesy/navesy-dlya-doma/#breadcrumb"},"inLanguage":"ru-RU"},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/katalog/navesy/navesy-dlya-doma/#primaryimage","url":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp","contentUrl":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp","width":800,"height":500},{"@type":"BreadcrumbList","@id":"/katalog/navesy/navesy-dlya-doma/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Каталог","item":"/katalog/"},{"@type":"ListItem","position":2,"name":"Навесы","item":"/katalog/navesy/"},{"@type":"ListItem","position":3,"name":"Для дома"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Навесы для дома из поликарбоната купить с установкой под ключ в Москве и МО">
+    <meta property="og:description" content="Навесы для частного дома и дачи из поликарбоната под ключ: во двор, для авто, над крыльцом, примыкающие к дому. Замер бесплатно, монтаж за 1–2 дня.">
+    <meta property="og:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp" />
+<meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp" />
+    <meta property="og:url" content="https://33navesa.ru/katalog/navesy/navesy-dlya-doma/">
+    <meta property="og:site_name" content="Фабрика навесов">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
+</head>
+<body>
+  <Header />
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <Sidebar currentCategory="dom" />
+            <main set:html={`
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Каталог." href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Навесы." href="/katalog/navesy/" class="taxonomy category"><span property="name">Навесы</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive taxonomy category current-item">Для дома</span><meta property="url" content="/katalog/navesy/navesy-dlya-doma/"><meta property="position" content="4"></span></div>                
+
+                <h1>Навесы для дома из поликарбоната</h1>
+                <p class="cat__offer">Купить навес для частного дома и дачи под ключ — замер <strong>бесплатно</strong>, монтаж за 1–2 дня, гарантия 10 лет.</p>
+
+                                <div class="products__items row">
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Навесы из поликарбоната во дворе</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из поликарбоната во дворе" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 400w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 768w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Навесы во дворе частного дома</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы во дворе частного дома" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp 400w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp 768w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Навесы во дворе из поликарбоната</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore"><img width="400" height="250" src="/uploads/2021/05/navesy-vo-dvore-iz-polikarbonata.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы во дворе из поликарбоната" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-vo-dvore-iz-polikarbonata.webp 400w, /uploads/2021/05/navesy-vo-dvore-iz-polikarbonata.webp 768w, /uploads/2021/05/navesy-vo-dvore-iz-polikarbonata.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#vo-dvore">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#dlya-avto">Навесы для авто во дворе дома</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#dlya-avto"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-dlja-mashiny.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы для авто во дворе дома" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-dlja-mashiny.webp 400w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-dlja-mashiny.webp 768w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-dlja-mashiny.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#dlya-avto">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye">Примыкающие навесы к дому</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye"><img width="400" height="250" src="/uploads/2021/05/navesy-pristennye.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Примыкающие навесы к дому" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-pristennye.webp 400w, /uploads/2021/05/navesy-pristennye.webp 768w, /uploads/2021/05/navesy-pristennye.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye">Односкатные пристенные навесы</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye"><img width="400" height="250" src="/uploads/2021/05/navesy-pristennye-odnoskatnye.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Односкатные пристенные навесы" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-pristennye-odnoskatnye.webp 400w, /uploads/2021/05/navesy-pristennye-odnoskatnye.webp 768w, /uploads/2021/05/navesy-pristennye-odnoskatnye.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#pristennye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom">Навесы над крыльцом дома</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom"><img width="400" height="250" src="/uploads/2021/05/naves-nad-krylcom.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы над крыльцом дома" decoding="async" loading="lazy" srcset="/uploads/2021/05/naves-nad-krylcom.webp 400w, /uploads/2021/05/naves-nad-krylcom.webp 768w, /uploads/2021/05/navesy-nad-krylcom.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom">Крыльцо с навесом из поликарбоната</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom"><img width="400" height="250" src="/uploads/2021/05/krylco-s-navesom-iz-polikarbonata.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Крыльцо с навесом из поликарбоната" decoding="async" loading="lazy" srcset="/uploads/2021/05/krylco-s-navesom-iz-polikarbonata.webp 400w, /uploads/2021/05/krylco-s-navesom-iz-polikarbonata.webp 768w, /uploads/2021/05/krylco-s-navesom-iz-polikarbonata.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/navesy-dlya-doma/#nad-krylcom">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                </div>
+
+                
+	
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:28px 0 8px;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы про навесы для дома</h2>
+<details open><summary>Сколько стоит навес для дома под ключ?</summary><p>Цена зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре.</p></details>
+<details><summary>Какой навес лучше для частного дома — примыкающий или отдельный?</summary><p>Примыкающий дешевле и ставится быстрее: одна сторона крепится к стене дома. Отдельный — если нужно укрытие в глубине двора, например для двух машин. Оба делаем из поликарбоната на металлическом каркасе.</p></details>
+<details><summary>Можно ли сделать навес для авто во дворе дома?</summary><p>Да, это самый частый заказ: навес для одной или двух машин во дворе частного дома. Ставим за 1–2 дня, поликарбонат защищает от града, снега и выгорания салона.</p></details>
+<details><summary>Делаете ли навесы над крыльцом?</summary><p>Да — козырьки и навесы над крыльцом и входом из поликарбоната и металла: от компактных козырьков до больших крылец с бетонированием стоек.</p></details>
+<details><summary>Подойдёт ли поликарбонат для террасы у дома?</summary><p>Да, поликарбонат 8–10 мм — стандартный вариант для террасы: светлый, тихий в дождь, не боится снега. Делаем примыкающие к дому и отдельно стоящие террасы.</p></details>
+<details><summary>Выдержит ли навес снег зимой?</summary><p>Да — при проектировании учитываем снеговую нагрузку Подмосковья: шаг ферм, сечение трубы и толщину поликарбоната подбираем под ваш участок.</p></details>
+<details><summary>Сколько времени занимает монтаж навеса для дома?</summary><p>Обычный навес — 1–2 дня: установка и бетонирование стоек, каркас, листы. Большие дворовые комплексы — до недели, срок называем в смете.</p></details>
+<details><summary>Выезжаете ли на замер за город?</summary><p>Да, замер по Москве и Московской области бесплатный при договоре. Доставка до 50 км от МКАД бесплатно.</p></details>
+</div>
+                                <div class="cat__text">
+                    <p>Навесы для дома можно купить на сайте 33navesa.ru по доступной цене | Предлагаем большой ассортимент металлических навесов, навесов и беседок из поликарбоната | Работаем по Москве и всем городам Московской области | Звоните с Пн по Вс с 9:00 до 18:00″</p>
+<h2 id="ceny">Цены на навесы для дома из поликарбоната</h2>
+<p>Стоимость навеса для дома под ключ зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре, монтаж и бетонирование стоек уже включены.</p>
+<h2 id="vo-dvore">Навесы во дворе частного дома</h2>
+<p>Навес во дворе частного дома — укрытие для авто, зоны отдыха или хоздвора: светлый поликарбонат 8–10 мм на каркасе из профильной трубы. Не затеняет участок, служит от 15 лет.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma.webp" alt="Навесы во дворе частного дома"></p>
+<h2 id="dlya-avto">Навесы для авто во дворе дома</h2>
+<p>Навес для авто во дворе дома — самый частый заказ: одна или две машины под крышей из поликарбоната. Защита от града, снега и выгорания, монтаж за 1–2 дня.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore-dlja-mashiny.webp" alt="Навесы для авто во дворе дома"></p>
+<h2 id="pristennye">Примыкающие навесы к дому</h2>
+<p>Примыкающий навес к дому — одна сторона крепится к стене, стоек меньше, цена ниже. Односкатные пристенные модели — ходовой вариант для двора и парковки у дома.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-pristennye.webp" alt="Примыкающие навесы к дому"></p>
+<h2 id="nad-krylcom">Навесы над крыльцом дома</h2>
+<p>Навес над крыльцом дома — козырёк или полноценное крыльцо с навесом из поликарбоната: защита входа от дождя и наледи, бетонирование стоек для больших крылец.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/naves-nad-krylcom.webp" alt="Навесы над крыльцом дома"></p>
+<h2 id="terrasa">Навесы для террасы у дома</h2>
+<p>Навес для террасы у дома из поликарбоната 8–10 мм — светлый и тихий в дождь. Примыкающие к дому и отдельно стоящие варианты, подбор цвета под крышу дома.</p>
+<h2 id="montazh">Монтаж навеса для дома под ключ</h2>
+<p>Монтаж навеса для дома под ключ за 1–2 дня: установка и бетонирование стоек, каркас из профильной трубы, листы поликарбоната 8–10 мм. Замер и смета — бесплатно.</p>
+<p class="cat__cta"><a href="#callback" data-fancybox class="btn">Вызвать замерщика — 0 ₽</a></p>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+</body>
+</html>

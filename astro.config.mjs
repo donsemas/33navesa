@@ -75,6 +75,19 @@ const MERGED_TO_BESEDKI = [
   "katalog/besedki/besedki-iz-polikarbonata", "katalog/besedki/besedki-iz-metalla",
 ];
 
+// 3 URL кластера «дом», слитые редиректом в /katalog/navesy/navesy-dlya-doma/
+const MERGED_TO_DOMA = [
+  "navesy-iz-polikarbonata-vo-dvore", "navesy-iz-polikarbonata-vo-dvore-chastnogo-doma",
+  "drugie/navesy-vo-dvore-iz-polikarbonata",
+];
+
+// 31 URL кластера «заборы», слитые редиректом в /katalog/zabory/
+const MERGED_TO_ZABORY = [
+  "katalog/zabory/kombinirovannie-zabory", "katalog/zabory/kovannie-zabori",
+  "katalog/zabory/metallicheskie-zabory", "katalog/zabory/svarnye-zabory",
+  "katalog/zabory/zabori-dlya-dachi", "katalog/zabory/zabory-iz-polikarbonata",
+];
+
 // 12 URL кластера «бассейн», слитые редиректом в /katalog/navesy/navesy-dlya-bassejna/
 const MERGED_TO_BASSEJNA = [
   "navesy-dlya-bassejna/navesy-u-bassejna",
@@ -96,7 +109,7 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });
