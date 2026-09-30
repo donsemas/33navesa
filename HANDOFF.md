@@ -88,6 +88,11 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Билд 432 стр., check-links 0 битых; дачные «домики» (dachnogo-domika, u-dachnogo-domika) оставлены на dachi
 - Файлы: navesy-dlya-doma/index.astro (новый), 3 редиректа, astro.config.mjs, 3 перелинковки
 
+## Сессия — «балкон» (каннибализация 3 дублей)
+- Главная /katalog/navesy/navesy-dlya-balkona/ усилена: H1+оффер, 3 карточки→якоря, FAQ 7 + FAQPage JSON-LD, 5 H2 (#ceny/#nad-balkonom/#iz-polikarbonata/#dlya-balkona/#montazh), CTA
+- 3 хвоста (wordCount 44) → Redirect.astro на главную; MERGED_TO_BALKONA в sitemap-фильтре (хвосты=0, главная=1); входящих извне не было
+- Билд 432 стр., check-links 0 битых. Демо: dist/demo/balkon.html (НЕ коммитить)
+
 ## Следующий шаг
 1. Города: дропдаун в хедере + 35 лендингов
 2. Конструкции / Материалы — после (риски пересечений)
