@@ -16,6 +16,9 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Своя страница 404
+ErrorDocument 404 /404.html
+
 # --- Точные 301 (старый WordPress / дубли) ---
 Redirect 301 /404/ /
 Redirect 301 /dlya-dachi/ /katalog/navesy/navesy-dlya-dachi/

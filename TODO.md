@@ -53,6 +53,7 @@
 - [x] Балкон: главная усилена (H1+оффер, 3 карточки→якоря, FAQ 7 + JSON-LD, 5 H2, CTA), 3 хвоста → Redirect, MERGED_TO_BALKONA в sitemap-фильтре
 - [x] Семантика из Вебмастера: research/semantic-core-runs/33navesa-2026-10/ (clusters/top/gaps/zero-ctr/url-map/roadmap); сниппет /cena/ под zero-CTR (title 64, desc 130)
 - [x] Внешняя ссылка roofor.ru → /naves-dlya-avtomobilya/ (404): 301 на авто-главную
+- [x] Своя 404: индустриальный дизайн, большая кнопка на главную, быстрые ссылки; ErrorDocument в .htaccess
 
 ## В работе
 - Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов — демо в dist/demo/
