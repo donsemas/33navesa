@@ -52,6 +52,7 @@
 - [x] Для дома: новая главная navesy-dlya-doma (H1+оффер, 8 карточек→якоря, FAQ 8 + JSON-LD, 7 H2, CTA), 3 хвоста (vo-dvore ×2 + drugie) → Redirect, MERGED_TO_DOMA в sitemap-фильтре, 9 ссылок → якоря
 - [x] Балкон: главная усилена (H1+оффер, 3 карточки→якоря, FAQ 7 + JSON-LD, 5 H2, CTA), 3 хвоста → Redirect, MERGED_TO_BALKONA в sitemap-фильтре
 - [x] Семантика из Вебмастера: research/semantic-core-runs/33navesa-2026-10/ (clusters/top/gaps/zero-ctr/url-map/roadmap); сниппет /cena/ под zero-CTR (title 64, desc 130)
+- [x] Внешняя ссылка roofor.ru → /naves-dlya-avtomobilya/ (404): 301 на авто-главную
 
 ## В работе
 - Города: дропдаун в хедере (клик по «Москва») + шаблон лендинга на 35 городов — демо в dist/demo/
