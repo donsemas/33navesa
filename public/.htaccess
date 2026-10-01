@@ -23,6 +23,7 @@ Redirect 301 /kak-zakazat/na-konstrukcii-e/ /kak-zakazat/
 Redirect 301 /kontakty/dscn0079/ /kontakty/
 Redirect 301 /kozyrki/ /katalog/navesy/navesy-dlya-dachi/
 Redirect 301 /navesy/ /katalog/navesy/
+Redirect 301 /naves-dlya-avtomobilya/ /katalog/navesy/navesy-dlya-mashin/
 Redirect 301 /zabory/ /katalog/zabory/
 Redirect 301 /partneram/ /
 Redirect 301 /uslugi/demontazh-2/ /uslugi/demontazh/
