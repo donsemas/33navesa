@@ -119,4 +119,5 @@ Redirect 301 /katalog/navesy/polikarbonatnye-navesy/ /zakazat-naves-iz-polikarbo
 # --- Глобы (после точных) ---
 RedirectMatch 301 ^/katalog/kozyrki/.*$ /katalog/navesy/navesy-dlya-dachi/
 RedirectMatch 301 ^/katalog/navesy/navesy-iz-polikarbonata/.+$ /zakazat-naves-iz-polikarbonata/
+RedirectMatch 301 ^/katalog/navesy/page/.+$ /katalog/navesy/
 RedirectMatch 301 ^/katalog/navesy/navesy-dlya-mangala/.+$ /katalog/navesy/
