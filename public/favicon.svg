@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="26" fill="#F26522"/>
+  <path d="M84 22c14-6 26-2 30 8-8 8-22 8-30-8z" fill="#7AB929"/>
+  <path d="M84 22c6 8 14 12 24 10" stroke="#4E7A1E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="58" y="88" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="900" fill="#ffffff" text-anchor="middle">33</text>
+</svg>
