@@ -238,3 +238,49 @@ footer { margin-top: 0 !important; }
   header .header__phone { margin-right: auto !important; }
   header .nav-mob__bt { margin-left: 0 !important; }
 }
+
+/* Беседки: H1 в одну строку на десктопе, аккуратные цитаты и фото */
+.besedka-page { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #1E2A32; }
+.besedka-page h1 { font-size: clamp(28px, 4vw, 38px) !important; line-height: 1.1 !important; letter-spacing: -.02em; text-wrap: balance; color: #1E2A32; margin: 14px 0 20px !important; }
+.besedka-page h2 { font-size: 22px !important; line-height: 1.25 !important; letter-spacing: -.01em; text-wrap: balance; color: #1E2A32; margin: 32px 0 12px !important; }
+.besedka-page p, .besedka-page li { font-size: 17px; line-height: 1.6; text-wrap: pretty; color: #1E2A32; }
+/* Подписи под фото как в демо: <p><em> только с подписью */
+.besedka-page p:has(> em:only-child) { font-size: 13.5px; color: #5B6572; margin: 8px 0 20px; }
+@media (min-width: 961px) {
+  .besedka-page h1 { white-space: nowrap; }
+}
+.besedka-page blockquote { margin: 20px 0 !important; }
+.besedka-note { background: #F5F6F3; border: 1px solid #E4E7E0; border-radius: 12px; padding: 16px 18px; margin: 20px 0; }
+.besedka-note strong { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: #3F6118; margin-bottom: 6px; }
+.besedka-note span { font-size: 15.5px; line-height: 1.6; }
+.besedka-page p img { width: 100% !important; max-width: 100% !important; border-radius: 12px; outline: 1px solid rgb(0 0 0 / .10); outline-offset: -1px; }
+/* Беседки как в демо: карточки видов, сравнение, таблица, CTA */
+.besedka-types { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.besedka-types > div { background: #fff; border: 1px solid #E4E7E0; border-radius: 12px; padding: 16px; box-shadow: 0 1px 2px rgb(30 42 50/.06), 0 4px 16px -4px rgb(30 42 50/.10); }
+.besedka-types h3 { margin: 0 0 6px !important; font-size: 16px !important; line-height: 1.4 !important; text-transform: none !important; text-align: left !important; }
+.besedka-types p { margin: 0 !important; color: #3A4753; }
+.besedka-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.besedka-vs > div { border: 1px solid #E4E7E0; border-radius: 12px; padding: 16px; }
+.besedka-vs h3 { margin: 0 0 8px !important; font-size: 15px !important; line-height: 1.4 !important; text-transform: none !important; text-align: left !important; }
+.besedka-vs ul { margin: 0 !important; padding-left: 18px; color: #3A4753; }
+.besedka-specs { width: 100%; border-collapse: collapse; margin: 16px 0; }
+.besedka-specs th, .besedka-specs td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #E4E7E0; font-size: 14px; }
+.besedka-specs th { color: #5B6572; font-weight: 600; font-size: 13px; }
+.besedka-specs td:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.besedka-cta { background: #23301A; color: #fff; border-radius: 16px; padding: 24px; margin: 28px 0; }
+.besedka-cta h2 { color: #fff !important; margin: 0 0 8px !important; }
+.besedka-cta p { color: #D9E2CC; margin: 0 0 16px !important; }
+.besedka-cta p:last-child { margin-bottom: 0 !important; }
+.besedka-cta .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 12px 20px; border-radius: 10px; background: #F26522; color: #fff !important; font-weight: 700; font-size: 15px; text-decoration: none; transition-property: transform, background-color; transition-duration: 150ms; }
+.besedka-cta .btn:active { transform: scale(.96); }
+.besedka-cta .btn:hover { background: #D9551B; color: #fff !important; }
+.besedka-cta .btn-green { background: #EFF3E8; color: #3F6118 !important; margin-left: 10px; }
+.besedka-cta .btn-green:hover { background: #E3EAD3; }
+/* Сайдбар без эмодзи: SVG-иконки в цвет текста */
+.conv-link svg { flex: none; }
+.conv-trust div { display: flex; gap: 10px; align-items: flex-start; }
+.conv-trust svg { flex: none; margin-top: 2px; }
+@media (max-width: 560px) {
+  .besedka-types, .besedka-vs { grid-template-columns: 1fr; }
+  .besedka-cta .btn-green { margin-left: 0; margin-top: 10px; }
+}
