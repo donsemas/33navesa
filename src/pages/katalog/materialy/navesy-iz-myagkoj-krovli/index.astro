@@ -1,0 +1,164 @@
+---
+import Header from "../../../../components/Header.astro"
+import Sidebar from "../../../../components/Sidebar.astro";;
+import Footer from "../../../../components/Footer.astro";
+import "../../../../styles/base.css";
+const title = 'Навесы из мягкой кровли купить под ключ — цена в Москве и МО';
+const description = 'Тихие навесы из мягкой кровли под ключ: арочные, для авто и дачи. Гибкая черепица не шумит в дождь. Замер 0 ₽, монтаж 1–2 дня, гарантия 10 лет.';
+const canonical = 'https://33navesa.ru/katalog/materialy/navesy-iz-myagkoj-krovli/';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит навес из мягкой кровли под ключ?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре."}},{"@type":"Question","name":"Мягкая кровля правда тише поликарбоната в дождь?","acceptedAnswer":{"@type":"Answer","text":"Да, это главный плюс: гибкая черепица лежит на сплошной обрешётке и почти не шумит — в отличие от поликарбоната и профнастила. Поэтому мягкую кровлю рекомендуют для навесов у дома и над зоной отдыха."}},{"@type":"Question","name":"Какие формы навесов делают из мягкой кровли?","acceptedAnswer":{"@type":"Answer","text":"Арочные, односкатные, двускатные и с плоской кровлей — гибкая черепица ложится на любую форму. Подберём форму под ваш дом и участок."}},{"@type":"Question","name":"Выдержит ли такой навес снег зимой?","acceptedAnswer":{"@type":"Answer","text":"Да — сплошная обрешётка плюс фермы с шагом под снеговую нагрузку Подмосковья. Конструкцию рассчитываем, сечение трубы и шаг ферм подбираем под ваш район."}},{"@type":"Question","name":"Сколько служит гибкая черепица на навесе?","acceptedAnswer":{"@type":"Answer","text":"От 20 лет: не гниёт, не ржавеет, не выцветает. Производители дают длительную гарантию на саму черепицу, мы добавляем гарантию на монтаж."}},{"@type":"Question","name":"Подойдёт ли мягкая кровля для навеса у дома?","acceptedAnswer":{"@type":"Answer","text":"Да, это лучший вариант визуально: навес выглядит как продолжение крыши дома. Подберём цвет черепицы под вашу кровлю."}},{"@type":"Question","name":"Сколько времени занимает монтаж?","acceptedAnswer":{"@type":"Answer","text":"Обычный навес — 1–2 дня: стойки, каркас, обрешётка, черепица. Большие комплексы — до недели, срок называем в смете."}},{"@type":"Question","name":"Замер платный?","acceptedAnswer":{"@type":"Answer","text":"Нет, замер по Москве и Московской области бесплатный. Специалист приезжает с образцами черепицы, считает точную смету на месте."}}]}';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/","url":"/katalog/materialy/navesy-iz-myagkoj-krovli/","name":"Навесы из мягкой кровли купить под ключ — цена в Москве и МО","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/#primaryimage"},"image":{"@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/#primaryimage"},"thumbnailUrl":"/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp","description":"Тихие навесы из мягкой кровли под ключ: арочные, для авто и дачи. Гибкая черепица не шумит в дождь. Замер 0 ₽, монтаж 1–2 дня.","breadcrumb":{"@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/#breadcrumb"},"inLanguage":"ru-RU"},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/#primaryimage","url":"/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp","contentUrl":"/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp","width":800,"height":500},{"@type":"BreadcrumbList","@id":"/katalog/materialy/navesy-iz-myagkoj-krovli/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Каталог","item":"/katalog/"},{"@type":"ListItem","position":2,"name":"Материалы","item":"/katalog/materialy/"},{"@type":"ListItem","position":3,"name":"Из мягкой кровли"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Навесы из мягкой кровли купить под ключ — цена в Москве и МО">
+    <meta property="og:description" content="Тихие навесы из мягкой кровли под ключ: арочные, для авто и дачи. Гибкая черепица не шумит в дождь. Замер 0 ₽, монтаж 1–2 дня.">
+    <meta property="og:image" content="https://33navesa.ru/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" />
+<meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://33navesa.ru/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" />
+    <meta property="og:url" content="https://33navesa.ru/katalog/materialy/navesy-iz-myagkoj-krovli/">
+    <meta property="og:site_name" content="Фабрика навесов">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
+</head>
+<body>
+  <Header />
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <Sidebar currentCategory="materialy" />
+            <main set:html={`
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Каталог." href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Материалы." href="/katalog/materialy/" class="taxonomy category"><span property="name">Материалы</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive taxonomy category current-item">Из мягкой кровли</span><meta property="url" content="/katalog/materialy/navesy-iz-myagkoj-krovli/"><meta property="position" content="4"></span></div>                
+
+                <h1>Навесы из мягкой кровли</h1>
+                <p class="cat__offer">Тихое покрытие, вид как у крыши дома — замер <strong>бесплатно</strong>, монтаж за 1–2 дня, гарантия 10 лет.</p>
+
+                                <div class="products__items row mat-grid">
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#arochnye">Арочные навесы из мягкой кровли</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#arochnye"><img width="400" height="250" src="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Арочные навесы из мягкой кровли" decoding="async" loading="lazy" srcset="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 400w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 768w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#arochnye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-avto">Навесы из мягкой кровли для авто</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-avto"><img width="400" height="250" src="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из мягкой кровли для авто" decoding="async" loading="lazy" srcset="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 400w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 768w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-avto">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-dachi">Навесы из мягкой кровли для дачи</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-dachi"><img width="400" height="250" src="/uploads/2021/05/navesy-s-ploskoj-krovlej.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из мягкой кровли для дачи" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-s-ploskoj-krovlej.webp 400w, /uploads/2021/05/navesy-s-ploskoj-krovlej.webp 768w, /uploads/2021/05/navesy-s-ploskoj-krovlej.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#dlya-dachi">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#ploskie">Навесы с плоской кровлей</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#ploskie"><img width="400" height="250" src="/uploads/2021/05/navesy-s-ploskoj-krovlej.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы с плоской кровлей" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-s-ploskoj-krovlej.webp 400w, /uploads/2021/05/navesy-s-ploskoj-krovlej.webp 768w, /uploads/2021/05/navesy-s-ploskoj-krovlej.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/#ploskie">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:28px 0 8px;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы про навесы из мягкой кровли</h2>
+<details open><summary>Сколько стоит навес из мягкой кровли под ключ?</summary><p>Цена зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре.</p></details>
+<details><summary>Мягкая кровля правда тише поликарбоната в дождь?</summary><p>Да, это главный плюс: гибкая черепица лежит на сплошной обрешётке и почти не шумит — в отличие от поликарбоната и профнастила. Поэтому мягкую кровлю рекомендуют для навесов у дома и над зоной отдыха.</p></details>
+<details><summary>Какие формы навесов делают из мягкой кровли?</summary><p>Арочные, односкатные, двускатные и с плоской кровлей — гибкая черепица ложится на любую форму. Подберём форму под ваш дом и участок.</p></details>
+<details><summary>Выдержит ли такой навес снег зимой?</summary><p>Да — сплошная обрешётка плюс фермы с шагом под снеговую нагрузку Подмосковья. Конструкцию рассчитываем, сечение трубы и шаг ферм подбираем под ваш район.</p></details>
+<details><summary>Сколько служит гибкая черепица на навесе?</summary><p>От 20 лет: не гниёт, не ржавеет, не выцветает. Производители дают длительную гарантию на саму черепицу, мы добавляем гарантию на монтаж.</p></details>
+<details><summary>Подойдёт ли мягкая кровля для навеса у дома?</summary><p>Да, это лучший вариант визуально: навес выглядит как продолжение крыши дома. Подберём цвет черепицы под вашу кровлю.</p></details>
+<details><summary>Сколько времени занимает монтаж?</summary><p>Обычный навес — 1–2 дня: стойки, каркас, обрешётка, черепица. Большие комплексы — до недели, срок называем в смете.</p></details>
+<details><summary>Замер платный?</summary><p>Нет, замер по Москве и Московской области бесплатный. Специалист приезжает с образцами черепицы, считает точную смету на месте.</p></details>
+</div>
+                                <div class="cat__text">
+                    <p>Навесы из мягкой кровли можно купить на сайте 33navesa.ru под ключ | Гибкая черепица: тихо, красиво, от 20 лет службы | Работаем по Москве и всем городам Московской области</p>
+<h2 id="ceny">Цены на навесы из мягкой кровли</h2>
+<p>Стоимость навеса из мягкой кровли под ключ зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре.</p>
+<h2 id="arochnye">Арочные навесы из мягкой кровли</h2>
+<p>Арочный навес из мягкой кровли — самый востребованный вариант: гнутый каркас, гибкая черепица повторяет изгиб, смотрится как малая архитектурная форма. Для авто, двора и зоны отдыха.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" alt="Арочные навесы из мягкой кровли"></p>
+<h2 id="dlya-avto">Навесы из мягкой кровли для авто</h2>
+<p>Навес для машины из мягкой кровли — тихий и солидный: не гремит в дождь, защищает от града и снега. Одно- и двускатные модели на одну или две машины.</p>
+<h2 id="dlya-dachi">Навесы из мягкой кровли для дачи</h2>
+<p>Навес из мягкой кровли для дачи — над крыльцом, террасой или зоной барбекю. Цвет черепицы подбираем под крышу дома, выглядит единым ансамблем.</p>
+<h2 id="ploskie">Навесы с плоской кровлей</h2>
+<p>Навес с плоской кровлей из мягкой черепицы — строгая геометрия для современных домов. Сплошная обрешётка держит снег, вода уходит по скрытому уклону.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-s-ploskoj-krovlej.webp" alt="Навесы с плоской кровлей"></p>
+<h2 id="montazh">Монтаж навеса из мягкой кровли под ключ</h2>
+<p>Монтаж за 1–2 дня: стойки с бетонированием, каркас из профильной трубы, сплошная обрешётка, укладка гибкой черепицы. Замер и смета — бесплатно.</p>
+<p class="cat__cta"><a href="#callback" data-fancybox class="btn">Вызвать замерщика — 0 ₽</a></p>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+</body>
+</html>

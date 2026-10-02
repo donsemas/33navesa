@@ -33,7 +33,7 @@ Redirect 301 /uslugi/demontazh-2/ /uslugi/demontazh/
 Redirect 301 /uslugi/montazh-2/ /uslugi/montazh/
 Redirect 301 /uslugi/zamena/ /uslugi/zamena-polikarbonata/
 Redirect 301 /uslugi/zamershiki/ /uslugi/vyezd-zamershhika/
-Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/ /
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/ /zakazat-naves-iz-polikarbonata/
 Redirect 301 /katalog/navesy/navesy-dlya-mangala/ /katalog/navesy/
 Redirect 301 /katalog/navesy/navesy-iz-polikarbonata-dlya-mangala/ /katalog/navesy/
 Redirect 301 /katalog/navesy/metallicheskie-navesy/metallicheskie-navesy-dlya-mangala/ /katalog/navesy/metallicheskie-navesy/
@@ -52,9 +52,9 @@ Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-pod
 Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-pod-avtomobil/ /katalog/navesy/navesy-iz-polikarbonata-pod-avtomobil/
 Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-vo-dvore/ /katalog/navesy/navesy-iz-polikarbonata-vo-dvore/
 Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma/ /katalog/navesy/navesy-iz-polikarbonata-vo-dvore-chastnogo-doma/
-Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-polikarbonat/ /katalog/navesy/navesy-polikarbonat/
-Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-s-polikarbonata/ /katalog/navesy/navesy-s-polikarbonata/
-Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/polikarbonatnye-navesy/ /katalog/navesy/polikarbonatnye-navesy/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-polikarbonat/ /zakazat-naves-iz-polikarbonata/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/navesy-s-polikarbonata/ /zakazat-naves-iz-polikarbonata/
+Redirect 301 /katalog/navesy/navesy-iz-polikarbonata/polikarbonatnye-navesy/ /zakazat-naves-iz-polikarbonata/
 
 # --- Аттачменты блога и портфолио -> разделы ---
 Redirect 301 /blog/besedki-iz-polikarbonata/attachment/besedki-iz-polikarbonata2/ /blog/
@@ -96,7 +96,27 @@ Redirect 301 /nashi-raboty/naves-iz-polikarbonata54/ /nashi-raboty/
 Redirect 301 /nashi-raboty/naves-iz-polikarbonata58/ /nashi-raboty/
 Redirect 301 /nashi-raboty/naves-iz-polikarbonata60/ /nashi-raboty/
 
+# --- Материалы: слитые дубли -> лендинги (02.10.2026) ---
+Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-iz-myagkoj-krovli/ /katalog/materialy/navesy-iz-myagkoj-krovli/
+Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-s-myagkoj-krovlej/ /katalog/materialy/navesy-iz-myagkoj-krovli/
+Redirect 301 /katalog/navesy/drugie/navesy-s-ploskoj-krovlej/ /katalog/materialy/navesy-iz-myagkoj-krovli/
+Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
+Redirect 301 /katalog/navesy/dvuhskatnye-navesy/dvuhskatnye-navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
+Redirect 301 /katalog/navesy/dvuhskatnye-navesy/navesy-dvuhskatnye-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
+Redirect 301 /katalog/navesy/drugie/navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
+Redirect 301 /katalog/navesy/drugie/navesy-s-profnastila/ /katalog/materialy/navesy-iz-profnastila/
+Redirect 301 /katalog/navesy/drugie/navesy-iz-metalloprofilya/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/navesy-iz-metallokonstrukcij/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/navesy-metallokonstrukcii/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/navesy-iz-profilnoj-truby/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/navesy-6-na-6-iz-metalla/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/navesy-stalnye/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/drugie/stalnye-navesy/ /katalog/navesy/metallicheskie-navesy/
+Redirect 301 /katalog/navesy/navesy-polikarbonat/ /zakazat-naves-iz-polikarbonata/
+Redirect 301 /katalog/navesy/navesy-s-polikarbonata/ /zakazat-naves-iz-polikarbonata/
+Redirect 301 /katalog/navesy/polikarbonatnye-navesy/ /zakazat-naves-iz-polikarbonata/
+
 # --- Глобы (после точных) ---
 RedirectMatch 301 ^/katalog/kozyrki/.*$ /katalog/navesy/navesy-dlya-dachi/
-RedirectMatch 301 ^/katalog/navesy/navesy-iz-polikarbonata/.+$ /katalog/navesy/
+RedirectMatch 301 ^/katalog/navesy/navesy-iz-polikarbonata/.+$ /zakazat-naves-iz-polikarbonata/
 RedirectMatch 301 ^/katalog/navesy/navesy-dlya-mangala/.+$ /katalog/navesy/

@@ -119,5 +119,14 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - Файлы: `blog/besedki-iz-polikarbonata/index.astro`, `Sidebar.astro`, `base.css` (всё под `.besedka-page`). Билд 433 стр., без ошибок
 - Локальный preview: http://localhost:4321/blog/besedki-iz-polikarbonata/
 
+## Сессия — хаб «Материалы» (02.10.2026)
+- Новый хаб /katalog/materialy/ (4 карточки→лендинги, FAQ 8 + JSON-LD, H2, CTA) + 2 новых лендинга: мягкая кровля, профнастил (по шаблону дома/балкона)
+- Лендинги: поликарбонат = /zakazat-naves-iz-polikarbonata/ (привязан строкой «все материалы»), металл = metallicheskie-navesy (усилена: оффер, FAQ 8, H2-якоря, alt, ссылка на хаб)
+- 18 дублей → Redirect-заглушки: мягкая ×3, профнастил ×5, металл ×7 (металлопрофиль, металлоконструкции, профтруба, 6на6-металл, стальные ×2), поликарбонат ×3
+- .htaccess: +18 правил; navesy-iz-polikarbonata(/+вложенности+глоб) переточены с / и /katalog/navesy/ на zakazat; astro.config: MERGED_TO_MATERIALY (18) в фильтр sitemap
+- 49 файлов: массовая замена href (скрипт Temp/opencode/fix-material-links.py, идемпотентный); картинки/тексты не тронуты
+- Оставлено на потом: металлочерепица (odnoskatnye/dvuhskatnye/drugie), ковка, deshevye-главная, konstrukcia×material (арочные/двускатные-поликарбонат, металлопрофиль) — для кластера «Конструкции»
+- Билд 436 стр., битых ссылок 0; новые URL в sitemap, дубли исключены. НЕ закоммичено (ждать «пуш»)
+
 ## Правила обновления
 Перед каждым коммитом: обновить TODO.md + HANDOFF.md, включить в git add.

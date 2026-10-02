@@ -284,3 +284,17 @@ footer { margin-top: 0 !important; }
   .besedka-types, .besedka-vs { grid-template-columns: 1fr; }
   .besedka-cta .btn-green { margin-left: 0; margin-top: 10px; }
 }
+/* Хаб «Материалы» + лендинги: 4 карточки сеткой 2×2 */
+.mat-grid.products__items > div { width: 50%; }
+.mat-grid .products__item-title { min-height: 40px; display: flex; align-items: center; justify-content: center; }
+.mat-grid .products__item-img img { outline: 1px solid oklch(0 0 0 / .1); outline-offset: -1px; }
+.mat-grid .products__more a { transition-property: transform, background-color; transition-duration: 150ms; }
+.mat-grid .products__more a:active { transform: scale(.96); }
+@media screen and (max-width: 575px) {
+  .mat-grid.products__items > div { width: 100%; }
+}
+/* /katalog/: 4 карточки сеткой 2×2 */
+.catalog-list--4 .box { -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; }
+@media screen and (max-width: 575px) {
+  .catalog-list--4 .box { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
+}

@@ -111,12 +111,25 @@ const MERGED_TO_BASSEJNA = [
   "navesy-dlya-bassejna/bassejny-s-navesom",
 ];
 
+// 18 URL кластера «материалы», слитые редиректом в лендинги (02.10.2026)
+const MERGED_TO_MATERIALY = [
+  "arochnye-navesy-iz-myagkoj-krovli", "arochnye-navesy-s-myagkoj-krovlej",
+  "drugie/navesy-s-ploskoj-krovlej",
+  "arochnye-navesy-iz-profnastila", "dvuhskatnye-navesy-iz-profnastila",
+  "navesy-dvuhskatnye-iz-profnastila",
+  "drugie/navesy-iz-profnastila", "drugie/navesy-s-profnastila",
+  "drugie/navesy-iz-metalloprofilya", "drugie/navesy-iz-metallokonstrukcij",
+  "drugie/navesy-metallokonstrukcii", "drugie/navesy-iz-profilnoj-truby",
+  "drugie/navesy-6-na-6-iz-metalla", "drugie/navesy-stalnye", "drugie/stalnye-navesy",
+  "navesy/navesy-polikarbonat", "navesy/navesy-s-polikarbonata", "navesy/polikarbonatnye-navesy",
+];
+
 export default defineConfig({
   site: "https://33navesa.ru",
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)) && !MERGED_TO_MATERIALY.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });

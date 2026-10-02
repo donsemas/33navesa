@@ -1,0 +1,166 @@
+---
+import Header from "../../../components/Header.astro"
+import Sidebar from "../../../components/Sidebar.astro";;
+import Footer from "../../../components/Footer.astro";
+import "../../../styles/base.css";
+const title = 'Навесы из поликарбоната, металла, профнастила — купить под ключ в Москве';
+const description = 'Навесы по материалу покрытия под ключ: поликарбонат, металл, мягкая кровля, профнастил. Замер бесплатно, монтаж за 1–2 дня, гарантия 10 лет. Москва и МО.';
+const canonical = 'https://33navesa.ru/katalog/materialy/';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какой материал лучше для навеса — поликарбонат или профнастил?","acceptedAnswer":{"@type":"Answer","text":"Поликарбонат светлый и лёгкий — хорош для двора, террасы и авто. Профнастил дешевле и непрозрачный — для хозпостроек и парковок. Оба ставим на металлический каркас, служат от 15 лет."}},{"@type":"Question","name":"Что дешевле — навес из поликарбоната или из металла?","acceptedAnswer":{"@type":"Answer","text":"Металлическое покрытие (профнастил) обычно дешевле поликарбоната на 15–20%. Точную разницу для вашего размера посчитает замерщик — замер и смета бесплатные."}},{"@type":"Question","name":"Навес из мягкой кровли тихий в дождь?","acceptedAnswer":{"@type":"Answer","text":"Да, это главный плюс мягкой кровли: гибкая черепица на сплошной обрешётке почти не шумит. Рекомендуем для навесов у дома, над террасой и зоной отдыха."}},{"@type":"Question","name":"Выдержит ли профнастил снеговую нагрузку?","acceptedAnswer":{"@type":"Answer","text":"Да — используем несущий профнастил, а шаг ферм и сечение трубы подбираем под снеговую нагрузку Подмосковья. Конструкция рассчитывается, а не ставится на глаз."}},{"@type":"Question","name":"Монолитный или сотовый поликарбонат выбрать?","acceptedAnswer":{"@type":"Answer","text":"Сотовый легче и дешевле — стандарт для авто и дачи. Монолитный прочнее и прозрачнее — для козырьков и дизайнерских решений. Поможем выбрать на замере по вашему бюджету."}},{"@type":"Question","name":"Сколько служит навес из металла?","acceptedAnswer":{"@type":"Answer","text":"Каркас из профильной трубы с покраской служит от 15 лет, металлическое покрытие — до 30 лет. Пожаробезопасно и не требует ухода."}},{"@type":"Question","name":"Какой материал выбрать для навеса над авто?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего — поликарбонат 6–8 мм: светлый, защищает от града и выгорания. Если нужна глухая тень и бюджет ниже — профнастил. Оба варианта ставим за 1–2 дня."}},{"@type":"Question","name":"Замер и смета правда бесплатные?","acceptedAnswer":{"@type":"Answer","text":"Да, замер по Москве и области — 0 ₽. Специалист приезжает с образцами материалов, считает точную смету, цену фиксируем в договоре."}}]}';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"/katalog/materialy/","url":"/katalog/materialy/","name":"Навесы из поликарбоната, металла, профнастила — купить под ключ в Москве","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/katalog/materialy/#primaryimage"},"image":{"@id":"/katalog/materialy/#primaryimage"},"thumbnailUrl":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp","description":"Навесы по материалу покрытия под ключ: поликарбонат, металл, мягкая кровля, профнастил. Замер бесплатно, монтаж за 1–2 дня, гарантия 10 лет.","breadcrumb":{"@id":"/katalog/materialy/#breadcrumb"},"inLanguage":"ru-RU"},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/katalog/materialy/#primaryimage","url":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp","contentUrl":"/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp","width":800,"height":500},{"@type":"BreadcrumbList","@id":"/katalog/materialy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Каталог","item":"/katalog/"},{"@type":"ListItem","position":2,"name":"Материалы"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Навесы из поликарбоната, металла, профнастила — купить под ключ в Москве">
+    <meta property="og:description" content="Навесы по материалу покрытия под ключ: поликарбонат, металл, мягкая кровля, профнастил. Замер бесплатно, монтаж за 1–2 дня.">
+    <meta property="og:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp" />
+<meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp" />
+    <meta property="og:url" content="https://33navesa.ru/katalog/materialy/">
+    <meta property="og:site_name" content="Фабрика навесов">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
+</head>
+<body>
+  <Header />
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <Sidebar currentCategory="materialy" />
+            <main set:html={`
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Каталог." href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive taxonomy category current-item">Материалы</span><meta property="url" content="/katalog/materialy/"><meta property="position" content="3"></span></div>                
+
+                <h1>Навесы по материалу покрытия</h1>
+                <p class="cat__offer">Выберите покрытие под задачу и бюджет — замер <strong>бесплатно</strong>, монтаж за 1–2 дня, гарантия 10 лет.</p>
+
+                                <div class="products__items row mat-grid">
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/zakazat-naves-iz-polikarbonata/">Навесы из поликарбоната</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/zakazat-naves-iz-polikarbonata/"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из поликарбоната" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 400w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 768w, /uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/zakazat-naves-iz-polikarbonata/">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/navesy/metallicheskie-navesy/">Металлические навесы</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/navesy/metallicheskie-navesy/"><img width="400" height="250" src="/uploads/2021/05/metallicheskie-navesy-dlja-mashin.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Металлические навесы" decoding="async" loading="lazy" srcset="/uploads/2021/05/metallicheskie-navesy-dlja-mashin.webp 400w, /uploads/2021/05/metallicheskie-navesy-dlja-mashin.webp 768w, /uploads/2021/05/metallicheskie-navesy-dlja-mashin.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/navesy/metallicheskie-navesy/">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/">Навесы из мягкой кровли</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/"><img width="400" height="250" src="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из мягкой кровли" decoding="async" loading="lazy" srcset="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 400w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 768w, /uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/">Навесы из профнастила</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-profnastila.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из профнастила" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-profnastila.webp 400w, /uploads/2021/05/navesy-iz-profnastila.webp 768w, /uploads/2021/05/navesy-iz-profnastila.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:28px 0 8px;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы про материалы навесов</h2>
+<details open><summary>Какой материал лучше для навеса — поликарбонат или профнастил?</summary><p>Поликарбонат светлый и лёгкий — хорош для двора, террасы и авто. Профнастил дешевле и непрозрачный — для хозпостроек и парковок. Оба ставим на металлический каркас, служат от 15 лет.</p></details>
+<details><summary>Что дешевле — навес из поликарбоната или из металла?</summary><p>Металлическое покрытие (профнастил) обычно дешевле поликарбоната на 15–20%. Точную разницу для вашего размера посчитает замерщик — замер и смета бесплатные.</p></details>
+<details><summary>Навес из мягкой кровли тихий в дождь?</summary><p>Да, это главный плюс мягкой кровли: гибкая черепица на сплошной обрешётке почти не шумит. Рекомендуем для навесов у дома, над террасой и зоной отдыха.</p></details>
+<details><summary>Выдержит ли профнастил снеговую нагрузку?</summary><p>Да — используем несущий профнастил, а шаг ферм и сечение трубы подбираем под снеговую нагрузку Подмосковья. Конструкция рассчитывается, а не ставится на глаз.</p></details>
+<details><summary>Монолитный или сотовый поликарбонат выбрать?</summary><p>Сотовый легче и дешевле — стандарт для авто и дачи. Монолитный прочнее и прозрачнее — для козырьков и дизайнерских решений. Поможем выбрать на замере по вашему бюджету.</p></details>
+<details><summary>Сколько служит навес из металла?</summary><p>Каркас из профильной трубы с покраской служит от 15 лет, металлическое покрытие — до 30 лет. Пожаробезопасно и не требует ухода.</p></details>
+<details><summary>Какой материал выбрать для навеса над авто?</summary><p>Чаще всего — поликарбонат 6–8 мм: светлый, защищает от града и выгорания. Если нужна глухая тень и бюджет ниже — профнастил. Оба варианта ставим за 1–2 дня.</p></details>
+<details><summary>Замер и смета правда бесплатные?</summary><p>Да, замер по Москве и области — 0 ₽. Специалист приезжает с образцами материалов, считает точную смету, цену фиксируем в договоре.</p></details>
+</div>
+                                <div class="cat__text">
+                    <p>Навесы по материалу покрытия можно заказать на сайте 33navesa.ru под ключ | Поликарбонат, металл, мягкая кровля и профнастил — подбор под задачу и бюджет | Работаем по Москве и всем городам Московской области</p>
+<h2 id="ceny">Цены на навесы по материалу</h2>
+<p>Стоимость навеса под ключ зависит от материала покрытия, размера и формы: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре.</p>
+<h2 id="polikarbonat">Навесы из поликарбоната</h2>
+<p>Поликарбонат — самый ходовой материал: сотовый 6–10 мм для авто и дачи, монолитный для козырьков. Светлый, лёгкий, служит от 10 лет без помутнения. <a href="/zakazat-naves-iz-polikarbonata/">Выбрать навес из поликарбоната</a>.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-iz-polikarbonata-vo-dvore.webp" alt="Навесы из поликарбоната"></p>
+<h2 id="metall">Металлические навесы</h2>
+<p>Металлические навесы — каркас из профильной трубы плюс покрытие из профнастила или металлочерепицы: прочно, пожаробезопасно, служит до 30 лет. <a href="/katalog/navesy/metallicheskie-navesy/">Выбрать металлический навес</a>.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/metallicheskie-navesy-dlja-mashin.webp" alt="Металлические навесы"></p>
+<h2 id="myagkaya-krovlya">Навесы из мягкой кровли</h2>
+<p>Мягкая кровля (гибкая черепица) — тихое и красивое покрытие: выглядит как крыша дома, не шумит в дождь. Ставим на сплошную обрешётку, служит от 20 лет. <a href="/katalog/materialy/navesy-iz-myagkoj-krovli/">Выбрать навес из мягкой кровли</a>.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/arochnye-navesy-s-mjagkoj-krovlej.webp" alt="Навесы из мягкой кровли"></p>
+<h2 id="profnastil">Навесы из профнастила</h2>
+<p>Профнастил — бюджетное глухое покрытие: дешевле поликарбоната, цвета RAL под забор и крышу дома. Для авто, хозпостроек и парковок. <a href="/katalog/materialy/navesy-iz-profnastila/">Выбрать навес из профнастила</a>.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-iz-profnastila.webp" alt="Навесы из профнастила"></p>
+<h2 id="montazh">Монтаж навеса под ключ</h2>
+<p>Монтаж навеса под ключ за 1–2 дня: установка и бетонирование стоек, каркас из профильной трубы, покрытие на ваш выбор. Замер и смета — бесплатно.</p>
+<p class="cat__cta"><a href="#callback" data-fancybox class="btn">Вызвать замерщика — 0 ₽</a></p>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+</body>
+</html>

@@ -1,0 +1,165 @@
+---
+import Header from "../../../../components/Header.astro"
+import Sidebar from "../../../../components/Sidebar.astro";;
+import Footer from "../../../../components/Footer.astro";
+import "../../../../styles/base.css";
+const title = 'Навесы из профнастила купить под ключ — цена в Москве и МО';
+const description = 'Бюджетные навесы из профнастила под ключ: арочные, двускатные, для авто. Цвета RAL под забор и крышу. Замер 0 ₽, монтаж 1–2 дня, гарантия 10 лет.';
+const canonical = 'https://33navesa.ru/katalog/materialy/navesy-iz-profnastila/';
+const faqJson = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит навес из профнастила под ключ?","acceptedAnswer":{"@type":"Answer","text":"Профнастил — самый бюджетный вариант покрытия: обычно дешевле поликарбоната на 15–20%. Точную смету назовёт замерщик после выезда: замер бесплатный, цену фиксируем в договоре."}},{"@type":"Question","name":"Профнастил или поликарбонат — что лучше для навеса?","acceptedAnswer":{"@type":"Answer","text":"Профнастил дешевле и даёт глухую тень — для парковок и хозпостроек. Поликарбонат светлее и легче — для двора, террасы и авто. Оба служат от 15 лет на металлическом каркасе."}},{"@type":"Question","name":"Шумный ли профнастил в дождь?","acceptedAnswer":{"@type":"Answer","text":"Честно: профнастил слышнее мягкой кровли — это металл. Для навеса над авто и хозпостроек это не критично, а для зоны отдыха у дома лучше взять мягкую кровлю или поликарбонат 8–10 мм."}},{"@type":"Question","name":"Выдержит ли навес из профнастила снег?","acceptedAnswer":{"@type":"Answer","text":"Да — используем несущий профнастил, шаг ферм и сечение трубы подбираем под снеговую нагрузку Подмосковья. Конструкцию рассчитываем под ваш район."}},{"@type":"Question","name":"Какие цвета профнастила есть?","acceptedAnswer":{"@type":"Answer","text":"Вся палитра RAL: коричневый, зелёный, графит, вишня и другие. Подберём цвет под ваш забор и крышу дома — навес выглядит единым ансамблем."}},{"@type":"Question","name":"Сколько служит навес из профнастила?","acceptedAnswer":{"@type":"Answer","text":"15–20 лет: оцинковка с полимерным покрытием не ржавеет и не облезает. Каркас из профильной трубы с покраской служит ещё дольше."}},{"@type":"Question","name":"Какие формы делают из профнастила?","acceptedAnswer":{"@type":"Answer","text":"Арочные, односкатные, двускатные — профнастил гнётся по радиусу и режется под любую форму. Самый ходовой вариант — односкатный навес для авто."}},{"@type":"Question","name":"Замер платный?","acceptedAnswer":{"@type":"Answer","text":"Нет, замер по Москве и Московской области бесплатный. Специалист приезжает с образцами профнастила, считает точную смету на месте."}}]}';
+const ldJson = '{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"/katalog/materialy/navesy-iz-profnastila/","url":"/katalog/materialy/navesy-iz-profnastila/","name":"Навесы из профнастила купить под ключ — цена в Москве и МО","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/katalog/materialy/navesy-iz-profnastila/#primaryimage"},"image":{"@id":"/katalog/materialy/navesy-iz-profnastila/#primaryimage"},"thumbnailUrl":"/uploads/2021/05/navesy-iz-profnastila.webp","description":"Бюджетные навесы из профнастила под ключ: арочные, двускатные, для авто. Цвета RAL под забор и крышу. Замер 0 ₽, монтаж 1–2 дня.","breadcrumb":{"@id":"/katalog/materialy/navesy-iz-profnastila/#breadcrumb"},"inLanguage":"ru-RU"},{"@type":"ImageObject","inLanguage":"ru-RU","@id":"/katalog/materialy/navesy-iz-profnastila/#primaryimage","url":"/uploads/2021/05/navesy-iz-profnastila.webp","contentUrl":"/uploads/2021/05/navesy-iz-profnastila.webp","width":800,"height":500},{"@type":"BreadcrumbList","@id":"/katalog/materialy/navesy-iz-profnastila/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Каталог","item":"/katalog/"},{"@type":"ListItem","position":2,"name":"Материалы","item":"/katalog/materialy/"},{"@type":"ListItem","position":3,"name":"Из профнастила"}]},{"@type":"WebSite","@id":"/#website","url":"/","name":"Фабрика навесов","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}';
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Навесы из профнастила купить под ключ — цена в Москве и МО">
+    <meta property="og:description" content="Бюджетные навесы из профнастила под ключ: арочные, двускатные, для авто. Цвета RAL под забор и крышу. Замер 0 ₽, монтаж 1–2 дня.">
+    <meta property="og:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-profnastila.webp" />
+<meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://33navesa.ru/uploads/2021/05/navesy-iz-profnastila.webp" />
+    <meta property="og:url" content="https://33navesa.ru/katalog/materialy/navesy-iz-profnastila/">
+    <meta property="og:site_name" content="Фабрика навесов">
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+  {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
+  {faqJson && <script is:inline type="application/ld+json" set:html={faqJson} />}
+</head>
+<body>
+  <Header />
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <Sidebar currentCategory="materialy" />
+            <main set:html={`
+
+                <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+	<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к Фабрика навесов." href="/" class="home"><span property="name">Главная</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Каталог." href="/katalog/" class="taxonomy category"><span property="name">Каталог</span></a><meta property="position" content="2"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Перейти к архиву рубрики Материалы." href="/katalog/materialy/" class="taxonomy category"><span property="name">Материалы</span></a><meta property="position" content="3"></span> &gt; <span property="itemListElement" typeof="ListItem"><span property="name" class="archive taxonomy category current-item">Из профнастила</span><meta property="url" content="/katalog/materialy/navesy-iz-profnastila/"><meta property="position" content="4"></span></div>                
+
+                <h1>Навесы из профнастила</h1>
+                <p class="cat__offer">Бюджетно и надёжно — замер <strong>бесплатно</strong>, монтаж за 1–2 дня, гарантия 10 лет.</p>
+
+                                <div class="products__items row mat-grid">
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#arochnye">Арочные навесы из профнастила</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#arochnye"><img width="400" height="250" src="/uploads/2021/05/arochnye-navesy-iz-profnastila.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Арочные навесы из профнастила" decoding="async" loading="lazy" srcset="/uploads/2021/05/arochnye-navesy-iz-profnastila.webp 400w, /uploads/2021/05/arochnye-navesy-iz-profnastila.webp 768w, /uploads/2021/05/arochnye-navesy-iz-profnastila.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#arochnye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dvuhskatnye">Двускатные навесы из профнастила</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dvuhskatnye"><img width="400" height="250" src="/uploads/2021/05/dvuhskatnye-navesy-iz-profnastila.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Двускатные навесы из профнастила" decoding="async" loading="lazy" srcset="/uploads/2021/05/dvuhskatnye-navesy-iz-profnastila.webp 400w, /uploads/2021/05/dvuhskatnye-navesy-iz-profnastila.webp 768w, /uploads/2021/05/dvuhskatnye-navesy-iz-profnastila.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dvuhskatnye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dlya-avto">Навесы из профнастила для авто</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dlya-avto"><img width="400" height="250" src="/uploads/2021/05/navesy-dlja-avto-iz-profnastila.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Навесы из профнастила для авто" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-dlja-avto-iz-profnastila.webp 400w, /uploads/2021/05/navesy-dlja-avto-iz-profnastila.webp 768w, /uploads/2021/05/navesy-dlja-avto-iz-profnastila.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#dlya-avto">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="products__item">
+                                <div class="products__item-title">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#odnoskatnye">Односкатные навесы из профнастила</a>
+                                </div>
+                                <div class="products__item-img">
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#odnoskatnye"><img width="400" height="250" src="/uploads/2021/05/navesy-iz-profnastila.webp" class="attachment-category-thumbnails size-category-thumbnails wp-post-image" alt="Односкатные навесы из профнастила" decoding="async" loading="lazy" srcset="/uploads/2021/05/navesy-iz-profnastila.webp 400w, /uploads/2021/05/navesy-iz-profnastila.webp 768w, /uploads/2021/05/navesy-iz-profnastila.webp 800w" sizes="auto, (max-width: 400px) 100vw, 400px"></a>
+                                </div>
+                                <div class="products__more"> 
+                                    <a href="/katalog/materialy/navesy-iz-profnastila/#odnoskatnye">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+<style>
+.faq-price{background:#161616;color:#fff;border-radius:8px;padding:36px 32px;margin:28px 0 8px;}
+.faq-price h2{color:#fff;font-size:clamp(22px,3vw,34px);text-transform:uppercase;margin:0 0 8px;line-height:1.2;}
+.faq-price summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;color:#fff;}
+.faq-price summary::-webkit-details-marker{display:none;}
+.faq-price summary::after{content:'+';font-size:28px;font-weight:300;line-height:1;flex-shrink:0;}
+.faq-price details[open] summary::after{content:'×';}
+.faq-price details p{color:#cfcfcf;margin:0 0 18px;max-width:640px;}
+</style>
+<div class="faq-price">
+<h2>Частые вопросы про навесы из профнастила</h2>
+<details open><summary>Сколько стоит навес из профнастила под ключ?</summary><p>Профнастил — самый бюджетный вариант покрытия: обычно дешевле поликарбоната на 15–20%. Точную смету назовёт замерщик после выезда: замер бесплатный, цену фиксируем в договоре.</p></details>
+<details><summary>Профнастил или поликарбонат — что лучше для навеса?</summary><p>Профнастил дешевле и даёт глухую тень — для парковок и хозпостроек. Поликарбонат светлее и легче — для двора, террасы и авто. Оба служат от 15 лет на металлическом каркасе.</p></details>
+<details><summary>Шумный ли профнастил в дождь?</summary><p>Честно: профнастил слышнее мягкой кровли — это металл. Для навеса над авто и хозпостроек это не критично, а для зоны отдыха у дома лучше взять мягкую кровлю или поликарбонат 8–10 мм.</p></details>
+<details><summary>Выдержит ли навес из профнастила снег?</summary><p>Да — используем несущий профнастил, шаг ферм и сечение трубы подбираем под снеговую нагрузку Подмосковья. Конструкцию рассчитываем под ваш район.</p></details>
+<details><summary>Какие цвета профнастила есть?</summary><p>Вся палитра RAL: коричневый, зелёный, графит, вишня и другие. Подберём цвет под ваш забор и крышу дома — навес выглядит единым ансамблем.</p></details>
+<details><summary>Сколько служит навес из профнастила?</summary><p>15–20 лет: оцинковка с полимерным покрытием не ржавеет и не облезает. Каркас из профильной трубы с покраской служит ещё дольше.</p></details>
+<details><summary>Какие формы делают из профнастила?</summary><p>Арочные, односкатные, двускатные — профнастил гнётся по радиусу и режется под любую форму. Самый ходовой вариант — односкатный навес для авто.</p></details>
+<details><summary>Замер платный?</summary><p>Нет, замер по Москве и Московской области бесплатный. Специалист приезжает с образцами профнастила, считает точную смету на месте.</p></details>
+</div>
+                                <div class="cat__text">
+                    <p>Навесы из профнастила можно купить на сайте 33navesa.ru под ключ | Бюджетное покрытие, цвета RAL, срок службы 15–20 лет | Работаем по Москве и всем городам Московской области</p>
+<h2 id="ceny">Цены на навесы из профнастила</h2>
+<p>Стоимость навеса из профнастила под ключ зависит от размера, формы и комплектации: точную смету назовёт замерщик после выезда. Замер по Москве и области — 0 ₽, цену фиксируем в договоре.</p>
+<h2 id="arochnye">Арочные навесы из профнастила</h2>
+<p>Арочный навес из профнастила — гнутый каркас, лист повторяет радиус: красиво и без стыков на скате. Для авто, двора и парковки. Цвет — любой из палитры RAL.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/arochnye-navesy-iz-profnastila.webp" alt="Арочные навесы из профнастила"></p>
+<h2 id="dvuhskatnye">Двускатные навесы из профнастила</h2>
+<p>Двускатный навес из профнастила — классика для дачи и дома: снег сходит сам, выглядит как маленькая крыша. Пролёты до 6 метров без промежуточных стоек.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/dvuhskatnye-navesy-iz-profnastila.webp" alt="Двускатные навесы из профнастила"></p>
+<h2 id="dlya-avto">Навесы из профнастила для авто</h2>
+<p>Навес для машины из профнастила — глухая тень, защита от града и листвы. Односкатные модели на одну-две машины — самый бюджетный вариант под ключ.</p>
+<p><img loading="lazy" decoding="async" src="/uploads/2021/05/navesy-dlja-avto-iz-profnastila.webp" alt="Навесы из профнастила для авто"></p>
+<h2 id="odnoskatnye">Односкатные навесы из профнастила</h2>
+<p>Односкатный навес из профнастила — пристенный или отдельно стоящий: минимум стоек, быстрый монтаж, низкая цена. Ходовое решение для дачи и парковки у дома.</p>
+<h2 id="montazh">Монтаж навеса из профнастила под ключ</h2>
+<p>Монтаж за 1–2 дня: стойки с бетонированием, каркас из профильной трубы, крепление листов на кровельные саморезы с прокладками. Замер и смета — бесплатно.</p>
+<p class="cat__cta"><a href="#callback" data-fancybox class="btn">Вызвать замерщика — 0 ₽</a></p>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+</div>`} />
+  <Footer />
+</body>
+</html>
