@@ -59,7 +59,7 @@ const MERGED_TO_AVTO = [
   "garazhi-iz-polikarbonata",
   "navesy-dlya-dachi/navesy-na-dache-iz-polikarbonata", "navesy-dlya-dachi/navesy-dachnye-iz-polikarbonata",
   "navesy-dlya-dachi/dachnye-navesy-iz-polikarbonata", "navesy-na-dachu",
-  "navesy-dlya-dachnogo-domika", "navesy/navesy-dlya-dachi-iz-polikarbonata/",
+  "navesy-dlya-dachnogo-domika", "navesy-dlya-dachi-iz-polikarbonata",
   "navesy-dlya-dachi-iz-metalla", "navesy-iz-polikarbonata-dlya-dachi",
   "navesy-dlya-stola-na-dache", "navesy-ot-dozhdya-dlya-dachi",
   "navesy-u-dachnogo-domika", "navesy-dlya-drov-na-dachu",
@@ -111,20 +111,17 @@ const MERGED_TO_BASSEJNA = [
   "navesy-dlya-bassejna/bassejny-s-navesom",
 ];
 
-// Слитые дубли: 2 близнеца форм + металл-generic + поликарбонат-дубли (02.10.2026)
+// 18 URL кластера «материалы», слитые редиректом в лендинги (02.10.2026)
 const MERGED_TO_MATERIALY = [
-  "arochnye-navesy-s-myagkoj-krovlej/",
-  "navesy-dvuhskatnye-iz-profnastila/",
-  "drugie/navesy-iz-metalloprofilya/", "drugie/navesy-iz-metallokonstrukcij/",
-  "drugie/navesy-metallokonstrukcii/", "drugie/navesy-iz-profilnoj-truby/",
-  "drugie/navesy-6-na-6-iz-metalla/", "drugie/navesy-stalnye/", "drugie/stalnye-navesy/",
-  "navesy/navesy-polikarbonat/", "navesy/navesy-s-polikarbonata/", "navesy/polikarbonatnye-navesy/",
-];
-
-// 2 URL кластера «формы», слитые редиректом (02.10.2026)
-const MERGED_TO_FORMY = [
-  "odnoskatnye-navesy/navesy-odnoskatnye-iz-polikarbonata/",
-  "dvuhskatnye-navesy/navesy-dvuhskatnye-iz-metallocherepicy/",
+  "arochnye-navesy-iz-myagkoj-krovli", "arochnye-navesy-s-myagkoj-krovlej",
+  "drugie/navesy-s-ploskoj-krovlej",
+  "arochnye-navesy-iz-profnastila", "dvuhskatnye-navesy-iz-profnastila",
+  "navesy-dvuhskatnye-iz-profnastila",
+  "drugie/navesy-iz-profnastila", "drugie/navesy-s-profnastila",
+  "drugie/navesy-iz-metalloprofilya", "drugie/navesy-iz-metallokonstrukcij",
+  "drugie/navesy-metallokonstrukcii", "drugie/navesy-iz-profilnoj-truby",
+  "drugie/navesy-6-na-6-iz-metalla", "drugie/navesy-stalnye", "drugie/stalnye-navesy",
+  "navesy/navesy-polikarbonat", "navesy/navesy-s-polikarbonata", "navesy/polikarbonatnye-navesy",
 ];
 
 export default defineConfig({
@@ -132,7 +129,7 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)) && !MERGED_TO_MATERIALY.some((s) => page.includes(s)) && !MERGED_TO_FORMY.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)) && !MERGED_TO_MATERIALY.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });
