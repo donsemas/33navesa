@@ -96,15 +96,13 @@ Redirect 301 /nashi-raboty/naves-iz-polikarbonata54/ /nashi-raboty/
 Redirect 301 /nashi-raboty/naves-iz-polikarbonata58/ /nashi-raboty/
 Redirect 301 /nashi-raboty/naves-iz-polikarbonata60/ /nashi-raboty/
 
+# --- Формы: слитые дубли -> лендинги (02.10.2026) ---
+Redirect 301 /katalog/navesy/odnoskatnye-navesy/navesy-odnoskatnye-iz-polikarbonata/ /katalog/navesy/odnoskatnye-navesy/odnoskatnye-navesy-iz-polikarbonata/
+Redirect 301 /katalog/navesy/dvuhskatnye-navesy/navesy-dvuhskatnye-iz-metallocherepicy/ /katalog/navesy/dvuhskatnye-navesy/dvuhskatnye-navesy-iz-metallocherepicy/
+Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-s-myagkoj-krovlej/ /katalog/navesy/arochnye-navesy/arochnye-navesy-iz-myagkoj-krovli/
+Redirect 301 /katalog/navesy/dvuhskatnye-navesy/navesy-dvuhskatnye-iz-profnastila/ /katalog/navesy/dvuhskatnye-navesy/dvuhskatnye-navesy-iz-profnastila/
+
 # --- Материалы: слитые дубли -> лендинги (02.10.2026) ---
-Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-iz-myagkoj-krovli/ /katalog/materialy/navesy-iz-myagkoj-krovli/
-Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-s-myagkoj-krovlej/ /katalog/materialy/navesy-iz-myagkoj-krovli/
-Redirect 301 /katalog/navesy/drugie/navesy-s-ploskoj-krovlej/ /katalog/materialy/navesy-iz-myagkoj-krovli/
-Redirect 301 /katalog/navesy/arochnye-navesy/arochnye-navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
-Redirect 301 /katalog/navesy/dvuhskatnye-navesy/dvuhskatnye-navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
-Redirect 301 /katalog/navesy/dvuhskatnye-navesy/navesy-dvuhskatnye-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
-Redirect 301 /katalog/navesy/drugie/navesy-iz-profnastila/ /katalog/materialy/navesy-iz-profnastila/
-Redirect 301 /katalog/navesy/drugie/navesy-s-profnastila/ /katalog/materialy/navesy-iz-profnastila/
 Redirect 301 /katalog/navesy/drugie/navesy-iz-metalloprofilya/ /katalog/navesy/metallicheskie-navesy/
 Redirect 301 /katalog/navesy/drugie/navesy-iz-metallokonstrukcij/ /katalog/navesy/metallicheskie-navesy/
 Redirect 301 /katalog/navesy/drugie/navesy-metallokonstrukcii/ /katalog/navesy/metallicheskie-navesy/
@@ -119,4 +117,5 @@ Redirect 301 /katalog/navesy/polikarbonatnye-navesy/ /zakazat-naves-iz-polikarbo
 # --- Глобы (после точных) ---
 RedirectMatch 301 ^/katalog/kozyrki/.*$ /katalog/navesy/navesy-dlya-dachi/
 RedirectMatch 301 ^/katalog/navesy/navesy-iz-polikarbonata/.+$ /zakazat-naves-iz-polikarbonata/
+RedirectMatch 301 ^/katalog/navesy/page/.+$ /katalog/navesy/
 RedirectMatch 301 ^/katalog/navesy/navesy-dlya-mangala/.+$ /katalog/navesy/
