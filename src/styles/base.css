@@ -298,3 +298,17 @@ footer { margin-top: 0 !important; }
 @media screen and (max-width: 575px) {
   .catalog-list--4 .box { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
 }
+/* Главная intent-nav: карточки по референсу — ярлык снизу слева */
+.intent-nav .catalog-list__item { border-radius: 8px; }
+.intent-nav .catalog-list__item-image img { transition: transform .5s; }
+.intent-nav .catalog-list__item:hover .catalog-list__item-image img { transform: scale(1.06); }
+.intent-nav .catalog-list__item-title {
+  top: auto; bottom: 14px; min-width: 0;
+  padding: 7px 14px; font-size: 13px; letter-spacing: .03em;
+  border-radius: 0 8px 8px 0; white-space: nowrap; max-width: 92%;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.intent-nav .catalog-list__item:hover .catalog-list__item-title { min-width: 0; text-align: left; }
+@media screen and (max-width: 767px) {
+  .intent-nav .catalog-list__item-title { font-size: 11px; padding: 5px 10px; bottom: 8px; }
+}
