@@ -298,7 +298,17 @@ footer { margin-top: 0 !important; }
 @media screen and (max-width: 575px) {
   .catalog-list--4 .box { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
 }
-/* Главная intent-nav: карточки по референсу — ярлык снизу слева */
+/* Каталог-дропдаун: тёмный везде, белый только на главной */
+.catalog-navigation__list { background: #161616; }
+.catalog-navigation { border-left-color: #2b2b2b; border-right-color: #2b2b2b; }
+.catalog-navigation__list>li { border-bottom-color: #2b2b2b; }
+.catalog-navigation__list>li>a { color: #fff; }
+.catalog-navigation__list>li>a:hover { background: #F26522; color: #fff; }
+body.is-home .catalog-navigation__list { background: #fff; }
+body.is-home .catalog-navigation { border-left-color: #eee; border-right-color: #eee; }
+body.is-home .catalog-navigation__list>li { border-bottom-color: #eee; }
+body.is-home .catalog-navigation__list>li>a { color: inherit; }
+body.is-home .catalog-navigation__list>li>a:hover { background: #2D3E53; color: #fff; }
 .intent-nav .catalog-list__item { border-radius: 8px; }
 .intent-nav .catalog-list__item-image img { transition: transform .5s; }
 .intent-nav .catalog-list__item:hover .catalog-list__item-image img { transform: scale(1.06); }
@@ -312,3 +322,14 @@ footer { margin-top: 0 !important; }
 @media screen and (max-width: 767px) {
   .intent-nav .catalog-list__item-title { font-size: 11px; padding: 5px 10px; bottom: 8px; }
 }
+/* Каталог-подменю: тёмное везде, белое только на главной */
+body .catalog-navigation,
+body .nav-box.fixed .catalog-navigation { background: #232F3E; border-left-color: #344253; border-right-color: #344253; }
+body .catalog-navigation__list > li { border-bottom-color: #344253; }
+body .catalog-navigation__list > li > a { color: #fff; }
+body .catalog-navigation__list > li > a:hover { background: #F26522; color: #fff; }
+body.is-home .catalog-navigation,
+body.is-home .nav-box.fixed .catalog-navigation { background: #fff; border-left-color: #eee; border-right-color: #eee; }
+body.is-home .catalog-navigation__list > li { border-bottom-color: #eee; }
+body.is-home .catalog-navigation__list > li > a { color: inherit; }
+body.is-home .catalog-navigation__list > li > a:hover { background: #2D3E53; color: #fff; }
