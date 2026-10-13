@@ -129,7 +129,7 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind(), sitemap({
     // страницы-заглушки редиректов — не для индекса
-    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)) && !MERGED_TO_MATERIALY.some((s) => page.includes(s)),
+    filter: (page) => !page.includes("montazh-2") && !page.includes("navesy-dlya-mangala") && !page.includes("navesy-dlya-barbekju") && !page.includes("navesy-iz-polikarbonata-dlya-barbekju") && !page.includes("/offline/") && !MERGED_TO_AVTO.some((s) => page.includes(s)) && !MERGED_TO_BASSEJNA.some((s) => page.includes(s)) && !MERGED_TO_BESEDKI.some((s) => page.includes(s)) && !MERGED_TO_DOMA.some((s) => page.includes(s)) && !MERGED_TO_BALKONA.some((s) => page.includes(s)) && !MERGED_TO_ZABORY.some((s) => page.includes(s)) && !MERGED_TO_MATERIALY.some((s) => page.includes(s)),
   })],
   trailingSlash: "always",
 });

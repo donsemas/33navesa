@@ -164,5 +164,13 @@ SEO-консолидация кластера «Бассейн»: 12 дочер�
 - base.css: .catalog-navigation тёмное #232F3E + белый текст + ховер #F26522 везде; белое только на главной через body.is-home (класс уже был)
 - Билд 415 стр., битых 0. НЕ закоммичено (ждать «пуш»)
 
+## Сессия — PWA на живой (03.10.2026)
+- Файлы: public/manifest.webmanifest (standalone, /), public/sw.js (VERSION navesa-pwa-v1, ядро: / /offline/ манифест иконки; рантайм-кэш остального; чистка старых), public/icon-192/512.png (PIL из фавикона)
+- src/pages/offline.astro (noindex, стиль 404, вне sitemap через фильтр /offline/)
+- Footer: кнопка #pwaInstallBtn (скрыта, beforeinstallprompt → показать, appinstalled/standalone → скрыть) + регистрация SW; base.css: стили кнопки (бренд, центр-низ/правый-низ, reduced-motion)
+- Все head: theme-color + manifest (скрипт Temp/opencode/add-pwa-head.py, 145 файлов)
+- Откат (если не зайдёт): убрать кнопку/манифест/регистрацию + залить пустой SW-самоудалятор на сутки
+- Билд 416 стр., битых 0. НЕ закоммичено (ждать «пуш»)
+
 ## Правила обновления
 Перед каждым коммитом: обновить TODO.md + HANDOFF.md, включить в git add.

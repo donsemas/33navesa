@@ -236,5 +236,30 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/24802502" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
  <script src="/js/related-slider.js?v=2" defer></script>
 <script src="/js/lead.js?v=6" defer></script>
+<button id="pwaInstallBtn" class="pwa-install-btn" aria-label="Установить приложение" hidden>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Установить на рабочий стол</span>
+</button>
+<script>
+(function(){
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function(){}); }
+  var btn = document.getElementById('pwaInstallBtn');
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if (!btn || standalone) return;
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault(); deferred = e; btn.hidden = false; btn.classList.add('show');
+  });
+  btn.addEventListener('click', function(){
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function(choice){
+      if (choice.outcome === 'accepted') { btn.classList.remove('show'); btn.hidden = true; }
+      deferred = null;
+    });
+  });
+  window.addEventListener('appinstalled', function(){ btn.classList.remove('show'); btn.hidden = true; });
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>

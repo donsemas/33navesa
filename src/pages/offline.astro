@@ -1,0 +1,60 @@
+---
+import Header from "../components/Header.astro"
+import Sidebar from "../components/Sidebar.astro";;
+import Footer from "../components/Footer.astro";
+import "../styles/base.css";
+const title = 'Нет соединения — 33Навеса';
+const description = 'Проверьте интернет. Открытые ранее страницы доступны офлайн.';
+const canonical = 'https://33navesa.ru/offline/';
+---
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#F26522" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-120.png" sizes="120x120" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.gif" type="image/gif" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <meta name="robots" content="noindex, follow" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/main.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/style.css" />
+  <link rel="stylesheet" href="/wp-content/themes/naves/css/media.css" />
+</head>
+<body>
+  <Header />
+  <div class="content">
+    <div class="container">
+        <div class="row">
+            <Sidebar />
+            <main>
+                <div class="breadcrumbs"><a href="/">Главная</a> &gt; <span>Нет соединения</span></div>
+                <div class="err404">
+                    <div class="err404-top">
+                        <div class="err404-code">3<span>3</span></div>
+                        <h1>Нет соединения</h1>
+                        <p class="err404-sub">Проверьте интернет. Открытые ранее страницы доступны из кэша, заявку можно отправить, когда сеть вернётся.</p>
+                        <a class="err404-btn" href="/">На главную</a>
+                    </div>
+                </div>
+<style>
+.err404{background:#141414;color:#fff;border-radius:14px;overflow:hidden;margin:24px 0;}
+.err404-top{padding:48px 32px 40px;text-align:center;}
+.err404-code{font-size:clamp(90px,18vw,170px);font-weight:900;line-height:1;color:#f26522;}
+.err404-code span{color:#fff;}
+.err404 h1{font-size:clamp(22px,3.4vw,32px);margin:12px 0 8px;color:#fff;text-transform:uppercase;}
+.err404-sub{color:#bdbdbd;font-size:17px;margin:0 auto 26px;max-width:560px;}
+.err404-btn{display:inline-block;background:#f26522;color:#fff;font-weight:800;font-size:18px;padding:16px 56px;border-radius:12px;text-decoration:none;text-transform:uppercase;}
+</style>
+            </main>
+        </div>
+    </div>
+  </div>
+  <Footer />
+</body>
+</html>
